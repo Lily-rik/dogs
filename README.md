@@ -10,7 +10,7 @@
 
 ### テーマを選んだ理由
 ・犬が大好きなので、たくさんの可愛い投稿を見て癒されたいと思った<br>
-・現在の情勢で環境や日常生活も大きく変わり、ストレスを抱えている人も多いと思うので、このサイトを訪れることで癒しを感じ幸せな時間を過ごして欲しいと思った。
+・現在の情勢で環境や日常生活も大きく変わり、ストレスを抱えている人も多いと思うので、このサイトを訪れることで癒しを感じ幸せな時間を過ごして欲しいと思った
 
 ### ターゲットユーザ
 ・犬が好きな人<br>
@@ -27,7 +27,7 @@
 <...>
 
 ## チャレンジ要素一覧
-<https://docs.google.com/spreadsheets/d/1UgK-6l38k5T81XjcTIn7CHnGRkB_sBXS5xQWAVhWmks/edit#gid=0>
+<https://docs.google.com/spreadsheets/d/18I_lboN2bf9WrsJ67evP9-1Hg5WRCn4qGPr-Jz9pmBc/edit#gid=0>
 
 ## 開発環境
 - OS：Linux(CentOS)
