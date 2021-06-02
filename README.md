@@ -31,7 +31,7 @@
 ・テーブル一覧、管理者側<br>
 <img width="900" alt="スクリーンショット 2021-06-02 23 39 41" src="https://user-images.githubusercontent.com/79913183/120501246-6e061780-c3fc-11eb-8def-0fe6927d638d.png"><br>
 ・会員側<br>
-<img width="762" alt="スクリーンショット 2021-06-02 23 37 23" src="https://user-images.githubusercontent.com/79913183/120501330-7f4f2400-c3fc-11eb-9279-f59b8c1ba988.png">
+<img width="762" alt="スクリーンショット 2021-06-02 23 52 03" src="https://user-images.githubusercontent.com/79913183/120502807-b3771480-c3fd-11eb-8854-a197ecb2c139.png">
 ### アプリケーション詳細設計
 ・管理者側<br>
 <img width="794" alt="スクリーンショット 2021-06-02 23 33 03" src="https://user-images.githubusercontent.com/79913183/120501403-8d9d4000-c3fc-11eb-98c6-6fb24d937711.png"><br>
