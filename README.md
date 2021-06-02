@@ -29,7 +29,7 @@
 
 ### テーブル定義書
 ・テーブル一覧、管理者側<br>
-<img width="900" alt="スクリーンショット 2021-06-02 23 39 41" src="https://user-images.githubusercontent.com/79913183/120501246-6e061780-c3fc-11eb-8def-0fe6927d638d.png"><br>
+<img width="598" alt="スクリーンショット 2021-06-03 1 08 29" src="https://user-images.githubusercontent.com/79913183/120514486-4cab2880-c408-11eb-9592-60e08c88673e.png"><br>
 ・会員側<br>
 <img width="762" alt="スクリーンショット 2021-06-02 23 52 03" src="https://user-images.githubusercontent.com/79913183/120502807-b3771480-c3fd-11eb-8854-a197ecb2c139.png">
 ### アプリケーション詳細設計
