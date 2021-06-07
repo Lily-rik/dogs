@@ -32,7 +32,7 @@ Rails.application.routes.draw do
     get 'users/:id/favorites' => 'users#favorites', as: 'favorites'
 
     # posts
-    resources :posts, only: [:show, :new, :create, :edit, :update, :destroy] do
+    resources :posts, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
       # comments
       resources :comments, only: [:create, :destroy]
       # favorites

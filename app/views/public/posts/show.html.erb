@@ -1,0 +1,8 @@
+<h1>投稿詳細</h1>
+
+<div class="post_show">
+  <h4>投稿画像</h4>
+  <%= attachment_image_tag @post, :image %>
+  <h4>投稿文章</h4>
+  <%= @post.caption %>
+</div>
