@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
     root 'homes#top'
     get 'search' => 'searches#search', as: 'search'
+    get 'homes/about' => 'homes#about', as: 'about'
 
     # Users
     resources :users, only: [:show, :edit, :update] do

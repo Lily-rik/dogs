@@ -4,7 +4,9 @@
   <h4>投稿画像</h4>
   <%= link_to post_path(post.id) do %>
     <%= attachment_image_tag post, :image %>
-  <% end %>
+  <% end %><br>
+  <%= link_to "#{post.comments.count}コメント", post_path(post.id) %>
+
   <h4>投稿文章</h4>
   <%= post.caption %>
 <% end %>
