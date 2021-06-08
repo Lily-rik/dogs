@@ -35,22 +35,31 @@ class Public::UsersController < ApplicationController
 
 
   # 退会機能
-
   def unsubscribe
     @user = User.find(params[:id])
   end
 
   def withdrawal
     user = User.find(params[:id])
-    #is_deletedカラムをtrueに更新してフラグを立てる(defaultはfalse)
+    ## is_deletedカラムをtrueに更新してフラグを立てる(defaultはfalse)
     user.update(is_deleted: true)
-    # ログアウト
+    ## ログアウト
     reset_session
     flash[:notice] = "ご利用ありがとうございました。またのご利用を心よりお待ちしております。"
     redirect_to root_path
   end
 
 
+  # フォロー・フォロワー
+  def follows
+    user = User.find(params[:id])
+    @users = user.followings
+  end
+
+  def followers
+    user = User.find(params[:id])
+    @users = user.followers
+  end
 
 
 
