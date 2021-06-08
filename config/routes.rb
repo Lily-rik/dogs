@@ -33,19 +33,18 @@ Rails.application.routes.draw do
     get 'users/:id/favorites' => 'users#favorites', as: 'favorites'
 
     # posts
+    get 'posts/ranking' => 'posts#ranking', as: 'ranking'
     resources :posts, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
       # comments
       resources :comments, only: [:create, :destroy]
       # favorites
       resource :favorites, only: [:create, :destroy]
     end
-    get 'posts/ranking' => 'posts#ranking', as: 'ranking'
 
   end
 
 
   namespace :admin do
-    get 'top' => 'homes#top', as: 'top'
     get 'search' => 'searches#search', as: 'search'
     resources :users, only: [:index, :show, :edit, :update]
   end
