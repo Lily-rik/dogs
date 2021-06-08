@@ -24,6 +24,19 @@ class Public::PostsController < ApplicationController
   end
 
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+
+  def update
+    post = Post.find(params[:id])
+    post.user_id = current_user.id
+    post.update(post_params)
+    redirect_to post_path(post.id)
+  end
+
+
   def ranking
   end
 
