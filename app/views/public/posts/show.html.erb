@@ -1,0 +1,56 @@
+<h1>投稿詳細</h1>
+
+<div class="post">
+
+  <%= attachment_image_tag @post.user, :image_id, :fill, 50, 50, fallback: "no_image.jpg" %>
+  <%= @post.user.user_name %>
+
+  <% if @post.user_id != current_user.id %>
+    <!--お気に入り-->
+    <% if @post.favorited_by?(current_user) %>
+        <%= link_to post_favorites_path(@post.id), method: :delete do %>
+          <i class="fas fa-heart fa-2x" style="color:orangered;"></i>
+        <% end %>
+    <% else %>
+        <%= link_to post_favorites_path(@post.id), method: :post do %>
+          <i class="far fa-heart fa-2x" style="color:black;"></i>
+        <% end %>
+    <% end %>
+  <% end %>
+
+
+
+
+  <!--編集アイコン-->
+  <% if @post.user_id == current_user.id %>
+    <%= link_to edit_post_path(@post.id) do %>
+    <i class="fas fa-edit"></i>
+    <% end %>
+  <% end %>
+
+  <p><%= attachment_image_tag @post, :image, :fill, 500, 500 %></p>
+  <h4>投稿文章</h4>
+  <%= @post.caption %>
+
+
+</div>
+
+<div class="comments">
+  <h4>コメント一覧</h4>
+  <% @post.comments.each do |comment| %>
+    <%= attachment_image_tag comment.user, :image_id, :fill, 30, 30, fallback: "no_image.jpg" %>
+    <%= comment.user.user_name %>
+    <%= comment.comment %>
+    <% if comment.user == current_user %>
+      <%= link_to '削除', post_comment_path(comment.post.id, comment.id), method: :delete %>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="new-comment">
+  <h4>コメント投稿</h4>
+  <%= form_with(model:[@post, @comment], local: true) do |f| %>
+    <%= f.text_area :comment, rows:'3' %>
+    <%= f.submit 'コメント投稿' %>
+  <% end %>
+</div>

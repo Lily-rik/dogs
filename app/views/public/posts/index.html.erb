@@ -1,0 +1,37 @@
+<h1>My DOG'S</h1>
+
+<% @posts.each do |post|%>
+
+  <%= attachment_image_tag post.user, :image_id, :fill, 50, 50, fallback: "no_image.jpg" %>
+  <%= post.user.user_name %>
+
+
+
+
+  <% if post.user_id != current_user.id %>
+    <!--お気に入り-->
+    <% if post.favorited_by?(current_user) %>
+        <%= link_to post_favorites_path(post.id), method: :delete do %>
+          <i class="fas fa-heart fa-2x" style="color:orangered;"></i>
+        <% end %>
+    <% else %>
+        <%= link_to post_favorites_path(post.id), method: :post do %>
+          <i class="far fa-heart fa-2x" style="color:black;"></i>
+        <% end %>
+    <% end %>
+  <% end %>
+
+
+  <%= link_to post_path(post.id) do %>
+    <i class="far fa-comment fa-2x" style="color:black;"></i>
+  <% end %>
+
+
+  <%= link_to post_path(post.id) do %>
+    <p><%= attachment_image_tag post, :image, :fill, 300, 300 %></p>
+  <% end %><br>
+
+
+  <h4>投稿文章</h4>
+  <%= post.caption %>
+<% end %>
