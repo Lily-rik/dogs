@@ -13,5 +13,16 @@ class User < ApplicationRecord
   has_many :active_relationships, class_name: "Relationship"
   has_many :passive_relationships, class_name: "Relationship"
   
-  
+
+  attachment :image
+
+  # 退会フラグがfalseの時しかログインできないようにする
+  def active_for_authentication?
+    super && (self.is_deleted == false)
+  end
+
+
+
+
+
 end

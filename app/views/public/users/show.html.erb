@@ -1,1 +1,38 @@
 <h1>マイページです</h1>
+
+<div class="user-info">
+  <p>
+    <%= @user.user_name %>
+  </p>
+  <p>
+    <%= attachment_image_tag @user, :image, :fill, 50, 50, fallback: "no_image.jpg" %>
+  </p>
+  <p>
+  <% if @user == current_user %>
+    <%= link_to edit_mypage_path(@user.id) do %>
+      <i class="fas fa-user-cog"></i>
+    <% end %>
+  <% end %>
+  </p>
+</div>
+
+
+
+<div class="user_buttons">
+  <%= link_to 'フォロー', follows_user_path(@user.id) %>
+  <%= link_to 'フォロワー', followers_user_path(@user.id) %>
+  <%= link_to 'お気に入り', favorites_path(@user.id) %>
+  <% if @user == current_user %>
+    <%= link_to '新規投稿', new_post_path %>
+  <% end %>
+</div>
+
+
+<div class="user-introduction">
+  <%= @user.self_introduction %>
+</div>
+
+<div class="posts">
+  <h4>投稿一覧</h4>
+  <p><%= render 'public/posts/posts', posts: @posts %></p>
+</div>

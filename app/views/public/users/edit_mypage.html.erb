@@ -1,0 +1,16 @@
+<h1>マイページ編集</h1>
+
+<%= form_with model: @user, url: update_mypage_path(current_user.id), local: true do |f| %>
+
+  <div class="field">
+    <%= f.label :image, "プロフィール画像" %>
+    <%= f.attachment_field :image %>
+  </div>
+
+  <div class="field">
+    <%= f.label :self_introduction, "自己紹介" %>
+    <%= f.text_area :self_introduction %>
+  </div>
+
+  <%= f.submit '保存' %>
+<% end %>

@@ -1,9 +1,13 @@
 <h1>投稿編集ページ</h1>
 
 <%= form_with model: @post, local: true do |f| %>
+
   <h4>投稿画像</h4>
   <%= f.attachment_field :image %>
   <h4>投稿文章</h4>
   <%= f.text_area :caption %>
+
   <%= f.submit '保存' %>
 <% end %>
+
+<%= link_to '削除', post_path(@post.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
