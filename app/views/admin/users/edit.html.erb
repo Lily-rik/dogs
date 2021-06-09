@@ -1,0 +1,42 @@
+<h1>会員編集</h1>
+
+<%= form_with model: [:admin, @user], local: true do |f|%>
+
+  <div class="field">
+    <%= f.label :image, "プロフィール画像" %>
+    <%= f.attachment_field :image %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :name, "名前" %>
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user_name, "ユーザーネーム" %>
+    <%= f.text_field :user_name %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :email, "メールアドレス" %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :telephone_number, "電話番号" %>
+    <%= f.text_field :telephone_number %>
+  </div>
+
+  <div class="field">
+    <%= f.label "会員ステータス" %>
+    <%= f.radio_button :is_deleted, "false" %>
+    <%= f.label :is_deleted, "有効", value: false %>
+    <%= f.radio_button :is_deleted, "true" %>
+    <%= f.label :is_deleted, "退会", value: true %>
+  </div>
+
+  <%= f.submit "更新" %>
+
+<% end %>
