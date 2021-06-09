@@ -33,7 +33,7 @@ Rails.application.routes.draw do
     patch 'mypage/:id/edit' => 'users#update_mypage', as: 'update_mypage'
     get 'users/:id/unsubscribe' => 'users#unsubscribe', as: 'unsubscribe'
     patch 'users/:id/withdrawal' => 'users#withdrawal', as: 'withdrawal'
-    get 'users/:id/favorites' => 'users#favorites', as: 'favorites'
+    get 'users/:id/my_favorites' => 'users#my_favorites', as: 'my_favorites'
 
     # posts
     get 'posts/ranking' => 'posts#ranking', as: 'ranking'

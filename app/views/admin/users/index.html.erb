@@ -8,27 +8,24 @@
     <th>名前</th>
     <th>メールアドレス</th>
     <th>会員ステータス</th>
+    <th></th>
   </tr>
 
   <% @users.each do |user| %>
-  <tr>
-    <td><%= user.id %></td>
-    <td>
-      <%= link_to admin_user_path(user.id) do %>
-        <%= user.name %>
-      <% end %>
-    </td>
-    <td><%= user.email %></td>
-    <td>
-      <% if user.is_deleted? %>
-        退会
-      <% else %>
-        有効
-      <% end %>
-    </td>
-  </tr>
+    <tr>
+      <td><%= user.id %></td>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+      <td>
+        <% if user.is_deleted? %>
+          退会
+        <% else %>
+          有効
+        <% end %>
+      </td>
+      <td><%= link_to "詳細", admin_user_path(user.id) %></td>
+    </tr>
   <% end %>
-
 </table>
 
 

@@ -39,12 +39,9 @@ class Public::PostsController < ApplicationController
     redirect_to user_path(post.user_id)
   end
 
-
   def ranking
+    @ranking = Post.create_ranking
   end
-
-
-
 
 
   private
