@@ -1,1 +1,11 @@
 <h1>会員一覧画面です</h1>
+
+<% @users.each do |user| %>
+
+  <%= user.name %>
+  <%= user.user_name %>
+  <%= user.email %>
+  <%= user.telephone_number %>
+  
+
+<% end %>

@@ -37,6 +37,14 @@ class Public::PostsController < ApplicationController
   end
 
 
+  def destroy
+    post = Post.find(params[:id])
+    post.user_id = current_user.id
+    post.destroy
+    redirect_to user_path(post.user_id)
+  end
+
+
   def ranking
   end
 

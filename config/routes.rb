@@ -21,13 +21,16 @@ Rails.application.routes.draw do
 
     # Users
     resources :users, only: [:show, :edit, :update] do
+
       # relationships
       resource :relationships, only: [:create, :destroy]
       get :follows, on: :member
       get :followers, on: :member
+
     end
-    get 'my_page/:id/edit' => 'users#edit_my_page', as: 'edit_my_page'
-    patch 'my_page/:id' => 'users#update_my_page', as: 'update_my_page'
+
+    get 'mypage/:id/edit' => 'users#edit_mypage', as: 'edit_mypage'
+    patch 'mypage/:id/edit' => 'users#update_mypage', as: 'update_mypage'
     get 'users/:id/unsubscribe' => 'users#unsubscribe', as: 'unsubscribe'
     patch 'users/:id/withdrawal' => 'users#withdrawal', as: 'withdrawal'
     get 'users/:id/favorites' => 'users#favorites', as: 'favorites'

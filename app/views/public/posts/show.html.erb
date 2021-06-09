@@ -2,7 +2,7 @@
 
 <div class="post">
 
-  <%= attachment_image_tag @post.user, :image_id, :fill, 50, 50, fallback: "no_image.jpg" %>
+  <%= attachment_image_tag @post.user, :image, :fill, 50, 50, fallback: "no_image.jpg" %>
   <%= @post.user.user_name %>
 
   <% if @post.user_id != current_user.id %>
@@ -38,7 +38,7 @@
 <div class="comments">
   <h4>コメント一覧</h4>
   <% @post.comments.each do |comment| %>
-    <%= attachment_image_tag comment.user, :image_id, :fill, 30, 30, fallback: "no_image.jpg" %>
+    <%= attachment_image_tag comment.user, :image, :fill, 30, 30, fallback: "no_image.jpg" %>
     <%= comment.user.user_name %>
     <%= comment.comment %>
     <% if comment.user == current_user %>

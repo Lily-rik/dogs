@@ -1,1 +1,26 @@
 <h1>会員情報編集画面です</h1>
+
+<%= form_with model: @user, local: true do |f| %>
+
+  <div class="field">
+    <%= f.label :name, "名前" %>
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email, "メールアドレス" %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :telephone_number, "電話番号" %>
+    <%= f.text_field :telephone_number %>
+  </div>
+
+  <%= f.submit "更新" %>
+
+  <% end %>
+
+  <%= link_to "退会する", unsubscribe_path(current_user) %>
+
+
