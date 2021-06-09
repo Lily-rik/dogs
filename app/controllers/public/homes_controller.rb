@@ -6,6 +6,7 @@ class Public::HomesController < ApplicationController
   end
 
   def about
+    @posts = Post.all
   end
 
 end

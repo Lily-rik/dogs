@@ -15,3 +15,33 @@
  */
 
  @import "bootstrap";
+
+
+// .dog-images {
+//   width: 300px;
+//   height: 300px;
+// }
+
+
+// Topページ
+#title {
+  font-size: 50px;
+}
+
+
+// Aboutページ
+.about-visual {
+  width: 100%;
+  height: 500px;
+  background-image: image-url("dogs01.jpeg");
+  background-size: contain;
+  background-position: bottom;
+}
+
+.about-visual-content {
+  width: 100%;
+  height: 500px;
+  background-color: rgba(255,255,255,0.5);
+  text-align: center;
+  padding-top: 200px;
+}
