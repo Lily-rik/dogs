@@ -6,16 +6,21 @@
     <%= post.favorites.count %>いいね
   </p>
   <%= attachment_image_tag post.user, :image, :fill, 50, 50, fallback: "no_image.jpg" %>
-  <%= post.user.user_name %>
+  <%= link_to user_path(post.user.id) do %>
+    <%= post.user.user_name %>
+  <% end %>
+
   <% if post.user_id != current_user.id %>
     <!--お気に入り-->
     <% if post.favorited_by?(current_user) %>
         <%= link_to post_favorites_path(post.id), method: :delete do %>
           <i class="fas fa-heart fa-2x" style="color:orangered;"></i>
+          <span><%= post.favorites.count %></span>
         <% end %>
     <% else %>
         <%= link_to post_favorites_path(post.id), method: :post do %>
           <i class="far fa-heart fa-2x" style="color:black;"></i>
+          <span><%= post.favorites.count %></span>
         <% end %>
     <% end %>
   <% end %>
@@ -23,6 +28,7 @@
 
   <%= link_to post_path(post.id) do %>
     <i class="far fa-comment fa-2x" style="color:black;"></i>
+    <span><%= post.comments.count %></span>
   <% end %>
 
 
