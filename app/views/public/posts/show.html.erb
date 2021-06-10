@@ -6,16 +6,9 @@
   <%= @post.user.user_name %>
 
   <% if @post.user_id != current_user.id %>
-    <!--お気に入り-->
-    <% if @post.favorited_by?(current_user) %>
-        <%= link_to post_favorites_path(@post.id), method: :delete do %>
-          <i class="fas fa-heart fa-2x" style="color:orangered;"></i>
-        <% end %>
-    <% else %>
-        <%= link_to post_favorites_path(@post.id), method: :post do %>
-          <i class="far fa-heart fa-2x" style="color:black;"></i>
-        <% end %>
-    <% end %>
+    <p id="favorite_button_<%= @post.id %>">
+      <%= render 'public/favorites/favorite', post: @post %>
+    </p>
   <% end %>
 
 
@@ -35,22 +28,14 @@
 
 </div>
 
-<div class="comments">
-  <h4>コメント一覧</h4>
-  <% @post.comments.each do |comment| %>
-    <%= attachment_image_tag comment.user, :image, :fill, 30, 30, fallback: "no_image.jpg" %>
-    <%= comment.user.user_name %>
-    <%= comment.comment %>
-    <% if comment.user == current_user %>
-      <%= link_to '削除', post_comment_path(comment.post.id, comment.id), method: :delete %>
-    <% end %>
-  <% end %>
+<div id="comment_button_<%= @post.id %>">
+
+  <%= render 'public/comments/comment', post: @post %>
+
 </div>
 
-<div class="new-comment">
-  <h4>コメント投稿</h4>
-  <%= form_with(model:[@post, @comment], local: true) do |f| %>
-    <%= f.text_area :comment, rows:'3' %>
-    <%= f.submit 'コメント投稿' %>
-  <% end %>
+<div id="new-comment">
+
+  <%= render 'public/comments/new_comment', {post: @post, comment: @comment} %>
+
 </div>

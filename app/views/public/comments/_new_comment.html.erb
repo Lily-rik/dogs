@@ -1,0 +1,5 @@
+<h4>コメント投稿</h4>
+<%= form_with(model:[post, comment], remote: true) do |f| %>
+  <%= f.text_area :comment, rows:'3', id: 'textarea' %>
+  <%= f.submit 'コメント投稿' %>
+<% end %>

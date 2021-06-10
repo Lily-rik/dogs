@@ -51,14 +51,16 @@ class Public::UsersController < ApplicationController
 
   # フォロー・フォロワー
   def follows
-    user = User.find(params[:id])
-    @users = user.followings
+        user  = User.find(params[:id])
+        @users = user.following
   end
 
   def followers
-    user = User.find(params[:id])
-    @users = user.followers
+        user  = User.find(params[:id])
+        @users = @user.followers
   end
+
+
 
   # お気に入り表示
   def my_favorites
