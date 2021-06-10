@@ -1,1 +1,37 @@
 <h1>ランキング一覧画面です</h1>
+
+<% @ranking.each.with_index(1) do |post, i| %>
+  <p>
+    <span>第<%= i %>位</span>
+    <%= post.favorites.count %>いいね
+  </p>
+  <%= attachment_image_tag post.user, :image, :fill, 50, 50, fallback: "no_image.jpg" %>
+  <%= link_to user_path(post.user.id) do %>
+    <%= post.user.user_name %>
+  <% end %>
+
+  <% if post.user_id != current_user.id %>
+
+
+  <p id="favorite_button_<%= post.id %>">
+    <%= render 'public/favorites/favorite', post: post %>
+  </p>
+
+
+  <% end %>
+
+
+  <%= link_to post_path(post.id) do %>
+    <i class="far fa-comment fa-2x" style="color:black;"></i>
+    <span><%= post.comments.count %></span>
+  <% end %>
+
+
+  <%= link_to post_path(post.id) do %>
+    <p><%= attachment_image_tag post, :image, :fill, 300, 300 %></p>
+  <% end %><br>
+
+
+  <h4>投稿文章</h4>
+  <p><%= post.caption %></p>
+<% end %>

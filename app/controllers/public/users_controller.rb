@@ -25,7 +25,6 @@ class Public::UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-
   def update_mypage
     user = User.find(params[:id])
     user.update(user_params)
@@ -52,17 +51,23 @@ class Public::UsersController < ApplicationController
 
   # フォロー・フォロワー
   def follows
-    user = User.find(params[:id])
-    @users = user.followings
+        user  = User.find(params[:id])
+        @users = user.following
   end
 
   def followers
-    user = User.find(params[:id])
-    @users = user.followers
+        user  = User.find(params[:id])
+        @users = @user.followers
   end
 
 
 
+  # お気に入り表示
+  def my_favorites
+    user = User.find(params[:id])
+    favorites = user.favorites.pluck(:post_id)
+    @favorites_list = Post.find(favorites)
+  end
 
 
 

@@ -1,0 +1,15 @@
+<h1>検索結果</h1>
+
+<% @users.each do |user| %>
+  <%= attachment_image_tag user, :image, :fill, 50, 50, fallback: "no_image.jpg" %>
+  <%= link_to user_path(user.id) do %>
+    <%= user.user_name %>
+  <% end %>
+
+  <div id="follow_button_<%= user.id %>">
+    <%= render 'public/relationships/follow_button', user: user %>
+  </div>
+
+
+
+<% end %>

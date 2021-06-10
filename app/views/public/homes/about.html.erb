@@ -4,11 +4,23 @@
   <div class="about-visual-content">
     <h1 class="about-visual-heading">DOG'S</h1>
     <p class="about-visual-text">
-      みんなの投稿です！<br>
+      みんなの投稿です<br>
       お気に入りのわんちゃんたちを見つけてね！
+      <!--This is your's post<br>-->
+      <!--You find your favorite dogs!-->
     </p>
   </div>
 </div>
+
+
+<%= form_with url: search_path, method: :get, local: :true do |f| %>
+  <%= f.label :range, "User"%>
+  <%= f.select :search, options_for_select([["完全一致","perfect_match"], ["部分一致","partial_match"]]) %>
+  <%= f.text_field :word %>
+  <%= f.submit "検索" %>
+<% end %>
+
+
 
 
 

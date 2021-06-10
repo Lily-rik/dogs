@@ -1,0 +1,9 @@
+  <h4>コメント一覧</h4>
+  <% post.comments.each do |comment| %>
+    <%= attachment_image_tag comment.user, :image, :fill, 30, 30, fallback: "no_image.jpg" %>
+    <%= comment.user.user_name %>
+    <%= comment.comment %>
+    <% if comment.user == current_user %>
+      <%= link_to '削除', post_comment_path(comment.post.id, comment.id), method: :delete, remote: true %>
+    <% end %>
+  <% end %>
