@@ -5,6 +5,12 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
     <script src="https://kit.fontawesome.com/792068b81e.js" crossorigin="anonymous"></script>
 
 
@@ -15,14 +21,14 @@
   <body>
 
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand">
         <div class="container">
-          <a class="navbar-brand" href="/"><span>DOG'S</span></a>
+          <a class="navbar-brand center-nav-title left-nav-title" id="navbar-content-center" href="/"><span>DOG'S</span></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto nav-list" id="navbar">
             <% if admin_signed_in? %>
               <li class="nav-item"><%= link_to '会員一覧', admin_users_path, class: 'nav-link' %></li>
               <li class="nav-item"><%= link_to 'ログアウト', destroy_admin_session_path, class: 'nav-link' %></li>
@@ -46,6 +52,12 @@
     <main>
       <%= yield %>
     </main>
+
+
+    <footer>
+      Copy.right
+    </footer>
+
 
   </body>
 </html>

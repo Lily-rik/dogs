@@ -1,6 +1,7 @@
 <h1>会員詳細</h1>
 
 <table>
+  
   <tr>
     <th>ID</th>
     <th>画像</th>
@@ -13,8 +14,7 @@
 
   <tr>
     <td><%= @user.id %></td>
-    <td><%= attachment_image_tag @user, :image, :fill, 50, 50, fallback: "no_image.jpg" %>
-  </td>
+    <td><%= attachment_image_tag @user, :image, :fill, 50, 50, fallback: "no_image.jpg" %></td>
     <td><%= @user.name %></td>
     <td><%= @user.user_name %></td>
     <td><%= @user.email %></td>

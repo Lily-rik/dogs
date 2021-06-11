@@ -15,7 +15,36 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
-//= require rails-ujs
+//= require jquery_ujs
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+/*global $*/
+$(document).on('turbolinks:load', function() {
+  $(".full-screen-o").slick({
+    centerMode: true, // スライドを中心に表示して部分的に前後のスライドが見えるように設定（奇数番号のスライドに使用）
+    centerPadding: '5%', // センターモード時のサイドパディング。見切れるスライドの幅。’px’または’％’。
+    dots: true, // ドットインジケーターの表示
+    autoplay: true, // 自動再生を設定
+    autoplaySpeed: 3000, // 自動再生のスピード（ミリ秒単位）
+    speed: 1000, // スライド/フェードアニメーションの速度を設定
+    infinite: true // スライドのループを有効にするか
+  });
+});
+
+
+$(document).on('turbolinks:load',function() {
+	$(window).on('load scroll', function() {
+		var scrollPos = $(this).scrollTop();
+		if ( scrollPos > 200 ) {
+			$('header').addClass('is-animation');
+			$('#navbar-content-center').removeClass('center-nav-title');
+			$('#navbar').removeClass('nav-list');
+		} else {
+			$('header').removeClass('is-animation');
+			$('#navbar-content-center').addClass('center-nav-title');
+			$('#navbar').addClass('nav-list');
+		}
+	});
+});

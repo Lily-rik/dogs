@@ -23,10 +23,103 @@
 // }
 
 
+
+body {
+	margin: 0;
+}
+
+
+// ヘッダー
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding: 50px 0;
+	width: 100%;
+  background-color: #D2B48C;
+	font-size: 24px;
+	text-align: center;
+	color: #fff;
+	transition: .3s;
+	z-index: 10;
+}
+
+// スクロールしたときのヘッダーのアニメーション
+.is-animation {
+  padding: 20px 0;
+	font-size: 12px;
+  background-color: #D2B48C;
+}
+
+
+
+
+.navbar {
+  background-color: #D2B48C;
+}
+
+.center-nav-title {
+  color: #fff;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  text-align:center;
+  margin: auto;
+	font-size: 32px;
+
+}
+
+.is-navbar-content-center {
+  color: #fff;
+}
+
+
+.left-nav-title {
+  color: #fff;
+}
+
+
+.nav-link {
+  color: #fff;
+}
+
+.nav-list {
+  margin: 0 auto;
+  padding-top: 50px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.is-navbar-nav {
+  color: #fff;
+}
+
+
+
+.main {
+	height: 2000px;
+	text-align: center;
+	background-color: #000;
+	z-index: 20;
+}
+
+
+
+
+
 // Topページ
 #title {
   font-size: 50px;
 }
+
+
+
+
+
+
+
 
 
 // Aboutページ
@@ -45,3 +138,13 @@
   text-align: center;
   padding-top: 200px;
 }
+
+
+footer {
+	padding: 3em 0;
+	text-align: center;
+	color: #fff;
+	background-color: #000;
+}
+
+

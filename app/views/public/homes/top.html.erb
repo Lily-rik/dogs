@@ -1,5 +1,7 @@
 
 
+
+
 <%= image_tag 'dogs01.jpeg', size: "300x300" %>
 <%= image_tag 'dogs02.jpeg', size: "300x300" %>
 <%= image_tag 'dogs03.jpeg', size: "300x300" %>
@@ -7,6 +9,22 @@
 
 
 <p id="title">Welcome to DOG'S!!!</p>
+
+
+
+<div class="sliderArea">
+  <div class="full-screen-o slider">
+    <div><img src="assets/dogs01.jpeg" alt="125naroom"></div>
+    <div><img src="assets/dogs02.jpeg" alt="125naroom"></div>
+    <div><img src="assets/dogs03.jpeg" alt="125naroom"></div>
+    <div><img src="assets/dogs04.jpeg" alt="125naroom"></div>
+    <div><img src="assets/dogs05.jpeg" alt="125naroom"></div>
+  </div>
+</div>
+
+
+
+
 
 <% unless user_signed_in? %>
   <%= link_to "ログイン", new_user_session_path %>
