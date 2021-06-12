@@ -17,22 +17,142 @@
  @import "bootstrap";
 
 
-// .dog-images {
-//   width: 300px;
-//   height: 300px;
-// }
+a {
+  color: #0f2350;
+
+}
+
+a:link, a:visited, a:hover, a:active {
+  color: #0f2350;
+}
+
+
+// ヘッダー
+header {
+	position: fixed;
+	top: 0px;
+	left: 0;
+	padding: 100px 0 50px 0;
+	width: 100%;
+  background-color: #fff;
+	font-size: 24px;
+	text-align: center;
+	color: #fff;
+	z-index: 30;
+}
+
+// スクロールしたときのヘッダーのアニメーション
+.is-animation {
+  padding: 15px 0;
+	font-size: 12px;
+  background-color: #fff;
+	z-index: 10;
+  transition: all 0.5s ease;
+}
+
+// スクロールでremove
+.center-nav-title {
+  color: #fff;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  text-align:center;
+  margin: auto;
+	font-size: 36px;
+	z-index: 10;
+}
+
+
+
+.nav-link {
+	font-size: 15px;
+  color: #fff;
+	z-index: 10;
+}
+
+// スクロールでremove
+.nav-list {
+  margin: 0 auto;
+  padding-top: 80px;
+  text-align: center;
+  font-size: 15px;
+	z-index: 10;
+}
+
+
+
+
+main {
+  margin: 350px auto 0 auto;
+	height: 2000px;
+// 	text-align: center;
+	background-color: #fff;
+	z-index: 20;
+}
+
+
+
 
 
 // Topページ
-#title {
+
+#web-title {
+  margin: 0 auto;
   font-size: 50px;
 }
 
 
+.top-button{
+  text-align: center;
+  cursor: pointer;
+  font-size:24px;
+  margin: 0 0 0 100px;
+  border-radius: 6px;
+  background-color: #336633;
+  border: none;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+}
+
+.top-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+  color: #fff;
+}
+
+.top-button span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.top-button:hover span {
+  padding-right: 25px;
+}
+
+.top-button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+
+
+
+
+
 // Aboutページ
 .about-visual {
-  width: 100%;
+  width: 80%;
   height: 500px;
+  margin: 0 auto;
   background-image: image-url("dogs01.jpeg");
   background-size: contain;
   background-position: bottom;
@@ -42,6 +162,260 @@
   width: 100%;
   height: 500px;
   background-color: rgba(255,255,255,0.5);
-  text-align: center;
-  padding-top: 200px;
+  // font-size: 24px;
+  // color: #0f2350;
+  // text-align: center;
 }
+
+
+.about-text {
+  width: 80%;
+  margin: 0 auto;
+  padding: 80px 0;
+  text-align: center;
+}
+
+
+// 投稿ページ全体
+
+#title {
+  color: #0f2350;
+  font-size: 32px;
+}
+
+.user-image {
+  border-radius: 50%;
+}
+
+
+
+
+
+
+// showページ
+
+.post {
+  position: relative;
+}
+
+.show-icon {
+  position: absolute;
+  top: 0px;
+  right: 200px;
+}
+
+
+#favorite-button, #rank-comment-btn {
+  position: relative;
+  text-decoration: none;
+}
+
+#favorite-button span, #rank-comment-btn span {
+  position: absolute;
+  top: -20px;
+  right: -25px;
+  font-size: 24px;
+  color: #2a4073;
+}
+
+
+
+
+
+.table{
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.table tr{
+  border-bottom: solid 1px #eee;
+  cursor: pointer;
+}
+
+
+.table tr:hover{
+  background-color: #eeeeee;
+  transition: 1.5s;
+}
+
+.comment-table td:nth-child(1) {
+  width: 10%;
+  padding: 15px 0 15px 10px;
+
+}
+
+.comment-table td:nth-child(2) {
+  width: 15%;
+  padding: 15px 0;
+
+}
+.comment-table td:nth-child(3) {
+  width: 50%;
+  padding: 15px 0;
+
+}
+
+.follow-table td:nth-child(1) {
+  width: 15%;
+  padding: 15px 0 15px 10px;
+
+}
+
+
+.follow-table td:nth-child(2) {
+  width: 15%;
+  padding: 15px 0 15px 10px;
+
+}
+
+.follow-table td:nth-child(3) {
+  width: 15%;
+  padding: 30px 0 10px 0;
+
+}
+.follow-table td:nth-child(4) {
+  width: 30%;
+  padding: 30px 0 10px 0;
+
+}
+
+
+
+
+
+// ボタン関連
+.button {
+  outline:none;
+  height: 40px;
+  text-align: center;
+  width: 130px;
+  background: #fff;
+  letter-spacing:1px;
+  text-shadow:0;
+  font:{
+    size:12px;
+    weight:bold;
+  }
+  cursor: pointer;
+  transition: all 0.25s ease;
+  &:hover {
+    color:white;
+  }
+  &:active {
+    letter-spacing: 2px ;
+  }
+}
+
+
+#user-btn {
+  padding: 15px;
+  text-decoration: none;
+  border: 1px solid #c1d8ac;
+  color: #c1d8ac;
+  &:hover {
+    color: #fff;
+    background: #c1d8ac;
+  }
+}
+
+
+.comment-button {
+  border: 1px solid #83ccd2;
+  color: #83ccd2;
+  &:hover {
+    background: #83ccd2;
+  }
+}
+
+.prf-edit-btn {
+  width: 120px;
+  margin: 0 auto;
+  border: 1px solid #dddcd6;
+  color: #dddcd6;
+  &:hover {
+    background: #dddcd6;
+  }
+
+}
+
+#unfollow-btn {
+  text-decoration: none;
+  padding: 8px 20px;
+  border: 1px solid #e9546b;
+  color: #e9546b;
+  &:hover {
+    color: white;
+    background: #e9546b;
+  }
+}
+
+#follow-btn {
+  text-decoration: none;
+  padding: 8px 20px;
+  border: 1px solid #83ccd2;
+  color: #83ccd2;
+  &:hover {
+    color: white;
+    background: #83ccd2;
+  }
+}
+
+
+
+
+#destroy-button {
+  text-decoration: none;
+  padding: 8px 20px;
+  border: 1px solid #e9546b;
+  color: #e9546b;
+  &:hover {
+    color: white;
+    background: #e9546b;
+  }
+}
+
+
+
+// ランキングページ
+
+#ranking {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  background-color: #f4b3c2;
+  border-radius: 50%;
+}
+
+#ranking span {
+  position: absolute;
+  top: 20px;
+  left: 28px;
+}
+
+.ranking {
+  position: relative;
+}
+
+.rank-fav-icon {
+  position: absolute;
+  top: 0;
+  right: 120px;
+}
+
+.rank-comment-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+
+
+footer {
+	padding: 3em 0;
+	text-align: center;
+	color: #fff;
+	background-color: #999999;
+}
+
+

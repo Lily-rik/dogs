@@ -51,12 +51,12 @@ class Public::UsersController < ApplicationController
 
   # フォロー・フォロワー
   def follows
-        user  = User.find(params[:id])
-        @users = user.following
+        @user  = User.find(params[:id])
+        @users = @user.following
   end
 
   def followers
-        user  = User.find(params[:id])
+        @user  = User.find(params[:id])
         @users = @user.followers
   end
 
@@ -64,8 +64,8 @@ class Public::UsersController < ApplicationController
 
   # お気に入り表示
   def my_favorites
-    user = User.find(params[:id])
-    favorites = user.favorites.pluck(:post_id)
+    @user = User.find(params[:id])
+    favorites = @user.favorites.pluck(:post_id)
     @favorites_list = Post.find(favorites)
   end
 

@@ -1,5 +1,19 @@
-<h1>フォローしている人一覧</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-4">
+      <div id="title"><%= @user.user_name %><span>'s follows</span></div>
+    </div>
+    <div class="col-lg-6"></div>
+  </div>
 
-<p id="follow_button">
-  <%= render 'follow', users: @users %>
-</p>
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+      <p id="follow_button">
+        <%= render 'follow', users: @users %>
+      </p>
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+</div>

@@ -1,9 +1,23 @@
-  <h4>コメント一覧</h4>
+  <h4>Comments(<%= post.comments.count%>)</h4>
   <% post.comments.each do |comment| %>
-    <%= attachment_image_tag comment.user, :image, :fill, 30, 30, fallback: "no_image.jpg" %>
-    <%= comment.user.user_name %>
-    <%= comment.comment %>
-    <% if comment.user == current_user %>
-      <%= link_to '削除', post_comment_path(comment.post.id, comment.id), method: :delete, remote: true %>
-    <% end %>
+  <table class="table comment-table">
+    <tr>
+      <td>
+        <%= attachment_image_tag comment.user, :image, :fill, 30, 30, fallback: "no_image.jpg", class: "user-image" %>
+      </td>
+      <td>
+        <%= link_to user_path(comment.user.id) do %>
+          <%= comment.user.user_name %>
+        <% end %>
+      </td>
+      <td>
+        <%= comment.comment %>
+      </td>
+      <td>
+        <% if comment.user == current_user %>
+          <%= link_to 'DESTROY', post_comment_path(comment.post.id, comment.id), method: :delete, remote: true, id: "destroy-button", class: "button" %>
+        <% end %>
+      </td>
+    </tr>
+  </table>
   <% end %>
