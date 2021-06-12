@@ -7,21 +7,9 @@
     <div class="col-lg-6"></div>
   </div>
 
-
-
-  <div class="search mt-3 mb-5" style="text-align: center;">
-    <%= form_with url: search_path, method: :get, local: :true do |f| %>
-      <%= f.label :range, "User"%>
-      <%= f.select :search, options_for_select([["完全一致","perfect_match"], ["部分一致","partial_match"]]) %>
-      <%= f.text_field :word %>
-      <%= f.submit "検索" %>
-    <% end %>
-  </div>
-
-
-
-
-<%= render 'public/posts/posts', posts: @favorites_list %>
+  <%= render 'public/posts/post', posts: @favorites_list %>
 
 
 </div>
+
+

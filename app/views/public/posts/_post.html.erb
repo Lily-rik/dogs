@@ -1,0 +1,38 @@
+<div class="search mt-3 mb-5" style="text-align: center;">
+  <%= form_with url: search_path, method: :get, local: :true do |f| %>
+    <%= f.label :range, "User"%>
+    <%= f.select :search, options_for_select([["完全一致","perfect_match"], ["部分一致","partial_match"]]) %>
+    <%= f.text_field :word %>
+    <%= f.submit "検索" %>
+  <% end %>
+</div>
+
+<div class="row">
+  <div class="col-lg-1"></div>
+
+  <div class="col-lg-11">
+
+    <div class="posts">
+      <div class="row">
+      <% posts.each do |post|%>
+        <div class="col-lg-4">
+
+          <%= attachment_image_tag post.user, :image, :fill, 50, 50, fallback: "no_image.jpg", class: "user-image mr-3"%>
+
+          <%= link_to user_path(post.user.id) do %>
+            <%= post.user.user_name %>
+          <% end %>
+
+          <%= link_to post_path(post.id) do %>
+            <p class="mt-3"><%= attachment_image_tag post, :image, :fill, 200, 200 %></p>
+          <% end %>
+
+          <h5>Caption</h5>
+          <p class="mb-5"><%= post.caption %></p>
+
+        </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
