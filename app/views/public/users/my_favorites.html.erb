@@ -1,13 +1,27 @@
-<h1>お気に入り一覧</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-4 mb-5">
+      <div id="title"><%= @user.user_name %><span>'s favorites</span></div>
+    </div>
+    <div class="col-lg-6"></div>
+  </div>
 
-<%= form_with url: search_path, method: :get, local: :true do |f| %>
-  <%= f.label :range, "User"%>
-  <%= f.select :search, options_for_select([["完全一致","perfect_match"], ["部分一致","partial_match"]]) %>
-  <%= f.text_field :word %>
-  <%= f.submit "検索" %>
-<% end %>
+
+
+  <div class="search mt-3 mb-5" style="text-align: center;">
+    <%= form_with url: search_path, method: :get, local: :true do |f| %>
+      <%= f.label :range, "User"%>
+      <%= f.select :search, options_for_select([["完全一致","perfect_match"], ["部分一致","partial_match"]]) %>
+      <%= f.text_field :word %>
+      <%= f.submit "検索" %>
+    <% end %>
+  </div>
 
 
 
 
 <%= render 'public/posts/posts', posts: @favorites_list %>
+
+
+</div>

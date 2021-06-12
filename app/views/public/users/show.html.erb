@@ -12,15 +12,15 @@
 
       <div class="user-info" style="text-align: center;">
         <p>
-          <%= attachment_image_tag @user, :image, :fill, 100, 100, fallback: "no_image.jpg" %>
+          <%= attachment_image_tag @user, :image, :fill, 100, 100, fallback: "no_image.jpg", class: "user-image" %>
         </p>
-        <p class="button prf-edit-btn">
         <% if @user == current_user %>
+        <p class="button prf-edit-btn">
           <%= link_to edit_mypage_path(@user.id) do %>
             <i class="fas fa-user-cog fa-2x mt-1"></i>
           <% end %>
-        <% end %>
         </p>
+        <% end %>
       </div>
     </div>
     <div class="col-lg-7">

@@ -168,6 +168,13 @@ main {
 }
 
 
+.about-text {
+  width: 80%;
+  margin: 0 auto;
+  padding: 80px 0;
+  text-align: center;
+}
+
 
 // 投稿ページ全体
 
@@ -198,18 +205,22 @@ main {
 }
 
 
-#favorite-button {
+#favorite-button, #rank-comment-btn {
   position: relative;
   text-decoration: none;
 }
 
-#favorite-button span {
+#favorite-button span, #rank-comment-btn span {
   position: absolute;
   top: -20px;
   right: -25px;
   font-size: 24px;
   color: #2a4073;
 }
+
+
+
+
 
 .table{
   border-collapse: collapse;
@@ -363,6 +374,41 @@ main {
     background: #e9546b;
   }
 }
+
+
+
+// ランキングページ
+
+#ranking {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  background-color: #f4b3c2;
+  border-radius: 50%;
+}
+
+#ranking span {
+  position: absolute;
+  top: 20px;
+  left: 28px;
+}
+
+.ranking {
+  position: relative;
+}
+
+.rank-fav-icon {
+  position: absolute;
+  top: 0;
+  right: 120px;
+}
+
+.rank-comment-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 
 
 footer {

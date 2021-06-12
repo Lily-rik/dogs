@@ -64,8 +64,8 @@ class Public::UsersController < ApplicationController
 
   # お気に入り表示
   def my_favorites
-    user = User.find(params[:id])
-    favorites = user.favorites.pluck(:post_id)
+    @user = User.find(params[:id])
+    favorites = @user.favorites.pluck(:post_id)
     @favorites_list = Post.find(favorites)
   end
 
