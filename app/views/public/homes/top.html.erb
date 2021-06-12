@@ -1,14 +1,12 @@
 
 
+<div class="about-visual">
+  <div class="about-visual-content">
+</div>
 
-
-<%= image_tag 'dogs01.jpeg', size: "300x300" %>
-<%= image_tag 'dogs02.jpeg', size: "300x300" %>
-<%= image_tag 'dogs03.jpeg', size: "300x300" %>
-<%= image_tag 'dogs04.jpeg', size: "300x300" %>
-
-
-<p id="title">Welcome to DOG'S!!!</p>
+<div class="web-title">
+  <p id="web-title">Welcome to DOG'S!!!</p>
+</div>
 
 
 
@@ -27,6 +25,10 @@
 
 
 <% unless user_signed_in? %>
-  <%= link_to "ログイン", new_user_session_path %>
-  <%= link_to "新規登録", new_user_registration_path %>
+  <div class="buttons">
+    <button class="top-button"><span><%= link_to "ログイン", new_user_session_path %></span></button>
+  </div>
+  <div class="buttons">
+    <button class="top-button"><span><%= link_to "新規登録", new_user_registration_path %></span></button>
+  </div>
 <% end %>

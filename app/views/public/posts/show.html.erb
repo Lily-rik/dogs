@@ -1,41 +1,55 @@
-<h1>投稿詳細</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-4">
+      <div id="title"><%= @post.user.user_name %><span>'s dog</span></div>
+    </div>
+    <div class="col-lg-6"></div>
+  </div>
+  <div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-7">
 
-<div class="post">
+      <div class="post my-3">
+        <%= attachment_image_tag @post.user, :image, :fill, 50, 50, fallback: "no_image.jpg", class: "user-image mr-3"%>
+        <%= link_to user_path(@post.user.id) do %>
+          <%= @post.user.user_name %>
+        <% end %>
 
-  <%= attachment_image_tag @post.user, :image, :fill, 50, 50, fallback: "no_image.jpg" %>
-  <%= @post.user.user_name %>
-
-  <% if @post.user_id != current_user.id %>
-    <p id="favorite_button_<%= @post.id %>">
-      <%= render 'public/favorites/favorite', post: @post %>
-    </p>
-  <% end %>
-
-
-
-
-  <!--編集アイコン-->
-  <% if @post.user_id == current_user.id %>
-    <%= link_to edit_post_path(@post.id) do %>
-    <i class="fas fa-edit"></i>
-    <% end %>
-  <% end %>
-
-  <p><%= attachment_image_tag @post, :image, :fill, 500, 500 %></p>
-  <h4>投稿文章</h4>
-  <%= @post.caption %>
+        <!--ログインユーザーなら編集ボタン、そうでなければお気に入りボタンを表示-->
+        <% if @post.user_id == current_user.id %>
+          <%= link_to edit_post_path(@post.id) do %>
+            <i class="fas fa-edit show-icon fa-3x" style="color: #0f2350;"></i>
+          <% end %>
+        <% else %>
+          <p id="favorite_button_<%= @post.id %>" class="show-icon">
+            <%= render 'public/favorites/favorite', post: @post %>
+          </p>
+        <% end %>
 
 
+        <div class="user-post my-3">
+          <p><%= attachment_image_tag @post, :image, :fill, 500, 500 %></p>
+        </div>
+        <div></div>
+        <div class="caption my-3">
+          <p><%= @post.caption %></p>
+        </div>
+
+      </div>
+
+      <div id="comment_button_<%= @post.id %>" class="mt-5 mb-3">
+        <%= render 'public/comments/comment', post: @post %>
+      </div>
+
+      <div id="new-comment" class="mb-3">
+        <%= render 'public/comments/new_comment', {post: @post, comment: @comment} %>
+      </div>
+
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
 </div>
 
-<div id="comment_button_<%= @post.id %>">
 
-  <%= render 'public/comments/comment', post: @post %>
 
-</div>
-
-<div id="new-comment">
-
-  <%= render 'public/comments/new_comment', {post: @post, comment: @comment} %>
-
-</div>
