@@ -1,26 +1,44 @@
-<h1>会員情報編集画面です</h1>
-
-<%= form_with model: @user, local: true do |f| %>
-
-  <div class="field">
-    <%= f.label :name, "名前" %>
-    <%= f.text_field :name, autofocus: true %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-4">
+      <div id="title">Information edit</span></div>
+    </div>
+    <div class="col-lg-6"></div>
   </div>
 
-  <div class="field">
-    <%= f.label :email, "メールアドレス" %>
-    <%= f.text_field :email %>
+  <div class="row mt-4">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6">
+    <%= form_with model: @user, local: true do |f| %>
+      <table class="info-edit-table">
+        <tr>
+          <th class="label">Name</th>
+          <td><%= f.text_field :name, autofocus: true, class: 'form-control' %></td>
+        </tr>
+        <tr>
+          <th class="label">Mail</th>
+          <td><%= f.text_field :email, class: 'form-control' %></td>
+        </tr>
+        <tr>
+          <th class="label">Phone number</th>
+          <td><%= f.text_field :telephone_number, class: 'form-control' %></td>
+        </tr>
+      </table>
+      <div class="row mt-5">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-3">
+          <%= f.submit "UPDATE", class: "edit-btn button" %>
+        </div>
+        <div class="col-lg-1"></div>
+        <div class="col-lg-3 mt-2 ml-3">
+          <%= link_to "UNSUBSCRIBE", unsubscribe_path(current_user), id: "withdraw-btn", class: "button" %>
+        </div>
+        <div class="col-lg-2"></div>
+      </div>
+    <% end %>
+    </div>
+    <div class="col-lg-3"></div>
   </div>
-
-  <div class="field">
-    <%= f.label :telephone_number, "電話番号" %>
-    <%= f.text_field :telephone_number %>
-  </div>
-
-  <%= f.submit "更新" %>
-
-  <% end %>
-
-  <%= link_to "退会する", unsubscribe_path(current_user) %>
-
+</div>
 

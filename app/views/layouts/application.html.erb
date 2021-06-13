@@ -37,7 +37,11 @@
               <li class="nav-item"><%= link_to 'みんなの投稿', about_path, class: 'nav-link' %></li>
               <li class="nav-item"><%= link_to 'ランキング', ranking_path, class: 'nav-link' %></li>
               <li class="nav-item"><%= link_to 'ログアウト', destroy_user_session_path, class: 'nav-link' %></li>
-              <li class="nav-item"><%= link_to '会員情報編集', "/users/#{current_user.id}/edit", class: 'nav-link' %></li>
+              <li class="nav-item">
+                <%= link_to "/users/#{current_user.id}/edit", class: 'nav-link' do %>
+                  <i class="fas fa-cog" style="color: #2a4073;"></i>
+                <% end %>
+              </li>
             <% else %>
               <li class="nav-item"><%= link_to '新規登録', new_user_registration_path, class: 'nav-link' %></li>
               <li class="nav-item"><%= link_to 'ログイン', new_user_session_path, class: 'nav-link' %></li>

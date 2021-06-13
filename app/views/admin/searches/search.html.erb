@@ -1,27 +1,43 @@
-<h1>検索結果</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-4">
+      <div id="title">Search results</span></div>
+    </div>
+    <div class="col-lg-6"></div>
+  </div>
 
-<table>
-  <tr>
-    <th>ID</th>
-    <th>名前</th>
-    <th>メールアドレス</th>
-    <th>会員ステータス</th>
-    <th></th>
-  </tr>
+  <div class="row mt-4">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
 
-  <% @users.each do |user| %>
-    <tr>
-      <td><%= user.id %></td>
-      <td><%= user.name %></td>
-      <td><%= user.email %></td>
-      <td>
-        <% if user.is_deleted? %>
-          退会
-        <% else %>
-          有効
+      <table class="table search-table">
+        <tr>
+          <th>ID</th>
+          <th>名前</th>
+          <th>メールアドレス</th>
+          <th>会員ステータス</th>
+          <th></th>
+        </tr>
+
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= user.id %></td>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+            <td>
+              <% if user.is_deleted? %>
+                退会
+              <% else %>
+                有効
+              <% end %>
+            </td>
+            <td><%= link_to "DETAIL", admin_user_path(user.id), class: "button", id: "detail-btn" %></td>
+          </tr>
         <% end %>
-      </td>
-      <td><%= link_to "詳細", admin_user_path(user.id) %></td>
-    </tr>
-  <% end %>
-</table>
+      </table>
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+</div>
+

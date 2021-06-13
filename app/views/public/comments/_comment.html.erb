@@ -1,6 +1,6 @@
-  <h4>Comments(<%= post.comments.count%>)</h4>
-  <% post.comments.each do |comment| %>
+  <h4 class="label">Comments(<%= post.comments.count%>)</h4>
   <table class="table comment-table">
+  <% post.comments.each do |comment| %>
     <tr>
       <td>
         <%= attachment_image_tag comment.user, :image, :fill, 30, 30, fallback: "no_image.jpg", class: "user-image" %>
@@ -14,10 +14,12 @@
         <%= comment.comment %>
       </td>
       <td>
+        <div class="mt-1">
         <% if comment.user == current_user %>
           <%= link_to 'DESTROY', post_comment_path(comment.post.id, comment.id), method: :delete, remote: true, id: "destroy-button", class: "button" %>
         <% end %>
+        </div>
       </td>
     </tr>
-  </table>
   <% end %>
+  </table>

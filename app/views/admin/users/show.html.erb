@@ -1,33 +1,59 @@
-<h1>会員詳細</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-4">
+      <div id="title">User detail</span></div>
+    </div>
+    <div class="col-lg-6"></div>
+  </div>
 
-<table>
-  
-  <tr>
-    <th>ID</th>
-    <th>画像</th>
-    <th>名前</th>
-    <th>ユーザネーム</th>
-    <th>メールアドレス</th>
-    <th>電話番号</th>
-    <th>会員ステータス</th>
-  </tr>
+  <div class="row mt-5">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-10">
 
-  <tr>
-    <td><%= @user.id %></td>
-    <td><%= attachment_image_tag @user, :image, :fill, 50, 50, fallback: "no_image.jpg" %></td>
-    <td><%= @user.name %></td>
-    <td><%= @user.user_name %></td>
-    <td><%= @user.email %></td>
-    <td><%= @user.telephone_number %></td>
-    <td>
-      <% if @user.is_deleted? %>
-        退会
-      <% else %>
-        有効
-      <% end %>
-    </td>
-  </tr>
+      <table class="table" >
 
-</table>
+        <tr style="text-align: center;">
+          <th>ID</th>
+          <th>画像</th>
+          <th>名前</th>
+          <th>ユーザネーム</th>
+          <th>メールアドレス</th>
+          <th>電話番号</th>
+          <th>会員ステータス</th>
+        </tr>
 
-<%= link_to '編集', edit_admin_user_path(@user.id) %>
+        <tr style="text-align: center;">
+          <td><%= @user.id %></td>
+          <td><%= attachment_image_tag @user, :image, :fill, 50, 50, fallback: "no_image.jpg" %></td>
+          <td><%= @user.name %></td>
+          <td><%= @user.user_name %></td>
+          <td><%= @user.email %></td>
+          <td><%= @user.telephone_number %></td>
+          <td>
+            <% if @user.is_deleted? %>
+              <p style="color: #ec6d51">退会</p>
+            <% else %>
+              <p style="color: #316745;">有効</p>
+            <% end %>
+          </td>
+        </tr>
+
+      </table>
+      <div class="mr-5 mt-5" style="text-align: right;">
+        <%= link_to 'EDIT', edit_admin_user_path(@user.id), class: "button", id: "user-edit-btn" %>
+      </div>
+
+
+    </div>
+    <div class="col-lg-1"></div>
+  </div>
+</div>
+
+
+
+
+
+
+
+

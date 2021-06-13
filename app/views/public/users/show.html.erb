@@ -15,11 +15,11 @@
           <%= attachment_image_tag @user, :image, :fill, 100, 100, fallback: "no_image.jpg", class: "user-image" %>
         </p>
         <% if @user == current_user %>
-        <p class="button prf-edit-btn">
           <%= link_to edit_mypage_path(@user.id) do %>
-            <i class="fas fa-user-cog fa-2x mt-1"></i>
+            <p class="button prf-edit-btn">
+            <i class="fas fa-user-cog fa-2x mt-1" style="color: #2a4073;"></i>
+            </p>
           <% end %>
-        </p>
         <% end %>
       </div>
     </div>
@@ -91,7 +91,6 @@
           <% end %>
 
 
-          <h5>Caption</h5>
           <p class="mb-5"><%= post.caption %></p>
         </div>
         <% end %>

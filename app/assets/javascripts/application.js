@@ -34,17 +34,17 @@ $(document).on('turbolinks:load', function() {
 });
 
 
-$(document).on('turbolinks:load',function() {
-	$(window).on('load scroll', function() {
-		var scrollPos = $(this).scrollTop();
-		if ( scrollPos > 80 ) {
-			$('header').addClass('is-animation');
-			$('#navbar-content-center').removeClass('center-nav-title');
-			$('#navbar').removeClass('nav-list');
-		} else {
-			$('header').removeClass('is-animation');
-			$('#navbar-content-center').addClass('center-nav-title');
-			$('#navbar').addClass('nav-list');
-		}
-	});
-});
+// $(document).on('turbolinks:load',function() {
+// 	$(window).on('load scroll', function() {
+// 		var scrollPos = $(this).scrollTop();
+// 		if ( scrollPos > 80 ) {
+// 			$('header').addClass('is-animation');
+// 			$('#navbar-content-center').removeClass('center-nav-title');
+// 			$('#navbar').removeClass('nav-list');
+// 		} else {
+// 			$('header').removeClass('is-animation');
+// 			$('#navbar-content-center').addClass('center-nav-title');
+// 			$('#navbar').addClass('nav-list');
+// 		}
+// 	});
+// });
