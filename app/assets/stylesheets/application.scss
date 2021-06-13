@@ -87,7 +87,7 @@ header {
 main {
   margin:0 auto;
   padding-top: 200px;
-	height: 2000px;
+	height: 3000px;
 // 	text-align: center;
 	background-color: #fff;
 	z-index: 20;
@@ -553,7 +553,7 @@ main {
 
 
 
-#user-btn {
+#user-btn, #chat-btn {
   padding: 15px;
   text-decoration: none;
   border: 1px solid #c1d8ac;
@@ -564,6 +564,9 @@ main {
   }
 }
 
+#chat-btn {
+  padding: 15px 33px;
+}
 
 .create-btn {
   border: 1px solid #83ccd2;
@@ -687,16 +690,17 @@ main {
 
 #ranking {
   position: relative;
-  width: 70px;
+  background-image: image-url("ranking.jpg");
+  background-size: contain;  width: 70px;
   height: 70px;
-  background-color: #f4b3c2;
-  border-radius: 50%;
 }
 
 #ranking span {
   position: absolute;
-  top: 20px;
-  left: 28px;
+  top: 12px;
+  left: 26px;
+  font-size: 32px;
+  color: #583822;
 }
 
 .ranking {
@@ -705,13 +709,13 @@ main {
 
 .rank-fav-icon {
   position: absolute;
-  top: 0;
+  top: -15px;
   right: 120px;
 }
 
 .rank-comment-icon {
   position: absolute;
-  top: 0;
+  top: -15px;
   right: 0;
 }
 

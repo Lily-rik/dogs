@@ -13,11 +13,11 @@
     <div class="col-lg-8">
         <div class="row">
           <div class="col-lg-2">
-            <p id="ranking"><span style="color: #fff;"><%= i %></span></p>
+            <p id="ranking"><span><%= i %></span></p>
           </div>
-          <div class="col-lg-4 pt-4">
-            <p><%= post.favorites.count %>Favorites</p>
-          </div>
+          <!--<div class="col-lg-4 pt-4">-->
+          <!--  <p><%#= post.favorites.count %>Favorites</p>-->
+          <!--</div>-->
         </div>
     </div>
     <div class="col-lg-2"></div>
@@ -36,16 +36,16 @@
           <div class="col-lg-2">
             <%= attachment_image_tag post.user, :image, :fill, 50, 50, fallback: "no_image.jpg", class: "user-image" %>
           </div>
-          <div class="col-lg-6">
+          <div class="col-lg-6 mt-3">
             <%= link_to user_path(post.user.id) do %>
               <%= post.user.user_name %>
             <% end %>
 
-            <% if post.user_id != current_user.id %>
+            <%# if post.user_id != current_user.id %>
               <p id="favorite_button_<%= post.id %>" class="rank-fav-icon">
                 <%= render 'public/favorites/favorite', post: post %>
               </p>
-            <% end %>
+            <%# end %>
               <p class="rank-comment-icon">
                 <%= link_to post_path(post.id), id: "rank-comment-btn" do %>
                   <i class="far fa-comment fa-3x" style="color: #2a4073;"></i>
