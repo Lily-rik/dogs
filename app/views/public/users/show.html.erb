@@ -20,6 +20,12 @@
             <i class="fas fa-user-cog fa-2x mt-1" style="color: #2a4073;"></i>
             </p>
           <% end %>
+        <% else %>
+          <div class="mt-4">
+            <div id="follow_button_<%= @user.id %>">
+              <%= render 'public/relationships/follow_button', user: @user %>
+            </div>
+          </div>
         <% end %>
       </div>
     </div>
@@ -48,13 +54,7 @@
           </div>
           <div class="col-lg-3 mt-5">
             <% if @user == current_user %>
-              <p>
                 <%= link_to 'NEW POST', new_post_path, id: "user-btn", class: "button"  %>
-              </p>
-            <% else %>
-              <p id="follow_button_<%= @user.id %>">
-                <%= render 'public/relationships/follow_button', user: @user %>
-              </p>
             <% end %>
           </div>
         </div>
