@@ -1,13 +1,51 @@
-<h1>投稿編集ページ</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-4">
+      <div id="title">Post edit</span></div>
+    </div>
+    <div class="col-lg-6"></div>
+  </div>
 
-<%= form_with model: @post, local: true do |f| %>
+  <div class="row mt-4">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6">
 
-  <h4>投稿画像</h4>
-  <%= f.attachment_field :image %>
-  <h4>投稿文章</h4>
-  <%= f.text_area :caption %>
+    <%= form_with model: @post, local: true do |f| %>
+      <h4 class="label">Post image</h4>
+      <%= f.attachment_field :image %>
+      <h4 class="label">Post text</h4></h4>
+      <%= f.text_area :caption, class: 'form-control' %>
 
-  <%= f.submit '保存' %>
-<% end %>
+      <div class="row mt-5">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-3">
+      <%= f.submit 'UPDATE', class: "edit-btn button" %>
+        </div>
+        <div class="col-lg-2"></div>
+        <div class="col-lg-3 mt-2">
+    <%= link_to 'DESTROY', post_path(@post.id), method: :delete, "data-confirm" => "本当に削除しますか？", id: "post-destroy-btn", class: "button" %>
+        </div>
+        <div class="col-lg-1"></div>
+      </div>
+    <% end %>
+    </div>
+    <div class="col-lg-3"></div>
 
-<%= link_to '削除', post_path(@post.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+
+
+
+
+
+
+    </div>
+    <div class="col-lg-3"></div>
+  </div>
+</div>
+
+
+
+
+
+
+

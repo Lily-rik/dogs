@@ -1,39 +1,64 @@
-<h1>会員一覧画面です</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-4">
+      <div id="title">Users</span></div>
+    </div>
+    <div class="col-lg-6"></div>
+  </div>
 
-<%= form_with url: admin_search_path, method: :get, local: :true do |f| %>
-  <%= f.label :range, "User"%>
-  <%= f.select :search, options_for_select([["完全一致","perfect_match"], ["部分一致","partial_match"]]) %>
-  <%= f.text_field :word %>
-  <%= f.submit "検索" %>
-<% end %>
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
 
-
-
-<table>
-  <tr>
-    <th>ID</th>
-    <th>名前</th>
-    <th>メールアドレス</th>
-    <th>会員ステータス</th>
-    <th></th>
-  </tr>
-
-  <% @users.each do |user| %>
-    <tr>
-      <td><%= user.id %></td>
-      <td><%= user.name %></td>
-      <td><%= user.email %></td>
-      <td>
-        <% if user.is_deleted? %>
-          退会
-        <% else %>
-          有効
+      <div class="search my-4" style="text-align: center;">
+        <%= form_with url: admin_search_path, method: :get, local: :true do |f| %>
+          <%= f.label :range, "User"%>
+          <%= f.select :search, options_for_select([["完全一致","perfect_match"], ["部分一致","partial_match"]]) %>
+          <%= f.text_field :word %>
+          <%= f.submit "検索" %>
         <% end %>
-      </td>
-      <td><%= link_to "詳細", admin_user_path(user.id) %></td>
-    </tr>
-  <% end %>
-</table>
+      </div>
+
+      <table class="table users-table" >
+        <tr style="text-align: center;">
+          <th>ID</th>
+          <th>名前</th>
+          <th>メールアドレス</th>
+          <th>会員ステータス</th>
+          <th></th>
+        </tr>
+
+        <% @users.each do |user| %>
+          <tr style="text-align: center;">
+            <td><%= user.id %></td>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+            <td>
+              <% if user.is_deleted? %>
+                退会
+              <% else %>
+                有効
+              <% end %>
+            </td>
+            <td><%= link_to "DETAIL", admin_user_path(user.id), id: "user-detail-btn" %></td>
+          </tr>
+        <% end %>
+      </table>
+
+
+
+
+
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+</div>
+
+
+
+
+
 
 
 

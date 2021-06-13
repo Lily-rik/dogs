@@ -15,11 +15,17 @@
           <%= attachment_image_tag @user, :image, :fill, 100, 100, fallback: "no_image.jpg", class: "user-image" %>
         </p>
         <% if @user == current_user %>
-        <p class="button prf-edit-btn">
           <%= link_to edit_mypage_path(@user.id) do %>
-            <i class="fas fa-user-cog fa-2x mt-1"></i>
+            <p class="button prf-edit-btn">
+            <i class="fas fa-user-cog fa-2x mt-1" style="color: #2a4073;"></i>
+            </p>
           <% end %>
-        </p>
+        <% else %>
+          <div class="mt-4">
+            <div id="follow_button_<%= @user.id %>">
+              <%= render 'public/relationships/follow_button', user: @user %>
+            </div>
+          </div>
         <% end %>
       </div>
     </div>
@@ -30,14 +36,14 @@
           <div class="col-lg-3 mt-5">
             <p id="following_button">
               <%= link_to follows_user_path(@user.id), id: "user-btn", class: "button" do %>
-                <span>FOLLOW (</span><%= @user.following.count %><span>)</span>
+                <span>FOLLOW </span><%= @user.following.count %>
               <% end %>
             </p>
           </div>
           <div class="col-lg-3 mt-5">
             <p id="follower_button">
               <%= link_to followers_user_path(@user.id), id: "user-btn", class: "button"  do %>
-                <span>FOLLWER(</span><%= @user.followers.count %><span>)</span>
+                <span>FOLLWER </span><%= @user.followers.count %>
               <% end %>
             </p>
           </div>
@@ -48,13 +54,7 @@
           </div>
           <div class="col-lg-3 mt-5">
             <% if @user == current_user %>
-              <p>
                 <%= link_to 'NEW POST', new_post_path, id: "user-btn", class: "button"  %>
-              </p>
-            <% else %>
-              <p id="follow_button_<%= @user.id %>">
-                <%= render 'public/relationships/follow_button', user: @user %>
-              </p>
             <% end %>
           </div>
         </div>
@@ -70,9 +70,6 @@
         <h4 class="mb-4">Introduction</h4>
         <%= @user.self_introduction %>
       </div>
-
-
-
     </div>
     <div class="col-lg-1"></div>
   </div>
@@ -94,7 +91,6 @@
           <% end %>
 
 
-          <h5>Caption</h5>
           <p class="mb-5"><%= post.caption %></p>
         </div>
         <% end %>

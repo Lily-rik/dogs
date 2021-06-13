@@ -28,40 +28,43 @@ a:link, a:visited, a:hover, a:active {
 
 
 // ヘッダー
+// header {
+// 	position: fixed;
+// 	top: 0px;
+// 	left: 0;
+// 	padding: 100px 0 50px 0;
+// 	width: 100%;
+//   background-color: #ede4cd;
+// 	font-size: 24px;
+// 	text-align: center;
+// 	color: #fff;
+// 	z-index: 30;
+// }
+
+// スクロールしたときのヘッダーのアニメーション
 header {
+  width: 100%;
 	position: fixed;
 	top: 0px;
 	left: 0;
-	padding: 100px 0 50px 0;
-	width: 100%;
-  background-color: #fff;
-	font-size: 24px;
-	text-align: center;
-	color: #fff;
-	z-index: 30;
-}
-
-// スクロールしたときのヘッダーのアニメーション
-.is-animation {
-  padding: 15px 0;
+  padding: 25px 0;
 	font-size: 12px;
-  background-color: #fff;
+  background-color: #bed2c3;
 	z-index: 10;
-  transition: all 0.5s ease;
 }
 
 // スクロールでremove
-.center-nav-title {
-  color: #fff;
-  position: absolute;
-  width: 100%;
-  left: 0;
-  top: 0;
-  text-align:center;
-  margin: auto;
-	font-size: 36px;
-	z-index: 10;
-}
+// .center-nav-title {
+//   color: #fff;
+//   position: absolute;
+//   width: 100%;
+//   left: 0;
+//   top: 0;
+//   text-align:center;
+//   margin: auto;
+// 	font-size: 36px;
+// 	z-index: 10;
+// }
 
 
 
@@ -71,20 +74,19 @@ header {
 	z-index: 10;
 }
 
-// スクロールでremove
-.nav-list {
-  margin: 0 auto;
-  padding-top: 80px;
-  text-align: center;
-  font-size: 15px;
-	z-index: 10;
-}
-
-
+// // スクロールでremove
+// .nav-list {
+//   margin: 0 auto;
+//   padding-top: 80px;
+//   text-align: center;
+//   font-size: 15px;
+// 	z-index: 10;
+// }
 
 
 main {
-  margin: 350px auto 0 auto;
+  margin:0 auto;
+  padding-top: 200px;
 	height: 2000px;
 // 	text-align: center;
 	background-color: #fff;
@@ -93,79 +95,215 @@ main {
 
 
 
+// ログインページ
+
+.remember-me {
+  color: #0f2350;
+}
+
+
 
 
 // Topページ
 
-#web-title {
+
+.top-btns {
+  padding-top: 100px;
+}
+
+
+.top-visual, .about-visual {
+  width: 80%;
+  height: 600px;
   margin: 0 auto;
+  background-size: cover;
+  background-position: center;
+}
+
+.top-visual {
+  background-image: image-url("dogs16.jpg");
+}
+
+.about-visual {
+  background-image: image-url("dogs09.jpg");
+  margin-bottom: 100px;
+}
+
+
+
+.top-visual-content, .about-visual-content {
+  width: 100%;
+  height: 600px;
+  background-color: rgba(255,255,255,0.2);
+}
+
+
+.about-visual-text {
+  padding-top: 100px;
+  text-align: center;
+  font-size: 24px;
+}
+
+
+
+#web-title {
+  width: 80%;
+  margin: 150px auto;
+  text-align: center;
   font-size: 50px;
 }
 
 
-.top-button{
-  text-align: center;
-  cursor: pointer;
-  font-size:24px;
-  margin: 0 0 0 100px;
-  border-radius: 6px;
-  background-color: #336633;
-  border: none;
-  padding: 20px;
-  width: 200px;
-  transition: all 0.5s;
-}
-
-.top-button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-  color: #fff;
-}
-
-.top-button span:after {
-  content: '»';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-}
-
-.top-button:hover span {
-  padding-right: 25px;
-}
-
-.top-button:hover span:after {
-  opacity: 1;
-  right: 0;
-}
 
 
 
 
+// .top-button{
+//   text-align: center;
+//   cursor: pointer;
+//   font-size:24px;
+//   margin: 0 0 0 100px;
+//   border-radius: 6px;
+//   background-color: #336633;
+//   border: none;
+//   padding: 20px;
+//   width: 200px;
+//   transition: all 0.5s;
+// }
+
+// .top-button span {
+//   cursor: pointer;
+//   display: inline-block;
+//   position: relative;
+//   transition: 0.5s;
+//   color: #fff;
+// }
+
+// .top-button span:after {
+//   content: '»';
+//   position: absolute;
+//   opacity: 0;
+//   top: 0;
+//   right: -20px;
+//   transition: 0.5s;
+// }
+
+// .top-button:hover span {
+//   padding-right: 25px;
+// }
+
+// .top-button:hover span:after {
+//   opacity: 1;
+//   right: 0;
+// }
 
 
+// topスライダー
 
-// Aboutページ
-.about-visual {
-  width: 80%;
-  height: 500px;
+
+.sliderArea {
+  max-width: 100%;
   margin: 0 auto;
-  background-image: image-url("dogs01.jpeg");
-  background-size: contain;
-  background-position: bottom;
+  padding: 0 25px;
+}
+.sliderArea.w300 {
+  max-width: 300px;
+}
+.slick-slide {
+  margin: 0 30px;
+}
+.slick-slide img {
+  width: 100%;
+  height: auto;
+}
+.slick-prev, .slick-next {
+  z-index: 1;
+}
+.slick-prev:before, .slick-next:before {
+  color: #000;
+}
+.slick-slide {
+  transition: all ease-in-out .3s;
+}
+.thumb {
+  margin: 20px 0 0;
+}
+.thumb .slick-slide {
+  cursor: pointer;
+}
+.thumb .slick-slide:hover {
+  opacity: .7;
 }
 
-.about-visual-content {
-  width: 100%;
-  height: 500px;
-  background-color: rgba(255,255,255,0.5);
-  // font-size: 24px;
-  // color: #0f2350;
-  // text-align: center;
+/*====================================================================
+.full-screen-o
+====================================================================*/
+
+.full-screen-o .slick-list {
+  overflow: visible;
 }
+.full-screen-o.slider {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.full-screen-o .slick-dots {
+  bottom: -33px;
+}
+.full-screen-o .slick-dots li {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.full-screen-o .slick-dots li button {
+  font-size: 0;
+  line-height: 0;
+  padding: 0;
+  cursor: pointer;
+  color: transparent;
+  border: 0;
+  text-indent: -9999px;
+  display: block;
+  width: 8px;
+  height: 8px;
+  margin: 0 8px;
+  outline: 0;
+  border-radius: 5px;
+  transition-duration: 0.3s;
+}
+.full-screen-o .slick-dots li button:before {
+  content: none;
+}
+.full-screen-o .slick-dots li:nth-child(1) button {
+  background: #f5d1c3;
+}
+.full-screen-o .slick-dots li:nth-child(2) button {
+  background: #a9b7ba;
+}
+.full-screen-o .slick-dots li:nth-child(3) button {
+  background: #c4d7d1;
+}
+.full-screen-o .slick-dots li:nth-child(4) button {
+  background: #b4b1a0;
+}
+.full-screen-o .slick-dots li:nth-child(5) button {
+  background: #e5dfd3;
+}
+.full-screen-o .slick-dots li button:hover, .full-screen-o .slick-dots li.slick-active button {
+  border-radius: 0px;
+  width: 12px;
+  height: 12px;
+}
+
+
+
+
+
+
+
 
 
 .about-text {
@@ -187,6 +325,10 @@ main {
   border-radius: 50%;
 }
 
+.label {
+  margin: 20px 0;
+  color: #2a4073;
+}
 
 
 
@@ -235,9 +377,43 @@ main {
 
 
 .table tr:hover{
-  background-color: #eeeeee;
-  transition: 1.5s;
+  background-color: #f8fbf8;
+  transition: 2s;
 }
+
+.users-table td:nth-child(1) {
+  width: 10%;
+  padding: 15px 0 15px 10px;
+
+}
+
+.users-table td:nth-child(2) {
+  width: 20%;
+  padding: 15px 0 15px 10px;
+
+}
+
+.users-table td:nth-child(3) {
+  width: 32%;
+  padding: 15px 0 15px 10px;
+
+}
+
+.users-table td:nth-child(4) {
+  width: 20%;
+  padding: 15px 0 15px 10px;
+
+}
+
+.users-table td:nth-child(5) {
+  width: 20%;
+  padding: 15px 0 15px 10px;
+
+}
+
+
+
+
 
 .comment-table td:nth-child(1) {
   width: 10%;
@@ -281,6 +457,21 @@ main {
 }
 
 
+.info-edit-table th, .user-edit-table th {
+  text-align: center;
+  width: 30%;
+  height: 70px;
+}
+
+.info-edit-table td, .user-edit-table td {
+  width: 40%;
+  height: 70px;
+}
+
+.search-table {
+  text-align: center;
+}
+
 
 
 
@@ -290,7 +481,7 @@ main {
   height: 40px;
   text-align: center;
   width: 130px;
-  background: #fff;
+	background-color: #fff;
   letter-spacing:1px;
   text-shadow:0;
   font:{
@@ -307,6 +498,59 @@ main {
   }
 }
 
+.signup-btn, {
+  margin-right: 70px;
+  border: 1px solid #e7609e;
+  color: #e7609e;
+  &:hover {
+    background: #e7609e;
+  }
+}
+
+#sign-up-btn, #top-signup-btn {
+  text-decoration: none;
+  border: 1px solid #e7609e;
+  color: #e7609e;
+  &:hover {
+    color: #fff;
+    background: #e7609e;
+  }
+}
+
+
+#sign-up-btn {
+  margin-left: 70px;
+  padding: 12px 35px 11px 35px;
+}
+
+#login-btn, #top-login-btn, .log-in-btn {
+  padding: 11px 40px 12px 40px;
+  text-decoration: none;
+  border: 1px solid #f8b500;
+  color: #f8b500;
+  &:hover {
+    color: #fff;
+    background: #f8b500;
+  }
+}
+
+
+
+#top-signup-btn {
+  font-size: 15px;
+  text-align: center;
+  padding: 20px 40px 20px 40px;
+}
+
+#top-login-btn {
+  font-size: 15px;
+  text-align: center;
+  padding: 19px 40px 21px 40px;
+}
+
+
+
+
 
 #user-btn {
   padding: 15px;
@@ -320,13 +564,31 @@ main {
 }
 
 
-.comment-button {
+.create-btn {
   border: 1px solid #83ccd2;
   color: #83ccd2;
   &:hover {
     background: #83ccd2;
   }
 }
+
+
+.edit-btn, #user-edit-btn {
+  border: 1px solid #f9c89b;
+  color: #f9c89b;
+  &:hover {
+    background: #f9c89b;
+  }
+}
+
+#user-edit-btn {
+  text-decoration: none;
+  padding: 15px 30px;
+  &:hover {
+    color: white;
+  }
+}
+
 
 .prf-edit-btn {
   width: 120px;
@@ -339,39 +601,82 @@ main {
 
 }
 
-#unfollow-btn {
+#unfollow-btn, #follow-btn, #detail-btn, #user-detail-btn, {
   text-decoration: none;
   padding: 8px 20px;
-  border: 1px solid #e9546b;
   color: #e9546b;
   &:hover {
     color: white;
+    background: #e9546b;
+  }
+}
+
+#unfollow-btn {
+  border: 1px solid #e9546b;
+  color: #e9546b;
+  &:hover {
     background: #e9546b;
   }
 }
 
 #follow-btn {
-  text-decoration: none;
-  padding: 8px 20px;
   border: 1px solid #83ccd2;
   color: #83ccd2;
   &:hover {
-    color: white;
     background: #83ccd2;
   }
 }
 
 
+#detail-btn, #user-detail-btn {
+  border: 1px solid #c1d8ac;
+  color: #c1d8ac;
+  &:hover {
+    background: #c1d8ac;
+  }
+}
+
+#user-detail-btn {
+  font-size: 12px;
+}
 
 
-#destroy-button {
+
+#destroy-button, #withdraw-btn, #post-destroy-btn, #unsubscribe-btn {
   text-decoration: none;
-  padding: 8px 20px;
   border: 1px solid #e9546b;
   color: #e9546b;
   &:hover {
     color: white;
     background: #e9546b;
+  }
+}
+
+#destroy-button {
+  padding: 7px 20px 8px 20px;
+}
+
+
+#withdraw-btn, #post-destroy-btn, #unsubscribe-btn {
+  padding: 12px 22px 10px 22px;
+}
+
+
+#unsubscribe-btn {
+  font-size: 20px;
+  padding: 20px 40px;
+}
+
+
+#no-btn {
+  font-size: 20px;
+  padding: 20px 40px;
+  text-decoration: none;
+  border: 1px solid #83ccd2;
+  color: #83ccd2;
+  &:hover {
+    color: white;
+    background: #83ccd2;
   }
 }
 
@@ -410,12 +715,27 @@ main {
 }
 
 
+.unsubscribe-text {
+  margin-top: 50px;
+  font-size: 32px;
+  text-align: center;
+  color: #2a4073;
+}
+
+.unsubscribe-caption {
+  margin-top: 20px;
+  font-size: 12px;
+  text-align: center;
+  color: #2a4073;
+}
+
+
 
 footer {
 	padding: 3em 0;
 	text-align: center;
 	color: #fff;
-	background-color: #999999;
+	background-color: #bed2c3;
 }
 
 

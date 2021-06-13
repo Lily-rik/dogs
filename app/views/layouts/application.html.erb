@@ -8,7 +8,6 @@
 
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 
     <script src="https://kit.fontawesome.com/792068b81e.js" crossorigin="anonymous"></script>
@@ -16,6 +15,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   </head>
 
   <body>
@@ -37,7 +37,11 @@
               <li class="nav-item"><%= link_to 'みんなの投稿', about_path, class: 'nav-link' %></li>
               <li class="nav-item"><%= link_to 'ランキング', ranking_path, class: 'nav-link' %></li>
               <li class="nav-item"><%= link_to 'ログアウト', destroy_user_session_path, class: 'nav-link' %></li>
-              <li class="nav-item"><%= link_to '会員情報編集', "/users/#{current_user.id}/edit", class: 'nav-link' %></li>
+              <li class="nav-item">
+                <%= link_to "/users/#{current_user.id}/edit", class: 'nav-link' do %>
+                  <i class="fas fa-cog" style="color: #2a4073;"></i>
+                <% end %>
+              </li>
             <% else %>
               <li class="nav-item"><%= link_to '新規登録', new_user_registration_path, class: 'nav-link' %></li>
               <li class="nav-item"><%= link_to 'ログイン', new_user_session_path, class: 'nav-link' %></li>

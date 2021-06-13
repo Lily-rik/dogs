@@ -1,42 +1,53 @@
-<h1>会員編集</h1>
-
-<%= form_with model: [:admin, @user], local: true do |f|%>
-
-  <div class="field">
-    <%= f.label :image, "プロフィール画像" %>
-    <%= f.attachment_field :image %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-4">
+      <div id="title">User edit</span></div>
+    </div>
+    <div class="col-lg-6"></div>
   </div>
 
+  <div class="row mt-4">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-7">
 
-  <div class="field">
-    <%= f.label :name, "名前" %>
-    <%= f.text_field :name, autofocus: true %>
+    <%= form_with model: [:admin, @user], local: true do |f|%>
+      <table class="info-edit-table">
+        <tr>
+          <th class="label">Profil image</th>
+          <td><%= f.attachment_field :image%></td>
+        </tr>
+        <tr>
+          <th class="label">Name</th>
+          <td><%= f.text_field :name, class: 'form-control', autofocus: true %></td>
+        </tr>
+        <tr>
+          <th class="label">User name</th>
+          <td><%= f.text_field :user_name, class: 'form-control' %></td>
+        </tr>
+        <tr>
+          <th class="label">Mail</th>
+          <td><%= f.text_field :email, class: 'form-control' %></td>
+        </tr>
+        <tr>
+          <th class="label">Phone number</th>
+          <td><%= f.text_field :telephone_number, class: 'form-control' %></td>
+        </tr>
+        <tr>
+          <th class="label">User status</th>
+          <td style="text-align: center;">
+            <%= f.radio_button :is_deleted, "false" %>
+            <%= f.label :is_deleted, "有効", value: false, class: "mr-5 pr-5" %>
+            <%= f.radio_button :is_deleted, "true" %>
+            <%= f.label :is_deleted, "退会", value: true %>
+          </td>
+        </tr>
+      </table>
+      <div class="update mt-4 mr-5" style="text-align: right;">
+        <%= f.submit "UPDATE", class: "edit-btn button" %>
+      </div>
+    <% end %>
+    </div>
+    <div class="col-lg-3"></div>
   </div>
-
-  <div class="field">
-    <%= f.label :user_name, "ユーザーネーム" %>
-    <%= f.text_field :user_name %>
-  </div>
-
-
-  <div class="field">
-    <%= f.label :email, "メールアドレス" %>
-    <%= f.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= f.label :telephone_number, "電話番号" %>
-    <%= f.text_field :telephone_number %>
-  </div>
-
-  <div class="field">
-    <%= f.label "会員ステータス" %>
-    <%= f.radio_button :is_deleted, "false" %>
-    <%= f.label :is_deleted, "有効", value: false %>
-    <%= f.radio_button :is_deleted, "true" %>
-    <%= f.label :is_deleted, "退会", value: true %>
-  </div>
-
-  <%= f.submit "更新" %>
-
-<% end %>
+</div>
