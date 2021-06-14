@@ -18,7 +18,9 @@
             <%= f.text_field :message, rows:'3',id: 'chat-text', class: 'form-control' %>
             <%= f.hidden_field :room_id, :value => @room.id %>
             <%= f.hidden_field :user_id, :value => @user.id %>
-            <%= f.submit '送信' %>
+            <%= button_tag :type => "submit", :class =>"chat-btn" do %>
+              <i class="fas fa-paper-plane fa-2x" style="color: #2a4073;"></i>
+            <% end %>
           <% end %>
         </div>
       </div>

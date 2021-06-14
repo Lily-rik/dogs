@@ -824,8 +824,22 @@ main {
 
 #chat-text {
   width: 350px;
+  margin-bottom: 10px;
+  margin-right: 5px;
 }
 
+.chat-btn {
+  width: 50px;
+  height: 38px;
+  border: 1px solid #fff;
+  border: 1px solid #dddcd6;
+  color: #dddcd6;
+  &:hover {
+    background: #dddcd6;
+  }
+
+
+}
 
 footer {
 	padding: 3em 0;
