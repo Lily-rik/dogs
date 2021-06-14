@@ -3,7 +3,7 @@
     <% chats.each do |chat| %>
       <% if chat.user == current_user %>
         <tr class="row justify-content-right my-chat">
-          <td class="col-lg-10">
+          <td class="col-lg-8">
             <div class="col-11 float-right" style="text-align: right;">
               <%= link_to user_path(chat.user.id) do %>
                 <%= chat.user.user_name %><br>
