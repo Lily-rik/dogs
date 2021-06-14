@@ -15,16 +15,22 @@ class Public::ChatsController < ApplicationController
       UserRoom.create(user_id: @user.id, room_id: @room.id)
     end
 
-    @chats = @room.chats
+    @chats = @room.chats.last(20)
     @chat = Chat.new(room_id: @room.id)
   end
 
 
 
   def create
+    @user = User.find(params[:chat][:user_id])
+    rooms = current_user.user_rooms.pluck(:room_id)
+    user_rooms = UserRoom.find_by(user_id: @user.id, room_id: rooms)
+    @room = user_rooms.room
+    @chats = @room.chats
+
     @chat = current_user.chats.new(chat_params)
     @chat.save
-    redirect_to request.referer
+    # redirect_to request.referer
   end
 
 
@@ -33,7 +39,7 @@ class Public::ChatsController < ApplicationController
   private
 
   def chat_params
-    params.require(:chat).permit(:message, :room_id)
+    params.require(:chat).permit(:message, :room_id, :user_id)
   end
 
 

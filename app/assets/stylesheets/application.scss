@@ -332,8 +332,6 @@ main {
 
 
 
-
-
 // showページ
 
 .post {
@@ -355,7 +353,7 @@ main {
 #favorite-button span, #rank-comment-btn span {
   position: absolute;
   top: -20px;
-  right: -25px;
+  right: -30px;
   font-size: 24px;
   color: #2a4073;
 }
@@ -688,6 +686,18 @@ main {
 
 // ランキングページ
 
+// rankingページ
+
+.user_name {
+  font-size: 20px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+}
+
+
+
+
+
 #ranking {
   position: relative;
   background-image: image-url("ranking.jpg");
@@ -710,13 +720,13 @@ main {
 .rank-fav-icon {
   position: absolute;
   top: -15px;
-  right: 120px;
+  right: 70px;
 }
 
 .rank-comment-icon {
   position: absolute;
   top: -15px;
-  right: 0;
+  right: -40px;
 }
 
 
@@ -734,6 +744,87 @@ main {
   color: #2a4073;
 }
 
+
+
+
+
+// チャットページ
+
+// 自分のメッセージの吹き出し
+.says {
+  float: left;
+  position: relative;
+  left: 17px;
+  width: calc(100% - 200px);
+  padding: 15px 10px 15px 30px;
+  margin: 5px 0 15px 0;
+  background: #ebf6f7;
+  border-radius: 15px;
+  line-height: 1.5;
+  word-break: break-all;
+}
+.says:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 3px;
+  left: -19px;
+  border: 8px solid transparent;
+  border-right: 18px solid #ebf6f7;
+  -webkit-transform: rotate(35deg);
+  transform: rotate(35deg);
+}
+
+// 自分以外のメッセージの吹き出し
+.other-user-says {
+  float: right;
+  position: relative;
+  right: 5px;
+  width: calc(100% - 200px);
+  padding: 15px 30px 15px 10px;
+  margin: 5px 0 15px 0;
+  background: #fdeff2;
+  border-radius: 15px;
+  line-height: 1.5;
+  word-break: break-all;
+  text-align: right;
+}
+.other-user-says:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 3px;
+  right: -19px;
+  border: 8px solid transparent;
+  border-right: 18px solid #fdeff2;
+  -webkit-transform: rotate(145deg);
+  transform: rotate(145deg);
+}
+
+.my-chat {
+  width: 800px;
+}
+
+.chat_box{
+  width: 100%;
+  height: 500px;
+  padding: 40px 40px 10px 220px;
+  margin-top: 10px;
+  overflow: scroll;
+  border: 1px solid #fff;
+  font-size: 14px;
+  background: #fff;
+}
+
+.form-inline {
+  display: inline-block;
+  width: 80%;
+  margin: 0 auto;
+}
+
+#chat-text {
+  width: 350px;
+}
 
 
 footer {

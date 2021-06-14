@@ -33,11 +33,11 @@
     <div class="col-lg-7">
       <div class="ranking">
         <div class="row">
-          <div class="col-lg-2">
+          <div class="col-lg-1">
             <%= attachment_image_tag post.user, :image, :fill, 50, 50, fallback: "no_image.jpg", class: "user-image" %>
           </div>
           <div class="col-lg-6 mt-3">
-            <%= link_to user_path(post.user.id) do %>
+            <%= link_to user_path(post.user.id), class: "user_name" do %>
               <%= post.user.user_name %>
             <% end %>
 

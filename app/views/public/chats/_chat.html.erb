@@ -1,0 +1,39 @@
+<table>
+  <tbody>
+    <% chats.each do |chat| %>
+      <% if chat.user == current_user %>
+        <tr class="row justify-content-right my-chat">
+          <td class="col-lg-10">
+            <div class="col-11 float-right" style="text-align: right;">
+              <%= link_to user_path(chat.user.id) do %>
+                <%= chat.user.user_name %><br>
+              <% end %>
+            </div>
+            <div class="other-user-says">
+              <p><%= chat.message %></p>
+              <span><%= l chat.created_at, format: :short %></span>
+            </div>
+          </td>
+          <td>
+            <%= link_to attachment_image_tag(chat.user, :image, :fill, 50, 50, fallback: "no_image.jpg", size:'50x50', class: "profile-image align-top user-image"), user_path(chat.user.id) %>
+          </td>
+        </tr>
+      <% else %>
+        <tr class="row justify-content-right my-chat">
+          <td class="col-lg-1">
+            <%= link_to attachment_image_tag(chat.user, :image, :fill, 50, 50, fallback: "no_image.jpg", size:'50x50', class: "profile-image align-top user-image"), user_path(chat.user.id) %>
+          </td>
+          <td class="col-lg-10">
+            <%= link_to user_path(chat.user.id) do %>
+              <%= chat.user.user_name %><br>
+            <% end %>
+            <div class="says">
+              <p><%= chat.message %></p>
+              <span><%= l chat.created_at, format: :short %></span>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
