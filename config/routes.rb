@@ -43,10 +43,14 @@ Rails.application.routes.draw do
       # favorites
       resource :favorites, only: [:create, :destroy]
     end
-    
+
+    # hashtags
+    get 'posts/hashtag/:name', to: "posts#hashtag", as: 'hashtag'
+
     # chats
     get 'chats/:id' => 'chats#show', as: 'chat'
     resources :chats, only: [:create]
+
 
   end
 

@@ -8,6 +8,7 @@ class Public::PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    return render :new unless image_present?
     @post.user_id = current_user.id
     @post.save
     redirect_to post_path(@post.id)
@@ -43,6 +44,12 @@ class Public::PostsController < ApplicationController
     @ranking = Post.create_ranking
   end
 
+  def hashtag
+    @user = current_user
+    @tag = Hashtag.find_by(hashname: params[:name])
+    @posts = @tag.posts
+  end
+
 
   private
 
@@ -50,8 +57,8 @@ class Public::PostsController < ApplicationController
     params.require(:post).permit(:image, :caption)
   end
 
-
-
-
+  def image_present?
+    post_params[:image].is_a?(ActionDispatch::Http::UploadedFile)
+  end
 
 end
