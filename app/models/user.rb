@@ -6,9 +6,21 @@ class User < ApplicationRecord
 
   attachment :image
 
+  validates :email, presence: true
+  validates :name, presence: true, length: { maximum: 10 }
+  validates :telephone_number, presence: true, length: { in: 10..11 }
+  validates :is_deleted, inclusion: { in: [true, false] }
+  validates :user_name, presence: true, length: { maximum: 10 }
+  validates :image_id, presence: true
+  validates :self_introduction, presence: true, length: { maximum: 100 }
+
+
+
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :user_rooms, dependent: :destroy
+  has_many :chats, dependent: :destroy
 
   has_many :following_relationships, foreign_key: "follower_id", class_name: "Relationship",  dependent: :destroy
   has_many :following, through: :following_relationships
@@ -39,12 +51,10 @@ class User < ApplicationRecord
     super && (self.is_deleted == false)
   end
 
-  def self.looks(searches, words)
-      if searches == "perfect_match"
-        @user = User.where("name LIKE ? OR user_name LIKE ? OR email LIKE ?", "#{words}", "#{words}", "#{words}")
-      else
-        @user = User.where("name LIKE ? OR user_name LIKE ? OR email LIKE ?", "%#{words}%", "%#{words}%", "%#{words}%")
-      end
+
+  # 検索
+  def self.looks(searchs)
+    @user = User.where("name LIKE ? OR user_name LIKE ? OR email LIKE ?", "%#{searchs}%", "%#{searchs}%", "%#{searchs}%")
   end
 
 end

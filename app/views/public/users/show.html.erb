@@ -54,7 +54,9 @@
           </div>
           <div class="col-lg-3 mt-5">
             <% if @user == current_user %>
-                <%= link_to 'NEW POST', new_post_path, id: "user-btn", class: "button"  %>
+              <%= link_to 'NEW POST', new_post_path, id: "user-btn", class: "button"  %>
+            <% else %>
+              <%= link_to 'CHAT', chat_path(@user.id), id: "chat-btn", class: "button"  %>
             <% end %>
           </div>
         </div>

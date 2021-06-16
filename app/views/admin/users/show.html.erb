@@ -25,7 +25,7 @@
 
         <tr style="text-align: center;">
           <td><%= @user.id %></td>
-          <td><%= attachment_image_tag @user, :image, :fill, 50, 50, fallback: "no_image.jpg" %></td>
+          <td><%= attachment_image_tag @user, :image, :fill, 50, 50, fallback: "no_image.jpg", class: "user-image" %></td>
           <td><%= @user.name %></td>
           <td><%= @user.user_name %></td>
           <td><%= @user.email %></td>

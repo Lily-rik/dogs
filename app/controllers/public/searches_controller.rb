@@ -3,10 +3,16 @@ class Public::SearchesController < ApplicationController
 
 
   def search
-    @users = User.looks(params[:search], params[:word])
-
+    @range = params[:range]
+    @search = params[:search]
+    if @range == "User"
+      @users = User.looks(@search)
+    elsif @search == "#"
+      @posts = Hashtag.looks(@search)
+    else
+      @posts = Post.looks(@search)
+    end
   end
-
 
 
 end

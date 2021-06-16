@@ -6,7 +6,7 @@
     </div>
     <div class="col-lg-6"></div>
   </div>
-  
+
   <div class="row">
     <div class="col-lg-3"></div>
     <div class="col-lg-7">
@@ -34,7 +34,7 @@
         </div>
         <div></div>
         <div class="caption my-3">
-          <p><%= @post.caption %></p>
+          <%= render_with_hashtags(@post.caption) %>
         </div>
 
       </div>

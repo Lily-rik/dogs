@@ -87,7 +87,7 @@ header {
 main {
   margin:0 auto;
   padding-top: 200px;
-	height: 2000px;
+	height: 3000px;
 // 	text-align: center;
 	background-color: #fff;
 	z-index: 20;
@@ -107,12 +107,8 @@ main {
 // Topページ
 
 
-.top-btns {
-  padding-top: 100px;
-}
 
-
-.top-visual, .about-visual {
+.about-visual {
   width: 80%;
   height: 600px;
   margin: 0 auto;
@@ -120,37 +116,29 @@ main {
   background-position: center;
 }
 
-.top-visual {
-  background-image: image-url("dogs16.jpg");
-}
 
 .about-visual {
-  background-image: image-url("dogs09.jpg");
+  position: relative;
+  background-image: image-url("dogs16.jpg");
   margin-bottom: 100px;
 }
 
 
 
-.top-visual-content, .about-visual-content {
+.about-visual-content {
   width: 100%;
   height: 600px;
-  background-color: rgba(255,255,255,0.2);
+  background-color: rgba(255,255,255,0.3);
 }
 
-
-.about-visual-text {
-  padding-top: 100px;
-  text-align: center;
-  font-size: 24px;
-}
 
 
 
 #web-title {
   width: 80%;
-  margin: 150px auto;
+  margin: 80px auto;
   text-align: center;
-  font-size: 50px;
+  font-size: 60px;
 }
 
 
@@ -306,10 +294,10 @@ main {
 
 
 
-.about-text {
+.about-text, .web-text {
   width: 80%;
   margin: 0 auto;
-  padding: 80px 0;
+  padding: 50px 0 120px 0;
   text-align: center;
 }
 
@@ -329,8 +317,6 @@ main {
   margin: 20px 0;
   color: #2a4073;
 }
-
-
 
 
 
@@ -355,7 +341,7 @@ main {
 #favorite-button span, #rank-comment-btn span {
   position: absolute;
   top: -20px;
-  right: -25px;
+  right: -30px;
   font-size: 24px;
   color: #2a4073;
 }
@@ -416,7 +402,8 @@ main {
 
 
 .comment-table td:nth-child(1) {
-  width: 10%;
+  text-align: center;
+  width: 15%;
   padding: 15px 0 15px 10px;
 
 }
@@ -427,7 +414,7 @@ main {
 
 }
 .comment-table td:nth-child(3) {
-  width: 50%;
+  width: 40%;
   padding: 15px 0;
 
 }
@@ -535,24 +522,42 @@ main {
 }
 
 
+#top-login-btn {
+  text-decoration: none;
+  font-size: 20px;
+  text-align: center;
+  padding: 25px 70px 25px 70px;
+  border: 1px solid #ffd900;
+  color: #ffd900;
+  &:hover {
+    color: #fff;
+    border: 1px solid #fddea5;
+    background: #fddea5;
+  }
+}
+
+
 
 #top-signup-btn {
-  font-size: 15px;
+  text-decoration: none;
+  font-size: 20px;
   text-align: center;
-  padding: 20px 40px 20px 40px;
+  padding: 25px 60px 25px 60px;
+  border: 1px solid #e95464;
+  color: #e95464;
+  &:hover {
+    color: #fff;
+    border: 1px solid #f4b3c2;
+    background: #f4b3c2;
+  }
 }
 
-#top-login-btn {
-  font-size: 15px;
-  text-align: center;
-  padding: 19px 40px 21px 40px;
-}
 
 
 
 
 
-#user-btn {
+#user-btn, #chat-btn {
   padding: 15px;
   text-decoration: none;
   border: 1px solid #c1d8ac;
@@ -563,6 +568,9 @@ main {
   }
 }
 
+#chat-btn {
+  padding: 15px 33px;
+}
 
 .create-btn {
   border: 1px solid #83ccd2;
@@ -684,18 +692,31 @@ main {
 
 // ランキングページ
 
+// rankingページ
+
+.user_name {
+  font-size: 20px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+}
+
+
+
+
+
 #ranking {
   position: relative;
-  width: 70px;
+  background-image: image-url("ranking.jpg");
+  background-size: contain;  width: 70px;
   height: 70px;
-  background-color: #f4b3c2;
-  border-radius: 50%;
 }
 
 #ranking span {
   position: absolute;
-  top: 20px;
-  left: 28px;
+  top: 12px;
+  left: 26px;
+  font-size: 32px;
+  color: #583822;
 }
 
 .ranking {
@@ -704,14 +725,14 @@ main {
 
 .rank-fav-icon {
   position: absolute;
-  top: 0;
-  right: 120px;
+  top: -15px;
+  right: 70px;
 }
 
 .rank-comment-icon {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -15px;
+  right: -40px;
 }
 
 
@@ -730,6 +751,91 @@ main {
 }
 
 
+
+
+
+// チャットページ
+
+// 自分のメッセージの吹き出し
+.says {
+  float: left;
+  position: relative;
+  left: 17px;
+  padding: 15px 30px;
+  margin: 5px 0 15px 0;
+  background: #ebf6f7;
+  border-radius: 15px;
+  line-height: 1.5;
+  word-break: break-all;
+}
+.says:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 3px;
+  left: -19px;
+  border: 8px solid transparent;
+  border-right: 18px solid #ebf6f7;
+  -webkit-transform: rotate(35deg);
+  transform: rotate(35deg);
+}
+
+// 自分以外のメッセージの吹き出し
+.other-user-says {
+  float: right;
+  position: relative;
+  right: 5px;
+  padding: 15px 30px;
+  margin: 5px 0 15px 0;
+  background: #fdeff2;
+  border-radius: 15px;
+  line-height: 1.5;
+  word-break: break-all;
+  text-align: right;
+}
+.other-user-says:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 3px;
+  right: -19px;
+  border: 8px solid transparent;
+  border-right: 18px solid #fdeff2;
+  -webkit-transform: rotate(145deg);
+  transform: rotate(145deg);
+}
+
+.my-chat {
+  width: 800px;
+}
+
+.chat_box{
+  width: 100%;
+  height: 430px;
+  padding: 40px 40px 10px 240px;
+  margin-top: 10px;
+  overflow: scroll;
+  border: 1px solid #fff;
+  font-size: 14px;
+  background: #fff;
+}
+
+.form-inline {
+  width: 50%;
+  margin-left: 300px;
+}
+
+#chat-text {
+  width: 350px;
+  margin-bottom: 10px;
+}
+
+.chat-btn {
+  width: 50px;
+  height: 38px;
+  border: 1px solid #fff;
+  background-color: #fff;
+}
 
 footer {
 	padding: 3em 0;

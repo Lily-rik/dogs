@@ -36,9 +36,9 @@
             <td><%= user.email %></td>
             <td>
               <% if user.is_deleted? %>
-                退会
+                <p style="color: #ec6d51">退会</p>
               <% else %>
-                有効
+                <p style="color: #316745;">有効</p>
               <% end %>
             </td>
             <td><%= link_to "DETAIL", admin_user_path(user.id), id: "user-detail-btn" %></td>
