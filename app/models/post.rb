@@ -57,4 +57,14 @@ class Post < ApplicationRecord
   end
 
 
+  # 検索
+  def self.looks(searchs)
+    if searchs != "#"
+      @post = Post.where("caption LIKE ?", "%#{searchs}%")
+    end
+  end
+
+
+
+
 end

@@ -51,12 +51,10 @@ class User < ApplicationRecord
     super && (self.is_deleted == false)
   end
 
-  def self.looks(searches, words)
-      if searches == "perfect_match"
-        @user = User.where("name LIKE ? OR user_name LIKE ? OR email LIKE ?", "#{words}", "#{words}", "#{words}")
-      else
-        @user = User.where("name LIKE ? OR user_name LIKE ? OR email LIKE ?", "%#{words}%", "%#{words}%", "%#{words}%")
-      end
+
+  # 検索
+  def self.looks(searchs)
+    @user = User.where("name LIKE ? OR user_name LIKE ? OR email LIKE ?", "%#{searchs}%", "%#{searchs}%", "%#{searchs}%")
   end
 
 end
