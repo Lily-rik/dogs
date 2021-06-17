@@ -4,12 +4,12 @@
       <% if chat.user == current_user %>
         <tr class="row justify-content-right my-chat">
           <td class="col-lg-8">
-            <div class="col-11 float-right" style="text-align: right;">
+            <div class="col-11 float-right text-right">
               <%= link_to user_path(chat.user.id) do %>
                 <%= chat.user.user_name %><br>
               <% end %>
             </div>
-            <div class="other-user-says">
+            <div class="says">
               <p><%= chat.message %></p>
               <span><%= l chat.created_at, format: :short %></span>
             </div>
@@ -27,7 +27,7 @@
             <%= link_to user_path(chat.user.id) do %>
               <%= chat.user.user_name %><br>
             <% end %>
-            <div class="says">
+            <div class="other-user-says">
               <p><%= chat.message %></p>
               <span><%= l chat.created_at, format: :short %></span>
             </div>
