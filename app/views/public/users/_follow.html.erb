@@ -1,10 +1,6 @@
 
-<div class="search mt-4 mb-5" style="text-align: center;">
-  <%= form_with url: search_path, method: :get, local: :true do |f| %>
-    <%= f.select :range, options_for_select(["User"])%>
-    <%= f.text_field :search %>
-    <%= f.submit "検索" %>
-  <% end %>
+<div class="search mt-4 mb-5 text-center">
+  <%= render 'public/searches/user_search' %>
 </div>
 
 

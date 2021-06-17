@@ -1,9 +1,10 @@
 class Admin::SearchesController < ApplicationController
   before_action :authenticate_admin!
-  
+
   def search
-    @users = User.looks(params[:search], params[:word])
+    @search = params[:search]
+    @users = User.looks(@search)
   end
-  
-  
+
+
 end

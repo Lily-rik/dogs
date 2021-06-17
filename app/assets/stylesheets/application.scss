@@ -380,37 +380,33 @@ main {
   transition: 2s;
 }
 
+.users-table td, .user-table td {
+  padding: 20px 0 5px 10px;
+}
+
 .users-table td:nth-child(1) {
   width: 10%;
-  padding: 15px 0 15px 10px;
-
 }
 
 .users-table td:nth-child(2) {
   width: 20%;
-  padding: 15px 0 15px 10px;
-
 }
 
 .users-table td:nth-child(3) {
   width: 32%;
-  padding: 15px 0 15px 10px;
-
 }
 
 .users-table td:nth-child(4) {
   width: 20%;
-  padding: 15px 0 15px 10px;
-
 }
 
 .users-table td:nth-child(5) {
   width: 20%;
-  padding: 15px 0 15px 10px;
-
 }
 
-
+.user-table td:nth-child(2) {
+  padding-top: 6px;
+}
 
 
 
@@ -486,10 +482,11 @@ main {
 }
 
 
-.search-table {
-  text-align: center;
-}
 
+.admin-search {
+  width: 300px;
+  margin: 0 auto;
+}
 
 
 
@@ -528,7 +525,7 @@ main {
 }
 
 
-#signup-btn, #log-in-btn {
+#signup-btn, #log-in-btn, #user-edit-btn {
   padding: 12px 20px 11px 20px;
   text-decoration: none;
   border: 1px solid #c1d8ac;
@@ -595,7 +592,7 @@ main {
 }
 
 
-.action-signup, .action-log-in, .action-unsubscribe {
+.action-signup, .action-log-in, .action-unsubscribe, .action-edit {
   text-align: right;
   margin-right: 50px;
 }
@@ -620,7 +617,7 @@ main {
 
 
 
-.edit-btn, #user-edit-btn, .update-btn {
+.edit-btn, .update-btn {
   width: 200px;
   border: 1px solid #f9c89b;
   color: #f9c89b;
