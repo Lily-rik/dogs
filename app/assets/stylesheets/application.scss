@@ -299,6 +299,11 @@ main {
   margin: 0 auto;
   padding: 50px 0 120px 0;
   text-align: center;
+  font-size: 14px;
+}
+
+.about-text {
+  font-size: 16px;
 }
 
 
@@ -328,21 +333,29 @@ main {
 
 .show-icon {
   position: absolute;
-  top: 0px;
+  top: 20px;
   right: 200px;
 }
 
 
-#favorite-button, #rank-comment-btn {
-  position: relative;
-  text-decoration: none;
+.favorite-icon {
+  position: absolute;
+  top: 10px;
+  right: 160px;
 }
 
-#favorite-button span, #rank-comment-btn span {
+
+#favorite-btn, #rank-comment-btn {
+  position: relative;
+  text-decoration: none;
+  margin-right: -7px;
+}
+
+#favorite-btn span, #rank-comment-btn span {
   position: absolute;
-  top: -20px;
-  right: -30px;
-  font-size: 24px;
+  top: -7px;
+  right: -17px;
+  font-size: 20px;
   color: #2a4073;
 }
 
@@ -404,19 +417,31 @@ main {
 .comment-table td:nth-child(1) {
   text-align: center;
   width: 15%;
-  padding: 15px 0 15px 10px;
+  padding: 10px 0 15px 10px;
 
 }
 
 .comment-table td:nth-child(2) {
   width: 15%;
-  padding: 15px 0;
+  padding: 22px 0;
 
 }
 .comment-table td:nth-child(3) {
   width: 40%;
-  padding: 15px 0;
+  padding: 22px 0;
 
+}
+
+.comment-table td:nth-child(4) {
+  width: 40%;
+  padding: 20px 0 20px 5px;
+
+}
+
+
+.follow-table {
+  width: 70%;
+  margin: 0 auto;
 }
 
 .follow-table td:nth-child(1) {
@@ -455,6 +480,12 @@ main {
   height: 70px;
 }
 
+.search {
+  margin-right: 120px;
+  padding-bottom: 20px;
+}
+
+
 .search-table {
   text-align: center;
 }
@@ -485,16 +516,8 @@ main {
   }
 }
 
-.signup-btn, {
-  margin-right: 70px;
-  border: 1px solid #e7609e;
-  color: #e7609e;
-  &:hover {
-    background: #e7609e;
-  }
-}
 
-#sign-up-btn, #top-signup-btn {
+#top-signup-btn {
   text-decoration: none;
   border: 1px solid #e7609e;
   color: #e7609e;
@@ -505,21 +528,42 @@ main {
 }
 
 
-#sign-up-btn {
-  margin-left: 70px;
-  padding: 12px 35px 11px 35px;
+#signup-btn, #log-in-btn {
+  padding: 12px 20px 11px 20px;
+  text-decoration: none;
+  border: 1px solid #c1d8ac;
+  color: #c1d8ac;
+  &:hover {
+    color: #fff;
+    background: #c1d8ac;
+  }
 }
 
-#login-btn, #top-login-btn, .log-in-btn {
+#login-btn, #top-login-btn, .login-btn, .sign-up-btn, .create-btn {
+  width: 200px;
   padding: 11px 40px 12px 40px;
   text-decoration: none;
-  border: 1px solid #f8b500;
-  color: #f8b500;
+  border: 1px solid #e9546b;
+  color: #e9546b;
   &:hover {
     color: #fff;
-    background: #f8b500;
+    background: #e9546b;
   }
 }
+
+#top-about-btn {
+  text-align: center;
+  padding: 20px 45px 20px 45px;
+  text-decoration: none;
+  border: 1px solid  #e9546b;
+  font-size: 20px;
+  color:  #e9546b;
+  &:hover {
+    color: #fff;
+    background:  #e9546b;
+  }
+}
+
 
 
 #top-login-btn {
@@ -527,12 +571,11 @@ main {
   font-size: 20px;
   text-align: center;
   padding: 25px 70px 25px 70px;
-  border: 1px solid #ffd900;
-  color: #ffd900;
+  border: 1px solid #e9546b;
+  color: #e9546b;
   &:hover {
     color: #fff;
-    border: 1px solid #fddea5;
-    background: #fddea5;
+    background: #e9546b;
   }
 }
 
@@ -543,17 +586,19 @@ main {
   font-size: 20px;
   text-align: center;
   padding: 25px 60px 25px 60px;
-  border: 1px solid #e95464;
-  color: #e95464;
+  border: 1px solid #e9546b;
+  color: #e9546b;
   &:hover {
     color: #fff;
-    border: 1px solid #f4b3c2;
-    background: #f4b3c2;
+    background: #e9546b;
   }
 }
 
 
-
+.action-signup, .action-log-in, .action-unsubscribe {
+  text-align: right;
+  margin-right: 50px;
+}
 
 
 
@@ -572,16 +617,11 @@ main {
   padding: 15px 33px;
 }
 
-.create-btn {
-  border: 1px solid #83ccd2;
-  color: #83ccd2;
-  &:hover {
-    background: #83ccd2;
-  }
-}
 
 
-.edit-btn, #user-edit-btn {
+
+.edit-btn, #user-edit-btn, .update-btn {
+  width: 200px;
   border: 1px solid #f9c89b;
   color: #f9c89b;
   &:hover {
@@ -620,18 +660,18 @@ main {
 }
 
 #unfollow-btn {
-  border: 1px solid #e9546b;
-  color: #e9546b;
-  &:hover {
-    background: #e9546b;
-  }
-}
-
-#follow-btn {
   border: 1px solid #83ccd2;
   color: #83ccd2;
   &:hover {
     background: #83ccd2;
+  }
+}
+
+#follow-btn {
+  border: 1px solid #e9546b;
+  color: #e9546b;
+  &:hover {
+    background: #e9546b;
   }
 }
 
@@ -650,35 +690,49 @@ main {
 
 
 
-#destroy-button, #withdraw-btn, #post-destroy-btn, #unsubscribe-btn {
+#destroy-btn, #withdraw-btn, #post-destroy-btn, #unsubscribe-btn {
   text-decoration: none;
-  border: 1px solid #e9546b;
-  color: #e9546b;
+  border: 1px solid #83ccd2;
+  color: #83ccd2;
   &:hover {
     color: white;
-    background: #e9546b;
+    background: #83ccd2;
   }
 }
 
-#destroy-button {
+#destroy-btn {
   padding: 7px 20px 8px 20px;
 }
 
 
-#withdraw-btn, #post-destroy-btn, #unsubscribe-btn {
+#withdraw-btn, #post-destroy-btn {
   padding: 12px 22px 10px 22px;
 }
+
+#withdraw-btn {
+  border: 1px solid #dddcd6;
+  color: #dddcd6;
+  &:hover {
+    background: #dddcd6;
+  }
+}
+
 
 
 #unsubscribe-btn {
   font-size: 20px;
-  padding: 20px 40px;
+  padding: 20px 60px;
+  border: 1px solid #e9546b;
+  color: #e9546b;
+  &:hover {
+    background: #e9546b;
+  }
 }
 
 
 #no-btn {
   font-size: 20px;
-  padding: 20px 40px;
+  padding: 20px 60px;
   text-decoration: none;
   border: 1px solid #83ccd2;
   color: #83ccd2;
@@ -725,13 +779,13 @@ main {
 
 .rank-fav-icon {
   position: absolute;
-  top: -15px;
+  top: 5px;
   right: 70px;
 }
 
 .rank-comment-icon {
   position: absolute;
-  top: -15px;
+  top: 5px;
   right: -40px;
 }
 

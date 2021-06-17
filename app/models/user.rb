@@ -11,7 +11,9 @@ class User < ApplicationRecord
   validates :telephone_number, presence: true, length: { in: 10..11 }
   validates :is_deleted, inclusion: { in: [true, false] }
   validates :user_name, presence: true, length: { maximum: 10 }
-  # validates :image_id, presence: true
+
+
+  # validates :image, presence: true
   # validates :self_introduction, presence: true, length: { maximum: 100 }
 
 

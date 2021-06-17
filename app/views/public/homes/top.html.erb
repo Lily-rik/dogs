@@ -15,14 +15,14 @@
   </div>
 
   <div id="web-title">
-    <p>Welcome to DOG'S!!!</p>
+    <p>Welcome to DOG'S</p>
   </div>
 
   <div class="web-text">
-    <p>ようこそDOG'Sへ！！！<br>
-       このサイトではたくさんのわんちゃんたちに出会うことができます<br>
-       可愛いわんちゃんを見てたくさん癒されてください<br>
-       素敵な投稿も楽しみにしております<br>
+    <p>ようこそDOG'Sへ！！<br>
+       このサイトではたくさんの可愛いわんちゃんたちに出会うことができます<br>
+       わんちゃんたちに癒されながら楽しいひとときをお過ごしください<br>
+       たくさんの素敵な投稿も楽しみにしております<br>
     </p>
   </div>
 
@@ -31,7 +31,13 @@
 
 
   <div class="row mt-5 top-btns">
-  <% unless user_signed_in? %>
+  <% if user_signed_in? %>
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4 button">
+      <%= link_to "YOUR DOG'S", about_path, id: "top-about-btn" %>
+    </div>
+    <div class="col-lg-4"></div>
+  <% else %>
     <div class="col-lg-2"></div>
     <div class="col-lg-3 button">
       <%= link_to "LOG IN", new_user_session_path, id: "top-login-btn" %>

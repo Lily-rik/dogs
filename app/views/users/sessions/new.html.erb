@@ -30,10 +30,15 @@
         </div>
       <% end %>
 
-      <div class="actions mt-5">
-        <div><%= f.submit "LOG IN", class: "log-in-btn button" %></div>
-        <div><%= render "users/shared/links" %></div>
+      <div class="mt-5 text-center">
+        <%= f.submit "LOG IN", class: "login-btn button" %>
       </div>
+      <div class="action-signup mt-5 pt-3">
+        <%= render "users/shared/links" %>
+      </div>
+
+
+
     <% end %>
   </div>
 </div>

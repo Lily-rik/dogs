@@ -3,7 +3,7 @@
   <% post.comments.each do |comment| %>
     <tr>
       <td>
-        <%= attachment_image_tag comment.user, :image, :fill, 40, 40, fallback: "no_image.jpg", class: "user-image" %>
+        <%= attachment_image_tag comment.user, :image, :fill, 50, 50, fallback: "no_image.jpg", size:'50x50', class: "user-image" %>
       </td>
       <td>
         <%= link_to user_path(comment.user.id) do %>
@@ -16,7 +16,7 @@
       <td>
         <div class="mt-1">
         <% if comment.user == current_user %>
-          <%= link_to 'DESTROY', post_comment_path(comment.post.id, comment.id), method: :delete, remote: true, id: "destroy-button", class: "button" %>
+          <%= link_to 'DESTROY', post_comment_path(comment.post.id, comment.id), method: :delete, remote: true, id: "destroy-btn", class: "button" %>
         <% end %>
         </div>
       </td>

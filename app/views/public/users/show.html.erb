@@ -12,7 +12,7 @@
 
       <div class="user-info" style="text-align: center;">
         <p>
-          <%= attachment_image_tag @user, :image, :fill, 100, 100, fallback: "no_image.jpg", class: "user-image" %>
+          <%= attachment_image_tag @user, :image, :fill, 100, 100, fallback: "no_image.jpg", size:'100x100', class: "user-image" %>
         </p>
         <% if @user == current_user %>
           <%= link_to edit_mypage_path(@user.id) do %>
@@ -82,7 +82,11 @@
 
 
       <div class="posts">
-        <h4 class="mb-4">Posts</h4>
+        <h3 class="mb-4">Posts</h3>
+
+        <div class="search mt-3 mb-5 text-center">
+          <%= render 'public/searches/search' %>
+        </div>
 
         <div class="row">
         <% @user.posts.each do |post|%>
