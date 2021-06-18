@@ -85,9 +85,9 @@ header {
 
 
 main {
-  margin:0 auto;
-  padding-top: 200px;
-	height: 3000px;
+  margin: 50px auto 80px auto;
+  padding-top: 140px;
+	height: 100%;
 // 	text-align: center;
 	background-color: #fff;
 	z-index: 20;
@@ -136,7 +136,7 @@ main {
 
 #web-title {
   width: 80%;
-  margin: 80px auto;
+  margin: 80px auto 50px auto;
   text-align: center;
   font-size: 60px;
 }
@@ -294,16 +294,17 @@ main {
 
 
 
-.about-text, .web-text {
+.web-text, .about-text {
   width: 80%;
   margin: 0 auto;
-  padding: 50px 0 120px 0;
+  padding-bottom: 30px;
   text-align: center;
   font-size: 14px;
 }
 
 .about-text {
   font-size: 16px;
+  padding-bottom: 60px;
 }
 
 
@@ -321,6 +322,16 @@ main {
 .label {
   margin: 20px 0;
   color: #2a4073;
+}
+
+
+.post-caption {
+  width: 190px;
+  padding-left: 10px;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 
@@ -899,8 +910,41 @@ main {
   background-color: #fff;
 }
 
+
+// ページネーション
+.paginate {
+  width: 55%;
+  margin: 30px auto 0 auto;
+}
+
+
+.pagination>li>a {
+  padding: 10px 15px;
+  margin-right: 5px;
+  border: none;
+  color: #316745;
+  border-radius: 20px;
+}
+
+.page-item.active .page-link {
+  margin-right: 5px;
+  background: #316745;
+  border-radius: 20px;
+}
+
+.pagination>li>a:hover {
+  background: #c1d8ac;
+  border-radius: 20px;
+  color: #fff;
+}
+
+
+
+
+
+
 footer {
-	padding: 3em 0;
+	padding: 2em 0;
 	text-align: center;
 	color: #fff;
 	background-color: #bed2c3;
