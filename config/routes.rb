@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   devise_for :admins, controllers: {
     sessions:      'admins/sessions',
     passwords:     'admins/passwords',
@@ -20,7 +19,7 @@ Rails.application.routes.draw do
     get 'homes/about' => 'homes#about', as: 'about'
 
     # Users
-    resources :users, only: [:show, :edit, :update] do
+    resources :users, only: [:index, :show, :edit, :update] do
 
       # relationships
       resource :relationships, only: [:create, :destroy]

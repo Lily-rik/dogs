@@ -101,7 +101,21 @@ main {
   color: #0f2350;
 }
 
+.error {
+  color: #a22041;
+}
 
+
+.attention {
+  color: #a22041;
+  margin-top: 3px;
+  font-size: 14px;
+}
+
+.field_with_errors {
+  border: solid 2px #a22041;
+  border-radius: 6px;
+}
 
 
 // Topページ
@@ -335,6 +349,23 @@ main {
 }
 
 
+.show-caption, .ranking-caption {
+  width: 475px;
+  line-height: 1.5;
+}
+
+.ranking-caption {
+  margin-left: 14px;
+}
+
+
+.more {
+  display: inline-block;
+  width: 100%;
+  text-align: right;
+  padding-right: 150px;
+}
+
 
 // showページ
 
@@ -452,7 +483,7 @@ main {
 }
 
 .follow-table td:nth-child(1) {
-  width: 15%;
+  width: 10%;
   padding: 15px 0 15px 10px;
 
 }
@@ -465,7 +496,7 @@ main {
 }
 
 .follow-table td:nth-child(3) {
-  width: 15%;
+  width: 20%;
   padding: 30px 0 10px 0;
 
 }
@@ -914,7 +945,13 @@ main {
 // ページネーション
 .paginate {
   width: 55%;
-  margin: 30px auto 0 auto;
+  margin: 0 auto;
+}
+
+.user-paginate {
+  width: 50%;
+  margin: 0 auto;
+  padding-left: 40px;
 }
 
 

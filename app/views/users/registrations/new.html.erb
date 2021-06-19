@@ -10,35 +10,65 @@
   <div class="row mt-4">
     <div class="col-lg-3"></div>
     <div class="col-lg-6">
-    <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>  <%= render "users/shared/error_messages", resource: resource %>
+    <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+      <% if @user.errors.any? %>
+      <% end %>
+
       <table class="info-edit-table">
         <tr>
           <th class="label">Name</th>
-          <td><%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "田中　太郎", class: 'form-control' %></td>
+          <td>
+            <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "田中　太郎", class: 'form-control' %>
+            <% if @user.errors.include?(:name) %>
+              <p class="attention"><%= @user.errors.full_messages_for(:name).first %>
+            <% end %>
+          </td>
         </tr>
         <tr>
-          <th class="label">User name</th>
-          <td><%= f.text_field :user_name, autocomplete: "user_name", placeholder: "たろう", class: 'form-control' %></td>
+          <th class="label">User name<br>
+                            (Within 5 characters)</th>
+          <td>
+            <%= f.text_field :user_name, autocomplete: "user_name", placeholder: "DOG'S", class: 'form-control' %>
+            <% if @user.errors.include?(:user_name) %>
+              <p class="attention"><%= @user.errors.full_messages_for(:user_name).first %>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <th class="label">Phone number</th>
+          <td>
+            <%= f.text_field :telephone_number, autocomplete: "telephone_number", placeholder: "00000000000", class: 'form-control' %>
+            <% if @user.errors.include?(:telephone_number) %>
+              <p class="attention"><%= @user.errors.full_messages_for(:telephone_number).first %>
+            <% end %>
+          </td>
         </tr>
         <tr>
           <th class="label">Email</th>
-          <td><%= f.email_field :email, autocomplete: "email", placeholder: "sample@gmail.com", class: 'form-control' %></td>
+          <td>
+            <%= f.email_field :email, autocomplete: "email", placeholder: "sample@gmail.com", class: 'form-control' %>
+            <% if @user.errors.include?(:email) %>
+              <p class="attention"><%= @user.errors.full_messages_for(:email).first %>
+            <% end %>
+          </td>
         </tr>
         <tr>
-          <th class="label">Passward</th>
+          <th class="label">Passward<br>
+                            (At least 6 characters)</th>
           <td>
             <% if @minimum_password_length %>
-            <% end %><br />
+            <% end %>
             <%= f.password_field :password, placeholder: "******", class: 'form-control' %>
+            <% if @user.errors.include?(:password) %>
+              <p class="attention"><%= @user.errors.full_messages_for(:password).first %>
+            <% end %>
           </td>
         </tr>
         <tr>
           <th class="label">Passward again</th>
-          <td><%= f.password_field :password_confirmation, placeholder: "******", class: 'form-control' %></td>
-        </tr>
-        <tr>
-          <th class="label">Phone number</th>
-          <td><%= f.text_field :telephone_number, autocomplete: "telephone_number", placeholder: "00000000000", class: 'form-control' %></td>
+          <td>
+            <%= f.password_field :password_confirmation, placeholder: "******", class: 'form-control' %>
+          </td>
         </tr>
       </table>
 

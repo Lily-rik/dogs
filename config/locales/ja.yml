@@ -3,3 +3,24 @@ ja:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
       short: "%m/%d %H:%M"
+
+
+
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+    attributes:
+      user:
+        name: 名前
+        user_name: ユーザーネーム
+        telephone_number: 電話番号
+        email: メールアドレス
+        password: パスワード
+    models:
+      post: 投稿
+    attributes:
+      post:
+        image: 画像
+        caption: 文章
+

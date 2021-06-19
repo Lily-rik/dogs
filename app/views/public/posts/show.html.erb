@@ -33,8 +33,9 @@
           <p><%= attachment_image_tag @post, :image, :fill, 500, 500 %></p>
         </div>
         <div></div>
-        <div class="caption my-3">
-          <%= render_with_hashtags(@post.caption) %>
+        <div class="my-3">
+          <p class="show-caption"><%= render_with_hashtags(@post.caption) %></p>
+          <a href="" class="more">Read more...</a>
         </div>
 
       </div>

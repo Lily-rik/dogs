@@ -29,6 +29,9 @@
           </tr>
         <% end %>
       </table>
+      <div class="user-paginate mt-5">
+        <%= paginate @users %>
+      </div>
     <% else %>
     <%= render 'public/posts/post', posts: @posts %>
     <% end %>

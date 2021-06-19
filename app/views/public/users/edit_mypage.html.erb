@@ -11,6 +11,8 @@
     <div class="col-lg-3"></div>
     <div class="col-lg-6">
 
+
+      <p class="error"><%= flash[:error] %></p>
       <%= form_with model: @user, url: update_mypage_path(current_user.id), local: true do |f| %>
 
         <div class="row">

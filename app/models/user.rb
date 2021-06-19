@@ -10,7 +10,7 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 10 }
   validates :telephone_number, presence: true, length: { in: 10..11 }
   validates :is_deleted, inclusion: { in: [true, false] }
-  validates :user_name, presence: true, length: { maximum: 10 }
+  validates :user_name, presence: true, length: { maximum: 5 }
 
 
   # validates :image, presence: true
@@ -58,5 +58,10 @@ class User < ApplicationRecord
   def self.looks(searchs)
     @user = User.where("name LIKE ? OR user_name LIKE ? OR email LIKE ?", "%#{searchs}%", "%#{searchs}%", "%#{searchs}%")
   end
+
+
+
+
+
 
 end

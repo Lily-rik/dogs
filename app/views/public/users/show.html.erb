@@ -89,7 +89,7 @@
         </div>
 
         <div class="row">
-        <% @user.posts.each do |post|%>
+        <% @posts.each do |post|%>
         <div class="col-lg-4">
 
           <%= link_to post_path(post.id) do %>
@@ -97,16 +97,15 @@
           <% end %>
 
 
-          <p class="mb-5"><%= post.caption %></p>
+          <p class="post-caption mb-5"><%= post.caption %></p>
         </div>
         <% end %>
-      <div class="paginate">
-        <%= paginate @posts %>
-      </div>
 
         </div>
 
-
+      </div>
+      <div class="paginate">
+        <%= paginate @posts %>
       </div>
     </div>
   </div>

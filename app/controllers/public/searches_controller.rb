@@ -6,11 +6,11 @@ class Public::SearchesController < ApplicationController
     @range = params[:range]
     @search = params[:search]
     if @range == "User"
-      @users = User.looks(@search)
+      @users = User.looks(@search).page(params[:page]).reverse_order.per(1)
     elsif @search == "#"
-      @posts = Hashtag.looks(@search)
+      @posts = Hashtag.looks(@search).page(params[:page]).reverse_order.per(1)
     else
-      @posts = Post.looks(@search)
+      @posts = Post.looks(@search).page(params[:page]).reverse_order.per(1)
     end
   end
 

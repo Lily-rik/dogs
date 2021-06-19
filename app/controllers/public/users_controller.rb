@@ -2,9 +2,13 @@ class Public::UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :ensure_correct_user, only: [:edit, :update, :edit_mypage, :update_mypage, :unsubscribe, :withdrawal]
 
+
+  def index
+  end
+
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts.page(params[:page]).reverse_order
+    @posts = Post.where(user_id: @user.id).page(params[:page]).reverse_order
   end
 
 
@@ -15,8 +19,11 @@ class Public::UsersController < ApplicationController
 
   def update
     user = User.find(params[:id])
-    user.update(user_params)
-    redirect_to user_path(user.id)
+    if user.update(user_params)
+      redirect_to user_path(user.id)
+    else
+      render :edit
+    end
   end
 
 
@@ -27,8 +34,11 @@ class Public::UsersController < ApplicationController
 
   def update_mypage
     user = User.find(params[:id])
-    user.update(user_params)
-    redirect_to user_path(user.id)
+    if user.update(user_params)
+       redirect_to user_path(user.id)
+    else
+       render :edit_mypage
+    end
   end
 
 
@@ -52,12 +62,12 @@ class Public::UsersController < ApplicationController
   # フォロー・フォロワー
   def follows
         @user  = User.find(params[:id])
-        @users = @user.following
+        @users = @user.following.page(params[:page]).reverse_order.per(10)
   end
 
   def followers
         @user  = User.find(params[:id])
-        @users = @user.followers
+        @users = @user.followers.page(params[:page]).reverse_order.per(10)
   end
 
 
@@ -66,7 +76,9 @@ class Public::UsersController < ApplicationController
   def my_favorites
     @user = User.find(params[:id])
     favorites = @user.favorites.pluck(:post_id)
-    @favorites_list = Post.find(favorites)
+    #@favorites_list = Post.find(favorites)
+    @favorites_list = Post.where(id: favorites).page(params[:page]).reverse_order
+    # @favorites_list = Post.page(params[:page]).reverse_order
   end
 
 
@@ -86,6 +98,7 @@ class Public::UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :telephone_number, :user_name, :image, :self_introduction)
   end
+
 
 
 end

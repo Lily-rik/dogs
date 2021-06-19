@@ -12,10 +12,19 @@
     <div class="col-lg-6">
 
     <%= form_with model: @post, local: true do |f| %>
+      <% if @post.errors.any? %>
+      <% end %>
+
       <h4 class="label">Post image</h4>
       <%= f.attachment_field :image, value: nil %>
+      <% if @post.errors.include?(:image) %>
+        <p class="attention"><%= @post.errors.full_messages_for(:image).first %>
+      <% end %>
       <h4 class="label mt-5">Post text</h4>
       <%= f.text_area :caption, rows:'3', class: 'form-control' %>
+      <% if @post.errors.include?(:caption) %>
+        <p class="attention"><%= @post.errors.full_messages_for(:caption).first %>
+      <% end %>
       <div class="text-center mt-5">
         <%= f.submit 'POST', class: "create-btn button" %>
       </div>

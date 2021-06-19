@@ -32,4 +32,66 @@ $(document).on('turbolinks:load', function() {
     speed: 1000, // スライド/フェードアニメーションの速度を設定
     infinite: true // スライドのループを有効にするか
   });
+
+
+
+  // read more...の表示
+  var $text = $('.show-caption, .ranking-caption');//対象のテキスト
+  var $more = $('.more');//続きを読むボタン
+  var lineNum = 2;//表示する行数
+  var textHeight = $text.height();//テキスト全文の高さ
+  var lineHeight = parseFloat($text.css('line-height'));//line-height
+  var textNewHeight = lineHeight * lineNum;//指定した行数までのテキストの高さ
+
+  // テキストが表示制限の行数を超えたら発動
+  if (textHeight > textNewHeight) {
+    $text.css({
+      height: textNewHeight,
+      overflow: 'hidden',
+    });
+    //続きを読むボタンクリックで全文表示
+    $more.click(function () {
+      $(this).hide();
+      $text.css({
+        'height': textHeight,
+        'overflow': 'visible',
+      });
+      return false;//aタグ無効化
+    });
+  } else {
+    // 指定した行数以下のテキストなら続きを読むは表示しない
+    $more.hide();
+  }
 });
+
+
+
+
+// $(function () {
+//   var $text = $('.show-caption, .ranking-caption');//対象のテキスト
+//   var $more = $('.more');//続きを読むボタン
+//   var lineNum = 1;//表示する行数
+//   var textHeight = $text.height();//テキスト全文の高さ
+//   var lineHeight = parseFloat($text.css('line-height'));//line-height
+//   var textNewHeight = lineHeight * lineNum;//指定した行数までのテキストの高さ
+
+//   // テキストが表示制限の行数を超えたら発動
+//   if (textHeight > textNewHeight) {
+//     $text.css({
+//       height: textNewHeight,
+//       overflow: 'hidden',
+//     });
+//     //続きを読むボタンクリックで全文表示
+//     $more.click(function () {
+//       $(this).hide();
+//       $text.css({
+//         'height': textHeight,
+//         'overflow': 'visible',
+//       });
+//       return false;//aタグ無効化
+//     });
+//   } else {
+//     // 指定した行数以下のテキストなら続きを読むは表示しない
+//     $more.hide();
+//   }
+// });
