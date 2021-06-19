@@ -27,6 +27,8 @@ a:link, a:visited, a:hover, a:active {
 }
 
 
+
+
 // ヘッダー
 // header {
 // 	position: fixed;
@@ -156,7 +158,11 @@ main {
 }
 
 
-
+.text {
+  font-size: 12px;
+  color: #2a4073;
+  padding-left: 15px;
+}
 
 
 
@@ -358,6 +364,12 @@ main {
   margin-left: 14px;
 }
 
+.show-caption>a {
+  color: #007bff;
+}
+
+
+
 
 .more {
   display: inline-block;
@@ -365,6 +377,11 @@ main {
   text-align: right;
   padding-right: 150px;
 }
+
+.ranking-more {
+  margin-right: 50px;
+}
+
 
 
 // showページ
@@ -974,8 +991,6 @@ main {
   border-radius: 20px;
   color: #fff;
 }
-
-
 
 
 

@@ -61,7 +61,7 @@ class Public::PostsController < ApplicationController
   def hashtag
     @user = current_user
     @tag = Hashtag.find_by(hashname: params[:name])
-    @posts = @tag.posts
+    @posts = @tag.posts.page(params[:page]).reverse_order
   end
 
 

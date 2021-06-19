@@ -16,7 +16,12 @@
       <table class="info-edit-table">
         <tr>
           <th class="label">Name</th>
-          <td><%= f.text_field :name, autofocus: true, class: 'form-control' %></td>
+          <td>
+            <%= f.text_field :name, autofocus: true, class: 'form-control' %>
+            <% if @user.errors.include?(:name) %>
+              <p class="attention"><%= @user.errors.full_messages_for(:name).first %>
+            <% end %>
+          </td>
         </tr>
         <tr>
           <th class="label">Email</th>

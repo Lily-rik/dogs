@@ -12,9 +12,9 @@
     <div class="col-lg-6">
 
 
-      <p class="error"><%= flash[:error] %></p>
       <%= form_with model: @user, url: update_mypage_path(current_user.id), local: true do |f| %>
-
+      <% if @user.errors.any? %>
+      <% end %>
         <div class="row">
           <div class="col-lg-4">
             <h4 class="label">User name</h4>
@@ -27,6 +27,9 @@
         <%= f.attachment_field :image %>
         <h4 class="label">Self introduction</h4>
         <%= f.text_area :self_introduction, rows:'3', class: 'form-control' %>
+      <% if @user.errors.include?(:self_introduction) %>
+        <p class="attention"><%= @user.errors.full_messages_for(:self_introduction).first %>
+      <% end %>
         <div class="text-center mt-5">
           <%= f.submit 'UPDATE', class: "edit-btn button" %>
         </div>

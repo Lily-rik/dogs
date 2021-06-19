@@ -13,6 +13,14 @@ class User < ApplicationRecord
   validates :user_name, presence: true, length: { maximum: 5 }
 
 
+  with_options on: :mypage do
+    validates :user_name, presence: true, length: { maximum: 5 }
+    validates :image, presence: true
+    validates :self_introduction, presence: true, length: { maximum: 100 }
+  end
+
+
+
   # validates :image, presence: true
   # validates :self_introduction, presence: true, length: { maximum: 100 }
 
