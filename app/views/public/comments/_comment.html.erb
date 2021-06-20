@@ -3,14 +3,14 @@
   <% post.comments.each do |comment| %>
     <tr>
       <td>
-        <%= attachment_image_tag comment.user, :image, :fill, 50, 50, fallback: "no_image.jpg", size:'50x50', class: "user-image" %>
+        <%= attachment_image_tag comment.user, :image, :fill, 50, 50, fallback: "dogs-icon.jpg", size:'50x50', class: "user-image" %>
       </td>
-      <td>
+      <td class="user-name">
         <%= link_to user_path(comment.user.id) do %>
           <%= comment.user.user_name %>
         <% end %>
       </td>
-      <td>
+      <td class="captions">
         <%= comment.comment %>
       </td>
       <td>
