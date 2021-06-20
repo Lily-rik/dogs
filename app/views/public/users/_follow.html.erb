@@ -1,11 +1,6 @@
 
-<div class="search my-4" style="text-align: center;">
-  <%= form_with url: search_path, method: :get, local: :true do |f| %>
-    <%= f.label :range, "User"%>
-    <%= f.select :search, options_for_select([["完全一致","perfect_match"], ["部分一致","partial_match"]]) %>
-    <%= f.text_field :word %>
-    <%= f.submit "検索" %>
-  <% end %>
+<div class="mt-5 mb-4 text-center">
+  <%= render 'public/searches/user_search' %>
 </div>
 
 
@@ -16,7 +11,7 @@
   <tr>
     <td></td>
     <td>
-      <%= attachment_image_tag user, :image, :fill, 50, 50, fallback: "no_image.jpg", class: "user-image" %>
+      <%= attachment_image_tag user, :image, :fill, 50, 50, fallback: "no_image.jpg", size:'50x50', class: "user-image" %>
     </td>
     <td>
       <%= link_to user_path(user.id) do %>
@@ -31,6 +26,9 @@
   </tr>
 <% end %>
 </table>
+<div class="paginate">
+  <%= paginate users %>
+</div>
 
 
 

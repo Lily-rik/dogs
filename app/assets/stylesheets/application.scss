@@ -27,6 +27,8 @@ a:link, a:visited, a:hover, a:active {
 }
 
 
+
+
 // ヘッダー
 // header {
 // 	position: fixed;
@@ -85,9 +87,9 @@ header {
 
 
 main {
-  margin:0 auto;
-  padding-top: 200px;
-	height: 3000px;
+  margin: 50px auto 80px auto;
+  padding-top: 140px;
+	height: 100%;
 // 	text-align: center;
 	background-color: #fff;
 	z-index: 20;
@@ -101,7 +103,25 @@ main {
   color: #0f2350;
 }
 
+.error {
+  color: #a22041;
+}
 
+
+.attention, .user-attention {
+  color: #a22041;
+  margin-top: 3px;
+  font-size: 14px;
+}
+
+.user-attention {
+  font-size: 12px;
+}
+
+.field_with_errors {
+  border: solid 2px #a22041;
+  border-radius: 6px;
+}
 
 
 // Topページ
@@ -136,13 +156,17 @@ main {
 
 #web-title {
   width: 80%;
-  margin: 80px auto;
+  margin: 80px auto 50px auto;
   text-align: center;
   font-size: 60px;
 }
 
 
-
+.text {
+  font-size: 12px;
+  color: #2a4073;
+  padding-left: 15px;
+}
 
 
 
@@ -294,11 +318,17 @@ main {
 
 
 
-.about-text, .web-text {
+.web-text, .about-text {
   width: 80%;
   margin: 0 auto;
-  padding: 50px 0 120px 0;
+  padding-bottom: 30px;
   text-align: center;
+  font-size: 14px;
+}
+
+.about-text {
+  font-size: 16px;
+  padding-bottom: 60px;
 }
 
 
@@ -319,6 +349,44 @@ main {
 }
 
 
+.post-caption {
+  width: 190px;
+  padding-left: 10px;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+.show-caption, .ranking-caption {
+  width: 475px;
+  line-height: 1.5;
+}
+
+.ranking-caption {
+  margin-left: 14px;
+}
+
+.show-caption>a {
+  color: #007bff;
+}
+
+
+
+
+.more {
+  display: inline-block;
+  width: 100%;
+  text-align: right;
+  padding-right: 150px;
+}
+
+.ranking-more {
+  margin-right: 50px;
+}
+
+
 
 // showページ
 
@@ -328,21 +396,29 @@ main {
 
 .show-icon {
   position: absolute;
-  top: 0px;
+  top: 20px;
   right: 200px;
 }
 
 
-#favorite-button, #rank-comment-btn {
-  position: relative;
-  text-decoration: none;
+.favorite-icon {
+  position: absolute;
+  top: 10px;
+  right: 160px;
 }
 
-#favorite-button span, #rank-comment-btn span {
+
+#favorite-btn, #rank-comment-btn {
+  position: relative;
+  text-decoration: none;
+  margin-right: -7px;
+}
+
+#favorite-btn span, #rank-comment-btn span {
   position: absolute;
-  top: -20px;
-  right: -30px;
-  font-size: 24px;
+  top: -7px;
+  right: -17px;
+  font-size: 20px;
   color: #2a4073;
 }
 
@@ -367,60 +443,68 @@ main {
   transition: 2s;
 }
 
+.users-table td, .user-table td {
+  padding: 20px 0 5px 10px;
+}
+
 .users-table td:nth-child(1) {
   width: 10%;
-  padding: 15px 0 15px 10px;
-
 }
 
 .users-table td:nth-child(2) {
   width: 20%;
-  padding: 15px 0 15px 10px;
-
 }
 
 .users-table td:nth-child(3) {
   width: 32%;
-  padding: 15px 0 15px 10px;
-
 }
 
 .users-table td:nth-child(4) {
   width: 20%;
-  padding: 15px 0 15px 10px;
-
 }
 
 .users-table td:nth-child(5) {
   width: 20%;
-  padding: 15px 0 15px 10px;
-
 }
 
-
+.user-table td:nth-child(2) {
+  padding-top: 6px;
+}
 
 
 
 .comment-table td:nth-child(1) {
   text-align: center;
   width: 15%;
-  padding: 15px 0 15px 10px;
+  padding: 10px 0 15px 10px;
 
 }
 
 .comment-table td:nth-child(2) {
   width: 15%;
-  padding: 15px 0;
+  padding: 22px 0;
 
 }
 .comment-table td:nth-child(3) {
   width: 40%;
-  padding: 15px 0;
+  padding: 22px 0;
 
 }
 
+.comment-table td:nth-child(4) {
+  width: 40%;
+  padding: 20px 0 20px 5px;
+
+}
+
+
+.follow-table {
+  width: 70%;
+  margin: 0 auto;
+}
+
 .follow-table td:nth-child(1) {
-  width: 15%;
+  width: 10%;
   padding: 15px 0 15px 10px;
 
 }
@@ -433,7 +517,7 @@ main {
 }
 
 .follow-table td:nth-child(3) {
-  width: 15%;
+  width: 20%;
   padding: 30px 0 10px 0;
 
 }
@@ -455,11 +539,17 @@ main {
   height: 70px;
 }
 
-.search-table {
-  text-align: center;
+.search {
+  margin-right: 120px;
+  padding-bottom: 20px;
 }
 
 
+
+.admin-search {
+  width: 300px;
+  margin: 0 auto;
+}
 
 
 // ボタン関連
@@ -485,16 +575,8 @@ main {
   }
 }
 
-.signup-btn, {
-  margin-right: 70px;
-  border: 1px solid #e7609e;
-  color: #e7609e;
-  &:hover {
-    background: #e7609e;
-  }
-}
 
-#sign-up-btn, #top-signup-btn {
+#top-signup-btn {
   text-decoration: none;
   border: 1px solid #e7609e;
   color: #e7609e;
@@ -505,21 +587,42 @@ main {
 }
 
 
-#sign-up-btn {
-  margin-left: 70px;
-  padding: 12px 35px 11px 35px;
+#signup-btn, #log-in-btn, #user-edit-btn {
+  padding: 12px 20px 11px 20px;
+  text-decoration: none;
+  border: 1px solid #c1d8ac;
+  color: #c1d8ac;
+  &:hover {
+    color: #fff;
+    background: #c1d8ac;
+  }
 }
 
-#login-btn, #top-login-btn, .log-in-btn {
+#login-btn, #top-login-btn, .login-btn, .sign-up-btn, .create-btn {
+  width: 200px;
   padding: 11px 40px 12px 40px;
   text-decoration: none;
-  border: 1px solid #f8b500;
-  color: #f8b500;
+  border: 1px solid #e9546b;
+  color: #e9546b;
   &:hover {
     color: #fff;
-    background: #f8b500;
+    background: #e9546b;
   }
 }
+
+#top-about-btn {
+  text-align: center;
+  padding: 20px 45px 20px 45px;
+  text-decoration: none;
+  border: 1px solid  #e9546b;
+  font-size: 20px;
+  color:  #e9546b;
+  &:hover {
+    color: #fff;
+    background:  #e9546b;
+  }
+}
+
 
 
 #top-login-btn {
@@ -527,12 +630,11 @@ main {
   font-size: 20px;
   text-align: center;
   padding: 25px 70px 25px 70px;
-  border: 1px solid #ffd900;
-  color: #ffd900;
+  border: 1px solid #006e54;
+  color: #006e54;
   &:hover {
     color: #fff;
-    border: 1px solid #fddea5;
-    background: #fddea5;
+    background: #006e54;
   }
 }
 
@@ -543,17 +645,19 @@ main {
   font-size: 20px;
   text-align: center;
   padding: 25px 60px 25px 60px;
-  border: 1px solid #e95464;
-  color: #e95464;
+  border: 1px solid #006e54;
+  color: #006e54;
   &:hover {
     color: #fff;
-    border: 1px solid #f4b3c2;
-    background: #f4b3c2;
+    background: #006e54;
   }
 }
 
 
-
+.action-signup, .action-log-in, .action-unsubscribe, .action-edit {
+  text-align: right;
+  margin-right: 50px;
+}
 
 
 
@@ -572,16 +676,11 @@ main {
   padding: 15px 33px;
 }
 
-.create-btn {
-  border: 1px solid #83ccd2;
-  color: #83ccd2;
-  &:hover {
-    background: #83ccd2;
-  }
-}
 
 
-.edit-btn, #user-edit-btn {
+
+.edit-btn, .update-btn {
+  width: 200px;
   border: 1px solid #f9c89b;
   color: #f9c89b;
   &:hover {
@@ -620,18 +719,18 @@ main {
 }
 
 #unfollow-btn {
-  border: 1px solid #e9546b;
-  color: #e9546b;
-  &:hover {
-    background: #e9546b;
-  }
-}
-
-#follow-btn {
   border: 1px solid #83ccd2;
   color: #83ccd2;
   &:hover {
     background: #83ccd2;
+  }
+}
+
+#follow-btn {
+  border: 1px solid #e9546b;
+  color: #e9546b;
+  &:hover {
+    background: #e9546b;
   }
 }
 
@@ -650,35 +749,49 @@ main {
 
 
 
-#destroy-button, #withdraw-btn, #post-destroy-btn, #unsubscribe-btn {
+#destroy-btn, #withdraw-btn, #post-destroy-btn, #unsubscribe-btn {
   text-decoration: none;
-  border: 1px solid #e9546b;
-  color: #e9546b;
+  border: 1px solid #83ccd2;
+  color: #83ccd2;
   &:hover {
     color: white;
-    background: #e9546b;
+    background: #83ccd2;
   }
 }
 
-#destroy-button {
+#destroy-btn {
   padding: 7px 20px 8px 20px;
 }
 
 
-#withdraw-btn, #post-destroy-btn, #unsubscribe-btn {
+#withdraw-btn, #post-destroy-btn {
   padding: 12px 22px 10px 22px;
 }
+
+#withdraw-btn {
+  border: 1px solid #dddcd6;
+  color: #dddcd6;
+  &:hover {
+    background: #dddcd6;
+  }
+}
+
 
 
 #unsubscribe-btn {
   font-size: 20px;
-  padding: 20px 40px;
+  padding: 20px 60px;
+  border: 1px solid #e9546b;
+  color: #e9546b;
+  &:hover {
+    background: #e9546b;
+  }
 }
 
 
 #no-btn {
   font-size: 20px;
-  padding: 20px 40px;
+  padding: 20px 60px;
   text-decoration: none;
   border: 1px solid #83ccd2;
   color: #83ccd2;
@@ -725,13 +838,13 @@ main {
 
 .rank-fav-icon {
   position: absolute;
-  top: -15px;
+  top: 5px;
   right: 70px;
 }
 
 .rank-comment-icon {
   position: absolute;
-  top: -15px;
+  top: 5px;
   right: -40px;
 }
 
@@ -756,44 +869,21 @@ main {
 
 // チャットページ
 
+
 // 自分のメッセージの吹き出し
 .says {
-  float: left;
-  position: relative;
-  left: 17px;
-  padding: 15px 30px;
-  margin: 5px 0 15px 0;
-  background: #ebf6f7;
-  border-radius: 15px;
-  line-height: 1.5;
-  word-break: break-all;
-}
-.says:after {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  top: 3px;
-  left: -19px;
-  border: 8px solid transparent;
-  border-right: 18px solid #ebf6f7;
-  -webkit-transform: rotate(35deg);
-  transform: rotate(35deg);
-}
-
-// 自分以外のメッセージの吹き出し
-.other-user-says {
   float: right;
   position: relative;
   right: 5px;
-  padding: 15px 30px;
-  margin: 5px 0 15px 0;
+  padding: 10px 30px;
+  margin: 5px 0 5px 0;
   background: #fdeff2;
   border-radius: 15px;
   line-height: 1.5;
   word-break: break-all;
   text-align: right;
 }
-.other-user-says:after {
+.says:after {
   content: "";
   display: inline-block;
   position: absolute;
@@ -805,15 +895,49 @@ main {
   transform: rotate(145deg);
 }
 
+
+
+
+// 相手のメッセージの吹き出し
+.other-user-says {
+  float: left;
+  position: relative;
+  padding: 10px 30px;
+  margin: 5px 0 5px 0;
+  background: #ebf6f7;
+  border-radius: 15px;
+  line-height: 1.5;
+  word-break: break-all;
+}
+.other-user-says:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 3px;
+  left: -19px;
+  border: 8px solid transparent;
+  border-right: 18px solid #ebf6f7;
+  -webkit-transform: rotate(35deg);
+  transform: rotate(35deg);
+}
+
+.other-user-says p, .says p {
+  margin-bottom: 3px;
+}
+.other-user-says span, .says span {
+  font-size: 10px;
+}
+
+
+
 .my-chat {
   width: 800px;
 }
 
 .chat_box{
   width: 100%;
-  height: 430px;
-  padding: 40px 40px 10px 240px;
-  margin-top: 10px;
+  height: 460px;
+  padding: 0 40px 10px 240px;
   overflow: scroll;
   border: 1px solid #fff;
   font-size: 14px;
@@ -837,8 +961,163 @@ main {
   background-color: #fff;
 }
 
+
+// ページネーション
+.paginate {
+  width: 55%;
+  margin: 0 auto;
+}
+
+.user-paginate {
+  width: 50%;
+  margin: 0 auto;
+  padding-left: 40px;
+}
+
+
+.pagination>li>a {
+  padding: 10px 15px;
+  margin-right: 5px;
+  border: none;
+  color: #316745;
+  border-radius: 20px;
+}
+
+.page-item.active .page-link {
+  margin-right: 5px;
+  background: #316745;
+  border-radius: 20px;
+}
+
+.pagination>li>a:hover {
+  background: #c1d8ac;
+  border-radius: 20px;
+  color: #fff;
+}
+
+
+
+
+// 検索ボタン
+
+.search-form {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 350px;
+  height: 40px;
+  border-radius: 40px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  transform: translate(-50%, -50%);
+  background: #fff;
+  transition: all 0.3s ease;
+
+  &.focus {
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.search-input {
+  position: absolute;
+  top: 10px;
+  left: 85px;
+  font-size: 14px;
+  background: none;
+  color: #5a6674;
+  width: 195px;
+  height: 20px;
+  border: none;
+  appearance: none;
+  outline: none;
+
+  &::-webkit-search-cancel-button {
+    appearance: none;
+  }
+}
+
+.search-button {
+  position: absolute;
+  top: 10px;
+  right: 40px;
+  height: 20px;
+  width: 20px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  outline: none!important;
+  cursor: pointer;
+
+}
+
+.search-option {
+  position: relative;
+  position: absolute;
+  text-align: right;
+  top: 10px;
+  right: 15px;
+
+  div {
+    position: absolute;
+    top: 0;
+    left: -260px;
+    position: relative;
+    display: inline-block;
+    margin: 0 1px;
+    cursor: pointer;
+
+    input {
+      position: absolute;
+      top: 8px;
+      left: 3px;
+      opacity: 0.01;
+      cursor: pointer;
+    }
+
+    span {
+      position: absolute;
+      display: block;
+      text-align: center;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      background: #929AA3;
+      color: #fff;
+      font-size: 9px;
+      letter-spacing: 1px;
+      line-height: 1;
+      text-transform: uppercase;
+      padding: 4px 7px;
+      border-radius: 12px;
+      top: -18px;
+      transition: all .2s ease-in-out;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-top: 4px solid #929AA3;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        transition: all .2s ease-in-out;
+      }
+    }
+
+    &:hover span {
+      opacity: 1;
+      top: -21px;
+    }
+
+  }
+}
+
+
+
+
 footer {
-	padding: 3em 0;
+	padding: 2em 0;
 	text-align: center;
 	color: #fff;
 	background-color: #bed2c3;

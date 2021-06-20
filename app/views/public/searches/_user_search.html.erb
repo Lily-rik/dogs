@@ -7,17 +7,9 @@
       <% end %>
       <span>Users</span>
     </div>
-    <div>
-      <%= f.radio_button :range, "Post", id:"posts-icon"%>
-      <%= f.label "", for:"posts-icon" do %>
-        <i class="far fa-edit icon-color"></i>
-      <% end %>
-      <span>Posts</span>
-    </div>
   </div>
   <%= f.text_field :search, class: "search-input", placeholder: "Search" %>
   <%= f.button :type => "submit", :class => "search-button" do %>
     <i class="fas fa-search" style="color: #2a4073;"></i>
   <% end %>
 <% end %>
-

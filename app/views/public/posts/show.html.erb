@@ -11,8 +11,8 @@
     <div class="col-lg-3"></div>
     <div class="col-lg-7">
 
-      <div class="post my-3">
-        <%= attachment_image_tag @post.user, :image, :fill, 50, 50, fallback: "no_image.jpg", class: "user-image mr-3"%>
+      <div class="post my-4">
+        <%= attachment_image_tag @post.user, :image, :fill, 60, 60, fallback: "no_image.jpg", size:'60x60', class: "user-image mr-3 ml-4"%>
         <%= link_to user_path(@post.user.id) do %>
           <%= @post.user.user_name %>
         <% end %>
@@ -20,7 +20,7 @@
         <!--ログインユーザーなら編集ボタン、そうでなければお気に入りボタンを表示-->
         <% if @post.user_id == current_user.id %>
           <%= link_to edit_post_path(@post.id) do %>
-            <i class="fas fa-edit show-icon fa-3x" style="color: #0f2350;"></i>
+            <i class="fas fa-edit show-icon fa-2x" style="color: #0f2350;"></i>
           <% end %>
         <% else %>
           <p id="favorite_button_<%= @post.id %>" class="show-icon">
@@ -33,8 +33,9 @@
           <p><%= attachment_image_tag @post, :image, :fill, 500, 500 %></p>
         </div>
         <div></div>
-        <div class="caption my-3">
-          <%= render_with_hashtags(@post.caption) %>
+        <div class="my-3">
+          <p class="show-caption"><%= render_with_hashtags(@post.caption) %></p>
+          <a href="" class="more">Read more...</a>
         </div>
 
       </div>

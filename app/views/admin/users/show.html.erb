@@ -11,9 +11,9 @@
     <div class="col-lg-1"></div>
     <div class="col-lg-10">
 
-      <table class="table" >
+      <table class="table user-table" >
 
-        <tr style="text-align: center;">
+        <tr class="text-center">
           <th>ID</th>
           <th>画像</th>
           <th>名前</th>
@@ -23,9 +23,9 @@
           <th>会員ステータス</th>
         </tr>
 
-        <tr style="text-align: center;">
+        <tr class="text-center">
           <td><%= @user.id %></td>
-          <td><%= attachment_image_tag @user, :image, :fill, 50, 50, fallback: "no_image.jpg", class: "user-image" %></td>
+          <td><%= attachment_image_tag @user, :image, :fill, 50, 50, fallback: "no_image.jpg", size:'50x50', class: "user-image" %></td>
           <td><%= @user.name %></td>
           <td><%= @user.user_name %></td>
           <td><%= @user.email %></td>
@@ -40,7 +40,7 @@
         </tr>
 
       </table>
-      <div class="mr-5 mt-5" style="text-align: right;">
+      <div class="action-edit mt-5 pt-3">
         <%= link_to 'EDIT', edit_admin_user_path(@user.id), class: "button", id: "user-edit-btn" %>
       </div>
 

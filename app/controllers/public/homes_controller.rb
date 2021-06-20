@@ -6,7 +6,7 @@ class Public::HomesController < ApplicationController
   end
 
   def about
-    @posts = Post.all
+    @posts = Post.page(params[:page]).reverse_order
   end
 
 end

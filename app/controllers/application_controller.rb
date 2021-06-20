@@ -17,8 +17,13 @@ class ApplicationController < ActionController::Base
       root_path
   end
 
-
-
+  def authenticate_user!
+    if user_signed_in?
+      super
+    else
+      redirect_to new_user_registration_path
+    end
+  end
 
 
   protected

@@ -10,31 +10,45 @@
   <div class="row mt-4">
     <div class="col-lg-3"></div>
     <div class="col-lg-6">
+
+    <p class="error"><%= flash[:error] %></p>
     <%= form_with model: @user, local: true do |f| %>
       <table class="info-edit-table">
         <tr>
           <th class="label">Name</th>
-          <td><%= f.text_field :name, autofocus: true, class: 'form-control' %></td>
+          <td>
+            <%= f.text_field :name, autofocus: true, class: 'form-control' %>
+            <% if @user.errors.include?(:name) %>
+              <p class="attention"><%= @user.errors.full_messages_for(:name).first %>
+            <% end %>
+          </td>
         </tr>
         <tr>
-          <th class="label">Mail</th>
-          <td><%= f.text_field :email, class: 'form-control' %></td>
+          <th class="label">Email</th>
+          <td>
+            <%= f.text_field :email, class: 'form-control' %>
+            <% if @user.errors.include?(:email) %>
+              <p class="attention"><%= @user.errors.full_messages_for(:email).first %>
+            <% end %>
+            </td>
         </tr>
         <tr>
           <th class="label">Phone number</th>
-          <td><%= f.text_field :telephone_number, class: 'form-control' %></td>
+          <td>
+            <%= f.text_field :telephone_number, class: 'form-control' %>
+            <% if @user.errors.include?(:telephone_number) %>
+              <p class="attention"><%= @user.errors.full_messages_for(:telephone_number).first %>
+            <% end %>
+          </td>
         </tr>
       </table>
-      <div class="row mt-5">
-        <div class="col-lg-2"></div>
-        <div class="col-lg-3">
-          <%= f.submit "UPDATE", class: "edit-btn button" %>
-        </div>
-        <div class="col-lg-1"></div>
-        <div class="col-lg-3 mt-2 ml-3">
-          <%= link_to "UNSUBSCRIBE", unsubscribe_path(current_user), id: "withdraw-btn", class: "button" %>
-        </div>
-        <div class="col-lg-2"></div>
+      <div class="mt-5 text-center">
+        <%= f.submit "UPDATE", class: "edit-btn button" %>
+      </div>
+      <div class="action-unsubscribe mt-5 pt-3">
+        <%= link_to "退会", unsubscribe_path(current_user), id: "withdraw-btn", class: "button" %>
+      </div>
+      <div class="col-lg-2"></div>
       </div>
     <% end %>
     </div>

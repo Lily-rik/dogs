@@ -1,6 +1,12 @@
 class Public::PostsController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    controller, action = Rails.application.routes.recognize_path(request.referrer).values
+    if controller == "public/posts" && action == "new"
+      redirect_to new_post_path
+    end
+  end
 
   def new
     @post = Post.new
@@ -8,10 +14,13 @@ class Public::PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    return render :new unless image_present?
+    # return render :new unless image_present?
     @post.user_id = current_user.id
-    @post.save
-    redirect_to post_path(@post.id)
+    if @post.save
+      redirect_to post_path(@post.id)
+    else
+      render :new
+    end
   end
 
   def show
@@ -26,10 +35,15 @@ class Public::PostsController < ApplicationController
 
 
   def update
-    post = Post.find(params[:id])
-    post.user_id = current_user.id
-    post.update(post_params)
-    redirect_to post_path(post.id)
+    @post = Post.find(params[:id])
+    # return render :edit unless image_present?
+    @post.user_id = current_user.id
+    if @post.update(post_params)
+      redirect_to post_path(@post.id)
+    else
+      render :edit
+    end
+
   end
 
 
@@ -47,7 +61,7 @@ class Public::PostsController < ApplicationController
   def hashtag
     @user = current_user
     @tag = Hashtag.find_by(hashname: params[:name])
-    @posts = @tag.posts
+    @posts = @tag.posts.page(params[:page]).reverse_order
   end
 
 
@@ -57,8 +71,8 @@ class Public::PostsController < ApplicationController
     params.require(:post).permit(:image, :caption)
   end
 
-  def image_present?
-    post_params[:image].is_a?(ActionDispatch::Http::UploadedFile)
-  end
+  # def image_present?
+  #   post_params[:image].is_a?(ActionDispatch::Http::UploadedFile)
+  # end
 
 end

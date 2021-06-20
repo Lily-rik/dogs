@@ -3,14 +3,14 @@
     <div class="col-lg-3"></div>
     <div class="col-lg-6">
       <p class="unsubscribe-text">退会しますか？</p>
-      <p class="unsubscribe-caption">退会すると今までの投稿や友達のデータは全て消えてしまいます</p>
+      <p class="unsubscribe-caption">退会すると今までの投稿や友達のデータは全て見れなくなってしまいます</p>
     </div>
     <div class="col-lg-3"></div>
   </div>
 
   <div class="row mt-5 pt-5">
     <div class="col-lg-3"></div>
-    <div class="col-lg-3" style="text-align: center;">
+    <div class="col-lg-3 text-center">
       <%= link_to 'Yse', withdrawal_path(@user.id), method: :patch, "data-confirm" => "本当に退会しますか？", id: "unsubscribe-btn", class: "button" %>
     </div>
     <div class="col-lg-3" style="text-align: center;">

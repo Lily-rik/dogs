@@ -34,7 +34,7 @@
       <div class="ranking">
         <div class="row">
           <div class="col-lg-1">
-            <%= attachment_image_tag post.user, :image, :fill, 50, 50, fallback: "no_image.jpg", class: "user-image" %>
+            <%= attachment_image_tag post.user, :image, :fill, 60, 60, fallback: "no_image.jpg", size:'60x60', class: "user-image" %>
           </div>
           <div class="col-lg-6 mt-3">
             <%= link_to user_path(post.user.id), class: "user_name" do %>
@@ -48,7 +48,7 @@
             <%# end %>
               <p class="rank-comment-icon">
                 <%= link_to post_path(post.id), id: "rank-comment-btn" do %>
-                  <i class="far fa-comment fa-3x" style="color: #2a4073;"></i>
+                  <i class="far fa-comment fa-2x" style="color: #2a4073;"></i>
                   <span><%= post.comments.count %></span>
                 <% end %>
               </p>
@@ -60,7 +60,8 @@
           <% end %><br>
         </div>
         <div class="row">
-          <p><%= post.caption %></p>
+          <p class="ranking-caption"><%= post.caption %></p>
+          <a href="" class="more ranking-more">Read more...</a>
         </div>
       </div>
     </div>
