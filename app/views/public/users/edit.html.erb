@@ -25,11 +25,21 @@
         </tr>
         <tr>
           <th class="label">Email</th>
-          <td><%= f.text_field :email, class: 'form-control' %></td>
+          <td>
+            <%= f.text_field :email, class: 'form-control' %>
+            <% if @user.errors.include?(:email) %>
+              <p class="attention"><%= @user.errors.full_messages_for(:email).first %>
+            <% end %>
+            </td>
         </tr>
         <tr>
           <th class="label">Phone number</th>
-          <td><%= f.text_field :telephone_number, class: 'form-control' %></td>
+          <td>
+            <%= f.text_field :telephone_number, class: 'form-control' %>
+            <% if @user.errors.include?(:telephone_number) %>
+              <p class="attention"><%= @user.errors.full_messages_for(:telephone_number).first %>
+            <% end %>
+          </td>
         </tr>
       </table>
       <div class="mt-5 text-center">

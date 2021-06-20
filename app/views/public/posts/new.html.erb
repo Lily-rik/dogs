@@ -12,9 +12,6 @@
     <div class="col-lg-6">
 
     <%= form_with model: @post, local: true do |f| %>
-      <% if @post.errors.any? %>
-      <% end %>
-
       <h4 class="label">Post image</h4>
       <%= f.attachment_field :image, value: nil %>
       <% if @post.errors.include?(:image) %>

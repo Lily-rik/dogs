@@ -22,6 +22,8 @@
 
 /*global $*/
 $(document).on('turbolinks:load', function() {
+
+  // 画像スライダー
   $(".full-screen-o").slick({
     arrows: false, // 左右矢印を表示する
     centerMode: true, // スライドを中心に表示して部分的に前後のスライドが見えるように設定（奇数番号のスライドに使用）
@@ -65,6 +67,7 @@ $(document).on('turbolinks:load', function() {
       $more.hide();
     }
   })
+
 
 });
 

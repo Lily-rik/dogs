@@ -10,6 +10,7 @@ ja:
   activerecord:
     models:
       user: ユーザー
+      post: 投稿
     attributes:
       user:
         name: 名前
@@ -17,9 +18,6 @@ ja:
         telephone_number: 電話番号
         email: メールアドレス
         password: パスワード
-    models:
-      post: 投稿
-    attributes:
       post:
         image: 画像
         caption: 文章

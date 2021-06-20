@@ -108,10 +108,14 @@ main {
 }
 
 
-.attention {
+.attention, .user-attention {
   color: #a22041;
   margin-top: 3px;
   font-size: 14px;
+}
+
+.user-attention {
+  font-size: 12px;
 }
 
 .field_with_errors {
@@ -548,7 +552,6 @@ main {
 }
 
 
-
 // ボタン関連
 .button {
   outline:none;
@@ -627,11 +630,11 @@ main {
   font-size: 20px;
   text-align: center;
   padding: 25px 70px 25px 70px;
-  border: 1px solid #e9546b;
-  color: #e9546b;
+  border: 1px solid #006e54;
+  color: #006e54;
   &:hover {
     color: #fff;
-    background: #e9546b;
+    background: #006e54;
   }
 }
 
@@ -642,11 +645,11 @@ main {
   font-size: 20px;
   text-align: center;
   padding: 25px 60px 25px 60px;
-  border: 1px solid #e9546b;
-  color: #e9546b;
+  border: 1px solid #006e54;
+  color: #006e54;
   &:hover {
     color: #fff;
-    background: #e9546b;
+    background: #006e54;
   }
 }
 
@@ -990,6 +993,124 @@ main {
   background: #c1d8ac;
   border-radius: 20px;
   color: #fff;
+}
+
+
+
+
+// 検索ボタン
+
+.search-form {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 350px;
+  height: 40px;
+  border-radius: 40px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  transform: translate(-50%, -50%);
+  background: #fff;
+  transition: all 0.3s ease;
+
+  &.focus {
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.search-input {
+  position: absolute;
+  top: 10px;
+  left: 85px;
+  font-size: 14px;
+  background: none;
+  color: #5a6674;
+  width: 195px;
+  height: 20px;
+  border: none;
+  appearance: none;
+  outline: none;
+
+  &::-webkit-search-cancel-button {
+    appearance: none;
+  }
+}
+
+.search-button {
+  position: absolute;
+  top: 10px;
+  right: 40px;
+  height: 20px;
+  width: 20px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  outline: none!important;
+  cursor: pointer;
+
+}
+
+.search-option {
+  position: relative;
+  position: absolute;
+  text-align: right;
+  top: 10px;
+  right: 15px;
+
+  div {
+    position: absolute;
+    top: 0;
+    left: -260px;
+    position: relative;
+    display: inline-block;
+    margin: 0 1px;
+    cursor: pointer;
+
+    input {
+      position: absolute;
+      top: 8px;
+      left: 3px;
+      opacity: 0.01;
+      cursor: pointer;
+    }
+
+    span {
+      position: absolute;
+      display: block;
+      text-align: center;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      background: #929AA3;
+      color: #fff;
+      font-size: 9px;
+      letter-spacing: 1px;
+      line-height: 1;
+      text-transform: uppercase;
+      padding: 4px 7px;
+      border-radius: 12px;
+      top: -18px;
+      transition: all .2s ease-in-out;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-top: 4px solid #929AA3;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        transition: all .2s ease-in-out;
+      }
+    }
+
+    &:hover span {
+      opacity: 1;
+      top: -21px;
+    }
+
+  }
 }
 
 
