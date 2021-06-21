@@ -101,27 +101,67 @@ describe 'ユーザーログイン前のテスト' do
       end
     end
 
-  end
 
-  context '新規登録成功のテスト' do
+    context '新規登録成功のテスト' do
+      before do
+        fill_in 'user[name]', with: Faker::Lorem.characters(number: 5)  # nameかidを入力する
+        fill_in 'user[user_name]', with: Faker::Lorem.characters(number: 5)
+        fill_in 'user[telephone_number]',with: "0#{rand(0..9)}0#{rand(1_000_000..99_999_999)}"
+        fill_in 'user[email]', with: Faker::Internet.email
+        fill_in 'user[password]', with: 'password'
+        fill_in 'user[password_confirmation]', with: 'password'
+      end
+      it '正しく新規登録される' do
+        expect { click_button 'SIGN UP' }.to change(User.all, :count).by(1)  # クリックボタンを押すとUserモデルのデータカウントが１増える
+      end
+      it '新規登録後のリダイレクト先がみんなの投稿(home/about)画面になっている' do
+        click_button 'SIGN UP'
+        expect(current_path).to eq '/homes/about'
+      end
+    end
+  end
+  
+  
+  describe 'ユーザーログイン' do
+    
+  end
+  
+  
+  
+  
+  
+  describe 'ユーザログイン' do
+    let(:user) { create(:user) }
+
     before do
-      fill_in 'user[name]', with: Faker::Lorem.characters(number: 5)  # nameかidを入力する
-      fill_in 'user[user_name]', with: Faker::Lorem.characters(number: 5)
-      fill_in 'user[telephone_number]',with: "0#{rand(0..9)}0#{rand(1_000_000..99_999_999)}"
-      fill_in 'user[email]', with: Faker::Internet.email
-      fill_in 'user[password]', with: 'password'
-      fill_in 'user[password_confirmation]', with: 'password'
+      visit new_user_session_path
     end
-    it '正しく新規登録される' do
-      expect { click_button 'SIGN UP' }.to change(User.all, :count).by(1)  # クリックボタンを押すとUserモデルのデータカウントが１増える
-    end
-    it '新規登録後のリダイレクト先がみんなの投稿(home/about)画面になっている' do
-      click_button 'SIGN UP'
-      expect(current_path).to eq '/homes/about'
-    end
-  end
 
-
+    context '表示内容の確認' do
+      it 'URLが正しい' do
+        expect(current_path).to eq '/users/sign_in'
+      end
+      it '「Log in」と表示される' do
+        expect(page).to have_content 'Log in'
+      end
+      it 'nameフォームが表示される' do
+        expect(page).to have_field 'user[name]'
+      end
+      it 'passwordフォームが表示される' do
+        expect(page).to have_field 'user[password]'
+      end
+      it 'Sign upボタンが表示される' do
+        expect(page).to have_button 'Log in'
+      end
+      it 'emailフォームは表示されない' do
+        expect(page).not_to have_field 'user[email]'
+      end
+    end  
+  
+  
+  
+  
+  
 
 
 
