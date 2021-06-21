@@ -14,9 +14,12 @@
             <span class="user-name"><%= post.user.user_name %></span>
           <% end %>
 
-          <div id="favorite_button_<%= post.id %>" class="favorite-icon">
-            <%= render 'public/favorites/favorite', post: post %>
-          </div>
+
+          <% if post.user != current_user %>
+            <div id="favorite_button_<%= post.id %>" class="favorite-icon">
+              <%= render 'public/favorites/favorite', post: post %>
+            </div>
+          <% end %>
 
 
 

@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-lg-2"></div>
     <div class="col-lg-4">
-      <div id="title">Sign up</span></div>
+      <div id="title">Sign up</div>
     </div>
     <div class="col-lg-6"></div>
   </div>
@@ -18,7 +18,7 @@
         <tr>
           <th class="label">Name</th>
           <td>
-            <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "田中　太郎", class: 'form-control' %>
+            <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "田中　太郎", class: 'form-control', id: "name" %>
             <% if @user.errors.include?(:name) %>
               <p class="attention"><%= @user.errors.full_messages_for(:name).first %>
             <% end %>
@@ -28,7 +28,7 @@
           <th class="label">User name<br>
                             (Within 5 characters)</th>
           <td>
-            <%= f.text_field :user_name, autocomplete: "user_name", placeholder: "DOG'S", class: 'form-control' %>
+            <%= f.text_field :user_name, autocomplete: "user_name", placeholder: "DOG'S", class: 'form-control form-font', id: "user_name" %>
             <% if @user.errors.include?(:user_name) %>
               <p class="attention"><%= @user.errors.full_messages_for(:user_name).first %>
             <% end %>
@@ -37,7 +37,7 @@
         <tr>
           <th class="label">Phone number</th>
           <td>
-            <%= f.text_field :telephone_number, autocomplete: "telephone_number", placeholder: "00000000000", class: 'form-control' %>
+            <%= f.text_field :telephone_number, autocomplete: "telephone_number", placeholder: "00000000000", class: 'form-control form-font', id: "telephone_number" %>
             <% if @user.errors.include?(:telephone_number) %>
               <p class="attention"><%= @user.errors.full_messages_for(:telephone_number).first %>
             <% end %>
@@ -46,7 +46,7 @@
         <tr>
           <th class="label">Email</th>
           <td>
-            <%= f.email_field :email, autocomplete: "email", placeholder: "sample@gmail.com", class: 'form-control' %>
+            <%= f.email_field :email, autocomplete: "email", placeholder: "sample@gmail.com", class: 'form-control form-font', id: "email" %>
             <% if @user.errors.include?(:email) %>
               <p class="attention"><%= @user.errors.full_messages_for(:email).first %>
             <% end %>
@@ -58,7 +58,7 @@
           <td>
             <% if @minimum_password_length %>
             <% end %>
-            <%= f.password_field :password, placeholder: "******", class: 'form-control' %>
+            <%= f.password_field :password, placeholder: "******", class: 'form-control', id: "password" %>
             <% if @user.errors.include?(:password) %>
               <p class="attention"><%= @user.errors.full_messages_for(:password).first %>
             <% end %>
@@ -67,7 +67,7 @@
         <tr>
           <th class="label">Passward again</th>
           <td>
-            <%= f.password_field :password_confirmation, placeholder: "******", class: 'form-control' %>
+            <%= f.password_field :password_confirmation, placeholder: "******", class: 'form-control', id: "password_confirmation" %>
           </td>
         </tr>
       </table>

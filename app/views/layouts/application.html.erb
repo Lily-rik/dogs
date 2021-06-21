@@ -29,21 +29,21 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto nav-list" id="navbar">
             <% if admin_signed_in? %>
-              <li class="nav-item"><%= link_to '会員一覧', admin_users_path, class: 'nav-link', id: 'nav-link1' %></li>
-              <li class="nav-item"><%= link_to 'ログアウト', destroy_admin_session_path, class: 'nav-link', id: 'nav-link2' %></li>
+              <li class="nav-item"><%= link_to 'MEMBERS', admin_users_path, class: 'nav-link', id: 'nav-link1' %></li>
+              <li class="nav-item"><%= link_to 'LOGOUT', destroy_admin_session_path, class: 'nav-link', id: 'nav-link2' %></li>
             <% elsif user_signed_in? %>
-              <li class="nav-item"><%= link_to 'マイページ', "/users/#{current_user.id}", class: 'nav-link', id: 'nav-link3' %></li>
-              <li class="nav-item"><%= link_to 'みんなの投稿', about_path, class: 'nav-link', id: 'nav-link4' %></li>
-              <li class="nav-item"><%= link_to 'ランキング', ranking_path, class: 'nav-link', id: 'nav-link5' %></li>
-              <li class="nav-item"><%= link_to 'ログアウト', destroy_user_session_path, class: 'nav-link', id: 'nav-link6' %></li>
+              <li class="nav-item"><%= link_to 'MY PAGE', "/users/#{current_user.id}", class: 'nav-link', id: 'nav-link3' %></li>
+              <li class="nav-item"><%= link_to 'YOUR DOGS', about_path, class: 'nav-link', id: 'nav-link4' %></li>
+              <li class="nav-item"><%= link_to 'RANKING', ranking_path, class: 'nav-link', id: 'nav-link5' %></li>
+              <li class="nav-item"><%= link_to 'LOG OUT', destroy_user_session_path, class: 'nav-link', id: 'nav-link6' %></li>
               <li class="nav-item">
                 <%= link_to "/users/#{current_user.id}/edit", class: 'nav-link', id: 'nav-link7' do %>
                   <i class="fas fa-cog" style="color: #543f32;"></i>
                 <% end %>
               </li>
             <% else %>
-              <li class="nav-item"><%= link_to '新規登録', new_user_registration_path, class: 'nav-link', id: 'nav-link8' %></li>
-              <li class="nav-item"><%= link_to 'ログイン', new_user_session_path, class: 'nav-link', id: 'nav-link9' %></li>
+              <li class="nav-item"><%= link_to 'SIGN UP', new_user_registration_path, class: 'nav-link', id: 'nav-link8' %></li>
+              <li class="nav-item"><%= link_to 'LOG IN', new_user_session_path, class: 'nav-link', id: 'nav-link9' %></li>
             <% end %>
             </ul>
           </div>
