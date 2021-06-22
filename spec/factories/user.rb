@@ -7,6 +7,8 @@ FactoryBot.define do  # 宣言文、データの定義を行う際に記述す�
     email { Faker::Internet.email }
     password { 'password' }
     password_confirmation { 'password' }
+    image { Rack::Test::UploadedFile.new(File.join(Rails.root, "spec/fixtures/dogs_icon.jpg")) }
+    self_introduction { Faker::Lorem.characters(number: 20) }
   end
 
 end

@@ -5,7 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   attachment :image
-
+  # mount_uploader :picture, PictureUploader
+  
   validates :email, presence: true
   validates :name, presence: true, length: { maximum: 10 }
   validates :telephone_number, presence: true, length: { in: 10..11 }
