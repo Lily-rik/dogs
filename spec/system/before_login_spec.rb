@@ -160,7 +160,7 @@ describe 'ユーザーログイン前のテスト' do
   end
 
 
-  describe 'ユーザーログイン' do
+  describe 'ユーザーログインのテスト' do
     let(:user) { create(:user) }  # @user = user.createと同じ意味
                                   # letはインスタンス変数やローカル変数をletという機能で置き換えることができる
     before do
@@ -219,34 +219,6 @@ describe 'ユーザーログイン前のテスト' do
       end
     end
   end
-
-
-  describe 'ユーザーログアウトのテスト' do
-    let(:user) { create(:user) }
-
-    before do
-      visit new_user_session_path
-      fill_in 'user[email]', with: user.email
-      fill_in 'user[password]', with: user.password
-      click_button 'LOG IN'
-      click_link 'nav-link6'
-    end
-
-    context 'ログアウト機能のテスト' do
-      subject { current_path }
-
-      it '正しくログアウトできている：ログアウト後のリダイレクト先において新規登録画面へのリンクが存在する' do
-        expect(page). to have_link '', href: '/users/sign_up'
-      end
-      it '正しくログアウトできている：ログアウト後のリダイレクト先においてログイン画面へのリンクが存在する' do
-        expect(page). to have_link '', href: '/users/sign_in'
-      end
-      it 'LOG OUTを押すとトップ画面に遷移する' do
-        is_expected.to eq '/'
-      end
-    end
-  end
-
 end
 
 
