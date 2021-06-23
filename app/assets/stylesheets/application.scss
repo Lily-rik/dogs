@@ -43,16 +43,10 @@ a:link, a:visited, a:hover, a:active {
 // 	z-index: 30;
 // }
 
-// スクロールしたときのヘッダーのアニメーション
 header {
   width: 100%;
-	position: fixed;
-	top: 0px;
-	left: 0;
-  padding: 25px 0;
-	font-size: 12px;
+  padding: 20px 0;
   background-color: #bed2c3;
-	z-index: 10;
 }
 
 // スクロールでremove
@@ -68,13 +62,26 @@ header {
 // 	z-index: 10;
 // }
 
-
-
-.nav-link {
-	font-size: 15px;
-  color: #fff;
-	z-index: 10;
+.navbar {
+  margin-right: 80px;
+  margin-left: 50px;
 }
+
+.nav-link>a {
+	font-size: 15px;
+}
+
+#nav-link1, #nav-link2, #nav-link3, #nav-link4, #nav-link5, #nav-link6, #nav-link8, #nav-link9, #nav-link7 {
+  color: #543f32;
+  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
+  // border: solid 1px #8d6449;
+  // border-radius: 5px;
+  margin-right: 10px;
+  &:hover {
+    color: #eaedf7;
+  }
+}
+
 
 // // スクロールでremove
 // .nav-list {
@@ -88,7 +95,7 @@ header {
 
 main {
   margin: 50px auto 80px auto;
-  padding-top: 140px;
+  padding-top: 50px;
 	height: 100%;
 // 	text-align: center;
 	background-color: #fff;
@@ -140,7 +147,7 @@ main {
 .about-visual {
   position: relative;
   background-image: image-url("dogs16.jpg");
-  margin-bottom: 100px;
+  margin-bottom: 70px;
 }
 
 
@@ -159,11 +166,13 @@ main {
   margin: 80px auto 50px auto;
   text-align: center;
   font-size: 60px;
+  font-family: 'Comic Sans MS', fantasy, sans-serif;
+  color: #543f32;
 }
 
 
 .text {
-  font-size: 12px;
+  font-size: 14px;
   color: #2a4073;
   padding-left: 15px;
 }
@@ -324,11 +333,15 @@ main {
   padding-bottom: 30px;
   text-align: center;
   font-size: 14px;
+  font-family: 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
+  color: #543f32;
 }
 
 .about-text {
   font-size: 16px;
-  padding-bottom: 60px;
+  padding-bottom: 40px;
+  font-family: 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
+  color: #543f32;
 }
 
 
@@ -337,7 +350,9 @@ main {
 #title {
   color: #0f2350;
   font-size: 32px;
+  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
 }
+
 
 .user-image {
   border-radius: 50%;
@@ -346,6 +361,7 @@ main {
 .label {
   margin: 20px 0;
   color: #2a4073;
+  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
 }
 
 
@@ -356,6 +372,15 @@ main {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  font-family: 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
+}
+
+.captions, .user-name, .form-control {
+  font-family: 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
+}
+
+.heading, .form-font {
+  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
 }
 
 
@@ -408,11 +433,18 @@ main {
 }
 
 
-#favorite-btn, #rank-comment-btn {
+#favorite-btn {
   position: relative;
   text-decoration: none;
-  margin-right: -7px;
+  margin-right: -10px;
 }
+
+#rank-comment-btn {
+  position: relative;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
 
 #favorite-btn span, #rank-comment-btn span {
   position: absolute;
@@ -561,6 +593,7 @@ main {
 	background-color: #fff;
   letter-spacing:1px;
   text-shadow:0;
+  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
   font:{
     size:12px;
     weight:bold;
@@ -576,7 +609,7 @@ main {
 }
 
 
-#top-signup-btn {
+#top-login-btn {
   text-decoration: none;
   border: 1px solid #e7609e;
   color: #e7609e;
@@ -592,18 +625,20 @@ main {
   text-decoration: none;
   border: 1px solid #c1d8ac;
   color: #c1d8ac;
+  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
   &:hover {
     color: #fff;
     background: #c1d8ac;
   }
 }
 
-#login-btn, #top-login-btn, .login-btn, .sign-up-btn, .create-btn {
+#login-btn, #top-signup-btn, .login-btn, .sign-up-btn, .create-btn {
   width: 200px;
   padding: 11px 40px 12px 40px;
   text-decoration: none;
   border: 1px solid #e9546b;
   color: #e9546b;
+  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
   &:hover {
     color: #fff;
     background: #e9546b;
@@ -617,6 +652,7 @@ main {
   border: 1px solid  #e9546b;
   font-size: 20px;
   color:  #e9546b;
+  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
   &:hover {
     color: #fff;
     background:  #e9546b;
@@ -632,6 +668,7 @@ main {
   padding: 25px 70px 25px 70px;
   border: 1px solid #006e54;
   color: #006e54;
+  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
   &:hover {
     color: #fff;
     background: #006e54;
@@ -647,6 +684,7 @@ main {
   padding: 25px 60px 25px 60px;
   border: 1px solid #006e54;
   color: #006e54;
+  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
   &:hover {
     color: #fff;
     background: #006e54;
@@ -666,6 +704,7 @@ main {
   text-decoration: none;
   border: 1px solid #c1d8ac;
   color: #c1d8ac;
+  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
   &:hover {
     color: #fff;
     background: #c1d8ac;
@@ -683,6 +722,7 @@ main {
   width: 200px;
   border: 1px solid #f9c89b;
   color: #f9c89b;
+  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
   &:hover {
     background: #f9c89b;
   }
@@ -712,6 +752,7 @@ main {
   text-decoration: none;
   padding: 8px 20px;
   color: #e9546b;
+  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
   &:hover {
     color: white;
     background: #e9546b;
@@ -822,6 +863,7 @@ main {
   background-image: image-url("ranking.jpg");
   background-size: contain;  width: 70px;
   height: 70px;
+  margin-right: 20px;
 }
 
 #ranking span {
@@ -830,6 +872,7 @@ main {
   left: 26px;
   font-size: 32px;
   color: #583822;
+  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
 }
 
 .ranking {
@@ -966,12 +1009,15 @@ main {
 .paginate {
   width: 55%;
   margin: 0 auto;
+  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
+
 }
 
 .user-paginate {
   width: 50%;
   margin: 0 auto;
   padding-left: 40px;
+  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
 }
 
 
@@ -1114,13 +1160,17 @@ main {
 }
 
 
+.unsubscribe-container {
+  margin-bottom: 202px;
+}
 
 
 footer {
-	padding: 2em 0;
+	padding: 20px 0;
 	text-align: center;
-	color: #fff;
 	background-color: #bed2c3;
+  color: #543f32;
+  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
 }
 
 

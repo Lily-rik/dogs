@@ -12,31 +12,13 @@
     <div class="col-lg-2"></div>
     <div class="col-lg-8">
         <div class="row">
-          <div class="col-lg-2">
+          <div class="col-lg-1">
             <p id="ranking"><span><%= i %></span></p>
           </div>
-          <!--<div class="col-lg-4 pt-4">-->
-          <!--  <p><%#= post.favorites.count %>Favorites</p>-->
-          <!--</div>-->
-        </div>
-    </div>
-    <div class="col-lg-2"></div>
-  </div>
-
-
-
-
-
-
-  <div class="row">
-    <div class="col-lg-3"></div>
-    <div class="col-lg-7">
-      <div class="ranking">
-        <div class="row">
-          <div class="col-lg-1">
-            <%= attachment_image_tag post.user, :image, :fill, 60, 60, fallback: "no_image.jpg", size:'60x60', class: "user-image" %>
+          <div class="col-lg-1 ml-4 mt-2">
+            <%= attachment_image_tag post.user, :image, :fill, 60, 60, fallback: "dogs-icon.jpg", size:'60x60', class: "user-image" %>
           </div>
-          <div class="col-lg-6 mt-3">
+          <div class="user-name col-lg-6 mt-4">
             <%= link_to user_path(post.user.id), class: "user_name" do %>
               <%= post.user.user_name %>
             <% end %>
@@ -53,15 +35,26 @@
                 <% end %>
               </p>
           </div>
+          <!--<div class="col-lg-4 pt-4">-->
+          <!--  <p><%#= post.favorites.count %>Favorites</p>-->
+          <!--</div>-->
         </div>
-        <div class="row mt-3">
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-7">
+      <div class="ranking">
+        <div class="row">
           <%= link_to post_path(post.id) do %>
             <p><%= attachment_image_tag post, :image, :fill, 500, 500 %></p>
           <% end %><br>
         </div>
         <div class="row">
-          <p class="ranking-caption"><%= post.caption %></p>
-          <a href="" class="more ranking-more">Read more...</a>
+          <p class="ranking-caption captions"><%= post.caption %></p>
+          <a href="" class="more ranking-more heading">Read more...</a>
         </div>
       </div>
     </div>

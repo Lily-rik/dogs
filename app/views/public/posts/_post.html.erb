@@ -8,21 +8,24 @@
       <% posts.each do |post|%>
         <div class="col-lg-4">
 
-          <%= attachment_image_tag post.user, :image, :fill, 50, 50, fallback: "no_image.jpg", size:'50x50', class: "user-image mr-2"%>
+          <%= attachment_image_tag post.user, :image, :fill, 50, 50, fallback: "dogs-icon.jpg", size:'50x50', class: "user-image mr-1"%>
 
           <%= link_to user_path(post.user.id) do %>
-            <%= post.user.user_name %>
+            <span class="user-name"><%= post.user.user_name %></span>
           <% end %>
 
-          <div id="favorite_button_<%= post.id %>" class="favorite-icon">
-            <%= render 'public/favorites/favorite', post: post %>
-          </div>
+
+          <% if post.user != current_user %>
+            <div id="favorite_button_<%= post.id %>" class="favorite-icon">
+              <%= render 'public/favorites/favorite', post: post %>
+            </div>
+          <% end %>
 
 
 
 
           <%= link_to post_path(post.id) do %>
-            <p class="mt-3"><%= attachment_image_tag post, :image, :fill, 200, 200 %></p>
+            <p class="mt-2"><%= attachment_image_tag post, :image, :fill, 200, 200 %></p>
           <% end %>
 
           <p class="post-caption mb-5"><%= post.caption %></p>

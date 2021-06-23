@@ -11,10 +11,10 @@
     <div class="col-lg-3"></div>
     <div class="col-lg-7">
 
-      <div class="post my-4">
-        <%= attachment_image_tag @post.user, :image, :fill, 60, 60, fallback: "no_image.jpg", size:'60x60', class: "user-image mr-3 ml-4"%>
+      <div class="post user-name my-4">
+        <%= attachment_image_tag @post.user, :image, :fill, 60, 60, fallback: "dogs-icon.jpg", size:'60x60', class: "user-image mr-3 ml-4"%>
         <%= link_to user_path(@post.user.id) do %>
-          <%= @post.user.user_name %>
+          <span style="font-size: 18px;"><%= @post.user.user_name %></span>
         <% end %>
 
         <!--ログインユーザーなら編集ボタン、そうでなければお気に入りボタンを表示-->
@@ -34,8 +34,8 @@
         </div>
         <div></div>
         <div class="my-3">
-          <p class="show-caption"><%= render_with_hashtags(@post.caption) %></p>
-          <a href="" class="more">Read more...</a>
+          <p class="show-caption captions"><%= render_with_hashtags(@post.caption) %></p>
+          <a href="" class="more captions">Read more...</a>
         </div>
 
       </div>

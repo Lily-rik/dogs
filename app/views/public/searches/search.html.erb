@@ -14,9 +14,9 @@
           <tr>
             <td></td>
             <td>
-              <%= attachment_image_tag user, :image, :fill, 50, 50, fallback: "no_image.jpg", size:'50x50', class: "user-image" %>
+              <%= attachment_image_tag user, :image, :fill, 50, 50, fallback: "dogs-icon.jpg", size:'50x50', class: "user-image" %>
             </td>
-            <td>
+            <td class="user-name">
               <%= link_to user_path(user.id) do %>
                 <%= user.user_name %>
               <% end %>
