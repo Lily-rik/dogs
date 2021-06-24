@@ -29,13 +29,13 @@
 
 ### テーブル定義書
 ・テーブル一覧、管理者側<br>
-<img width="553" alt="スクリーンショット 2021-06-24 20 59 56" src="https://user-images.githubusercontent.com/79913183/123262400-ce3b3580-d532-11eb-8e20-a125c5c92b63.png">
+<img width="553" alt="スクリーンショット 2021-06-24 20 59 56" src="https://user-images.githubusercontent.com/79913183/123262400-ce3b3580-d532-11eb-8e20-a125c5c92b63.png"><br>
 ・会員側<br>
 <img width="561" alt="スクリーンショット 2021-06-24 18 13 39" src="https://user-images.githubusercontent.com/79913183/123262221-9af8a680-d532-11eb-8945-5e561c372a63.png">
 <img width="548" alt="スクリーンショット 2021-06-24 20 55 49" src="https://user-images.githubusercontent.com/79913183/123262296-b2379400-d532-11eb-955a-2cf1d91786eb.png">
 ### アプリケーション詳細設計
 ・管理者側<br>
-<img width="794" alt="スクリーンショット 2021-06-02 23 33 03" src="https://user-images.githubusercontent.com/79913183/120501403-8d9d4000-c3fc-11eb-98c6-6fb24d937711.png"><br>
+<img width="596" alt="スクリーンショット 2021-06-24 21 30 08" src="https://user-images.githubusercontent.com/79913183/123262943-689b7900-d533-11eb-86ba-d9e2094d2e1c.png"><br>
 ・会員側<br>
 <img width="724" alt="スクリーンショット 2021-06-24 21 19 45" src="https://user-images.githubusercontent.com/79913183/123261850-39d0d300-d532-11eb-8e45-dfc404793abb.png">
 ## チャレンジ要素一覧
