@@ -35,7 +35,7 @@
 <img width="548" alt="スクリーンショット 2021-06-24 20 55 49" src="https://user-images.githubusercontent.com/79913183/123262296-b2379400-d532-11eb-955a-2cf1d91786eb.png">
 ### アプリケーション詳細設計
 ・管理者側<br>
-<img width="596" alt="スクリーンショット 2021-06-24 21 30 08" src="https://user-images.githubusercontent.com/79913183/123262943-689b7900-d533-11eb-86ba-d9e2094d2e1c.png"><br>
+<img width="596" alt="スクリーンショット 2021-06-24 21 30 08" src="https://user-images.githubusercontent.com/79913183/123263154-a1d3e900-d533-11eb-95c5-1f3465b65444.png"><br>
 ・会員側<br>
 <img width="724" alt="スクリーンショット 2021-06-24 21 19 45" src="https://user-images.githubusercontent.com/79913183/123261850-39d0d300-d532-11eb-8e45-dfc404793abb.png">
 ## チャレンジ要素一覧
