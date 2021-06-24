@@ -1,7 +1,6 @@
 class Admin::UsersController < ApplicationController
   before_action :authenticate_admin!
 
-
   def index
     @users = User.all
   end
@@ -20,13 +19,9 @@ class Admin::UsersController < ApplicationController
     redirect_to admin_user_path(user.id)
   end
 
-
-
   private
-
 
   def user_params
     params.require(:user).permit(:name, :email, :telephone_number, :is_deleted, :image, :user_name)
   end
-
 end

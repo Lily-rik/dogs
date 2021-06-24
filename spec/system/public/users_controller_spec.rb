@@ -29,7 +29,7 @@ describe 'ユーザーログイン後のテスト：users_controller' do
         expect(page.all(".attachment.user.image").length).to eq 1
       end
       it 'マイページ編集アイコンボタンが表示される' do
-        expect(page).to have_button  ''
+        expect(page).to have_button ''
       end
       it 'FOLLOWリンクが表示される：左上から７番目のリンクがFOLLOWである' do
         follow_link = find_all('a')[7].native.inner_text
@@ -47,13 +47,13 @@ describe 'ユーザーログイン後のテスト：users_controller' do
         new_post_link = find_all('a')[10].native.inner_text
         expect(new_post_link).to match(/NEW POST/i)
       end
-      it "Introductionと表示される" do
+      it 'Introductionと表示される' do
         expect(page).to have_content 'Introduction'
       end
-      it "Introductionと表示される" do
+      it 'ユーザーの自己紹介が表示される' do
         expect(page).to have_content user.self_introduction
       end
-      it "Postsと表示される" do
+      it 'Postsと表示される' do
         expect(page).to have_content 'Posts'
       end
       it '投稿画像が表示される：自分の投稿画像が1つ存在する' do
@@ -81,7 +81,6 @@ describe 'ユーザーログイン後のテスト：users_controller' do
       end
     end
   end
-
 
   describe 'ユーザー情報編集画面のテスト' do
     before do
@@ -115,13 +114,12 @@ describe 'ユーザーログイン後のテスト：users_controller' do
 
     context 'リンク内容を確認' do
       subject { current_path }
+
       it '退会を押すと退会画面に遷移する' do
         click_link 'withdraw-btn'
         is_expected.to eq '/users/' + user.id.to_s + '/unsubscribe'
       end
     end
-
-
   end
 
   describe 'マイページ情報編集画面のテスト' do
@@ -148,17 +146,16 @@ describe 'ユーザーログイン後のテスト：users_controller' do
       it 'UPDATEボタンが表示される' do
         expect(page). to have_button 'UPDATE'
       end
-      # it 'YESリンクが表示される:左上から６番目が退会するリンクである' do
-      #   yes_link = find_all('a')[6].native.inner_text
-      #   expect(yes_link).to match(/YES/i)
-      # end
-      # it 'NOリンクが表示される:左上から７番目が退会しないリンクである' do
-      #   no_link = find_all('a')[7].native.inner_text
-      #   expect(no_link).to match(/NO/i)
-      # end
+      it 'YESリンクが表示される:左上から６番目が退会するリンクである' do
+        yes_link = find_all('a')[6].native.inner_text
+        expect(yes_link).to match(/YES/i)
+      end
+      it 'NOリンクが表示される:左上から７番目が退会しないリンクである' do
+        no_link = find_all('a')[7].native.inner_text
+        expect(no_link).to match(/NO/i)
+      end
     end
   end
-
 
   describe '退会画面のテスト' do
     before do
@@ -175,9 +172,33 @@ describe 'ユーザーログイン後のテスト：users_controller' do
     end
   end
 
+  describe 'フォロー画面のテスト' do
+    before do
+      visit follows_user_path(user)
+    end
 
+    context '表示内容の確認' do
+      it 'URLが正しい' do
+        expect(current_path).to eq '/users/' + user.id.to_s + '/follows'
+      end
+      it "user_name's followsと表示される" do
+        expect(page).to have_content "#{user.user_name}'s follows"
+      end
+    end
+  end
 
+  describe 'フォロワー画面のテスト' do
+    before do
+      visit followers_user_path(user)
+    end
 
-
-
+    context '表示内容の確認' do
+      it 'URLが正しい' do
+        expect(current_path).to eq '/users/' + user.id.to_s + '/followers'
+      end
+      it "user_name's followsと表示される" do
+        expect(page).to have_content "#{user.user_name}'s followers"
+      end
+    end
+  end
 end

@@ -1,5 +1,4 @@
 class Post < ApplicationRecord
-
   attachment :image
   # mount_uploader :picture, PictureUploader
 
@@ -13,14 +12,12 @@ class Post < ApplicationRecord
   has_many :post_hashtags, dependent: :destroy
   has_many :hashtags, through: :post_hashtags
 
-
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
   end
 
-
- # ランキング機能
-  def self.create_ranking  # Postクラスからデータを取ってくる処理なのでクラスメソッド
+  # ランキング機能
+  def self.create_ranking # Postクラスからデータを取ってくる処理なのでクラスメソッド
     Post.find(Favorite.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
     ## Favoriteモデルの中から記事の番号(post_id)が同じものにグループを分ける → group(:post_id)
     ## 番号の多い順に並びかえる → order('count(post_id) desc') ：descは降順（多い順）になる
@@ -29,14 +26,11 @@ class Post < ApplicationRecord
     ## pluckで取り出される数字をPostのIDとすることでいいね順にpostを取得する事ができる → Post.find(pluckで取り出されたpost_id)
   end
 
-
-
-
   # タグ機能
 
   after_create do
-    post = Post.find_by(id: self.id)
-    hashtags = self.caption.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/) # (\w 英数字, \p{Han} 漢字,ぁ-ヶ ひらがなカタカナ,ｦ-ﾟー 半角カタカナ)
+    post = Post.find_by(id: id)
+    hashtags = caption.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/) # (\w 英数字, \p{Han} 漢字,ぁ-ヶ ひらがなカタカナ,ｦ-ﾟー 半角カタカナ)
     post.hashtags = []
 
     hashtags.uniq.map do |hashtag|
@@ -46,17 +40,15 @@ class Post < ApplicationRecord
     end
   end
 
-
   before_update do
-    post = Post.find_by(id: self.id)
+    post = Post.find_by(id: id)
     post.hashtags.clear
-    hashtags = self.caption.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
+    hashtags = caption.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
     hashtags.uniq.map do |hashtag|
       tag = Hashtag.find_or_create_by(hashname: hashtag.downcase.delete('#'))
       post.hashtags << tag
     end
   end
-
 
   # 検索
   def self.looks(searchs)
@@ -64,8 +56,4 @@ class Post < ApplicationRecord
       @post = Post.where("caption LIKE ?", "%#{searchs}%")
     end
   end
-
-
-
-
 end

@@ -1,6 +1,5 @@
 class Public::HomesController < ApplicationController
-  before_action :authenticate_user!,except: [:top]
-
+  before_action :authenticate_user!, except: [:top]
 
   def top
   end
@@ -8,5 +7,4 @@ class Public::HomesController < ApplicationController
   def about
     @posts = Post.page(params[:page]).reverse_order
   end
-
 end

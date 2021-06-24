@@ -95,7 +95,7 @@ header {
 
 main {
   margin: 50px auto 80px auto;
-  padding-top: 50px;
+  padding-top: 20px;
 	height: 100%;
 // 	text-align: center;
 	background-color: #fff;
@@ -133,7 +133,15 @@ main {
 
 // Topページ
 
+.section {
+  margin-top: 20px;
+}
 
+// Aboutページ
+
+#about-container {
+  margin-top: 25px;
+}
 
 .about-visual {
   width: 80%;
@@ -380,9 +388,14 @@ main {
 }
 
 .heading, .form-font {
+  color: #0f2350;
   font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
 }
 
+.self-introduction {
+  line-height: 1.9;
+  font-size: 15px;
+}
 
 .show-caption, .ranking-caption {
   width: 475px;
