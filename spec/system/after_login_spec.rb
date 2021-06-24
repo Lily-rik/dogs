@@ -58,22 +58,12 @@ describe 'ユーザーログイン後のテスト' do
 
   describe 'ユーザーログアウトのテスト' do
     before do
-      visit new_user_session_path
-      fill_in 'user[email]', with: user.email
-      fill_in 'user[password]', with: user.password
-      click_button 'LOG IN'
       click_link 'nav-link6'
     end
 
     context 'ログアウト機能のテスト' do
       subject { current_path }
 
-      it '正しくログアウトできている：ログアウト後のリダイレクト先において新規登録画面へのリンクが存在する' do
-        expect(page). to have_link '', href: '/users/sign_up'
-      end
-      it '正しくログアウトできている：ログアウト後のリダイレクト先においてログイン画面へのリンクが存在する' do
-        expect(page). to have_link '', href: '/users/sign_in'
-      end
       it 'LOG OUTを押すとトップ画面に遷移する' do
         is_expected.to eq '/'
       end

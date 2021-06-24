@@ -137,22 +137,11 @@ describe 'ユーザーログイン後のテスト：users_controller' do
       it 'user_nameフォームが表示される' do
         expect(page).to have_field 'user[user_name]'
       end
-      # it 'user_imageフォームが表示される' do
-      #   expect(page).to attach_field 'user[image]'
-      # end
       it 'Self introductionフォームが表示される' do
         expect(page).to have_field 'user[self_introduction]'
       end
       it 'UPDATEボタンが表示される' do
         expect(page). to have_button 'UPDATE'
-      end
-      it 'YESリンクが表示される:左上から６番目が退会するリンクである' do
-        yes_link = find_all('a')[6].native.inner_text
-        expect(yes_link).to match(/YES/i)
-      end
-      it 'NOリンクが表示される:左上から７番目が退会しないリンクである' do
-        no_link = find_all('a')[7].native.inner_text
-        expect(no_link).to match(/NO/i)
       end
     end
   end
@@ -169,6 +158,14 @@ describe 'ユーザーログイン後のテスト：users_controller' do
       it '退会しますか？と表示される' do
         expect(page).to have_content '退会しますか？'
       end
+    end
+    it 'YESリンクが表示される:左上から６番目が退会するリンクである' do
+      yes_link = find_all('a')[6].native.inner_text
+      expect(yes_link).to match(/YES/i)
+    end
+    it 'NOリンクが表示される:左上から７番目が退会しないリンクである' do
+      no_link = find_all('a')[7].native.inner_text
+      expect(no_link).to match(/NO/i)
     end
   end
 
