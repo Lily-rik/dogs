@@ -7,20 +7,17 @@ class User < ApplicationRecord
   attachment :image
   # mount_uploader :picture, PictureUploader
 
-  validates :email, presence: true
-  validates :name, presence: true, length: { maximum: 10 }
-  validates :telephone_number, presence: true, length: { in: 10..11 }
+  validates :email, presence: true, uniqueness: true
+  validates :name, presence: true, length: { maximum: 10 }, uniqueness: true
+  validates :telephone_number, presence: true, length: { in: 10..11 }, uniqueness: true
   validates :is_deleted, inclusion: { in: [true, false] }
-  validates :user_name, presence: true, length: { maximum: 5 }
+  validates :user_name, presence: true, length: { maximum: 5 }, uniqueness: true
 
-  with_options on: :mypage do
-    validates :user_name, presence: true, length: { maximum: 5 }
-    validates :image, presence: true
-    validates :self_introduction, presence: true, length: { maximum: 100 }
-  end
-
-  # validates :image, presence: true
-  # validates :self_introduction, presence: true, length: { maximum: 100 }
+  # with_options on: :mypage do
+  #   validates :user_name, presence: true, length: { maximum: 5 }
+  #   validates :image, presence: true
+  #   validates :self_introduction, presence: true, length: { maximum: 100 }
+  # end
 
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy

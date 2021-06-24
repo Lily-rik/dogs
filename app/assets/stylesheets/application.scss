@@ -387,6 +387,10 @@ main {
   font-family: 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
 }
 
+.comment-captions {
+  word-break : break-all;
+}
+
 .heading, .form-font {
   color: #0f2350;
   font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
@@ -527,18 +531,18 @@ main {
 
 .comment-table td:nth-child(2) {
   width: 15%;
-  padding: 22px 0;
+  padding: 22px 0 22px 5px;
 
 }
 .comment-table td:nth-child(3) {
   width: 40%;
-  padding: 22px 0;
+  padding: 22px 20px 22px 15px;
 
 }
 
 .comment-table td:nth-child(4) {
-  width: 40%;
-  padding: 20px 0 20px 5px;
+  width: 30%;
+  padding: 20px 0 20px 15px;
 
 }
 
