@@ -1,7 +1,7 @@
-<h4 class="label">New Comment</h4>
+<h4 class="label mt-5">New Comment</h4>
 <%= form_with(model:[post, comment], remote: true) do |f| %>
-  <%= f.text_area :comment, rows:'3', id: 'textarea', class: 'form-control captions mt-3' %>
-  <div class="text-right mt-4">
+  <%= f.text_area :comment, rows:'3', id: 'textarea', class: 'form-control captions mt-3 new-comment' %>
+  <div class="text-right mt-4 new-comment-btn">
     <%= f.submit 'COMMENT', class: "create-btn button" %>
   </div>
 <% end %>

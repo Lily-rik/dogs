@@ -28,9 +28,9 @@ describe 'ユーザーログイン後のテスト：users_controller' do
       it 'プロフィール画像が表示される：自分のプロフィール画像が1つ存在する' do
         expect(page.all(".attachment.user.image").length).to eq 1
       end
-      it 'マイページ編集アイコンボタンが表示される' do
-        expect(page).to have_button ''
-      end
+      # it 'マイページ編集アイコンが表示される' do
+      #   is_expected.to have_selector '.fas.fa-user-cog'
+      # end
       it 'FOLLOWリンクが表示される：左上から７番目のリンクがFOLLOWである' do
         follow_link = find_all('a')[7].native.inner_text
         expect(follow_link).to match(/FOLLOW 0/i)
@@ -195,6 +195,22 @@ describe 'ユーザーログイン後のテスト：users_controller' do
       end
       it "user_name's followsと表示される" do
         expect(page).to have_content "#{user.user_name}'s followers"
+      end
+    end
+  end
+
+
+  describe 'お気に入り画面のテスト' do
+    before do
+      visit my_favorites_path(user)
+    end
+
+    context '表示内容の確認' do
+      it 'URLが正しい' do
+        expect(current_path).to eq '/users/' + user.id.to_s + '/my_favorites'
+      end
+      it "user_name's favoritesと表示される" do
+        expect(page).to have_content "#{user.user_name}'s favorites"
       end
     end
   end
