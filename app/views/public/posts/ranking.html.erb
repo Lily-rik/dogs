@@ -53,7 +53,7 @@
           <% end %><br>
         </div>
         <div class="row">
-          <p class="ranking-caption captions"><%= post.caption %></p>
+          <%= simple_format(render_with_hashtags(post.caption), class: "ranking-caption captions") %>
           <a href="" class="more ranking-more heading">Read more...</a>
         </div>
       </div>

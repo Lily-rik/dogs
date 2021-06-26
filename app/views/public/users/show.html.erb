@@ -70,7 +70,7 @@
 
       <div class="captions mt-4 mb-5 d-flex">
         <h5 class="heading mb-3 mx-4">Introduction</h5>
-        <p class="self-introduction" ><%= @user.self_introduction %></p>
+        <p class="self-introduction" ><%= simple_format(@user.self_introduction) %></p>
       </div>
     </div>
     <div class="col-lg-1"></div>

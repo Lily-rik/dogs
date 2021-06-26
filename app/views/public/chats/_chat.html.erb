@@ -10,7 +10,7 @@
               <% end %>
             </div>
             <div class="says captions">
-              <p><%= chat.message %></p>
+              <p><%= simple_format(chat.message) %></p>
               <span><%= l chat.created_at, format: :short %></span>
             </div>
           </td>
@@ -28,7 +28,7 @@
               <%= chat.user.user_name %><br>
             <% end %>
             <div class="other-user-says captions">
-              <p><%= chat.message %></p>
+              <p><%= simple_format(chat.message) %></p>
               <span><%= l chat.created_at, format: :short %></span>
             </div>
           </td>

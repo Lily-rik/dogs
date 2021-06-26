@@ -34,7 +34,7 @@
         </div>
         <div></div>
         <div class="my-3">
-          <p class="show-caption captions"><%= render_with_hashtags(@post.caption) %></p>
+          <%= simple_format(render_with_hashtags(@post.caption), class: "show-caption captions") %>
           <a href="" class="more captions">Read more...</a>
         </div>
 
@@ -52,6 +52,4 @@
     <div class="col-lg-2"></div>
   </div>
 </div>
-
-
 
