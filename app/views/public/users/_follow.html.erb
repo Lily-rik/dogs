@@ -19,9 +19,11 @@
       <% end %>
     </td>
     <td>
-      <div id="follow_button_<%= user.id %>">
-        <%= render 'public/relationships/follow_button', user: user %>
-      </div>
+      <% if user != current_user %>
+        <div id="follow_button_<%= user.id %>">
+          <%= render 'public/relationships/follow_button', user: user %>
+        </div>
+      <% end %>
     </td>
   </tr>
 <% end %>

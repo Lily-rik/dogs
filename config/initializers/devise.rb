@@ -244,7 +244,7 @@ Devise.setup do |config|
   # Turn scoped views on. Before rendering "sessions/new", it will first check for
   # "users/sessions/new". It's turned off by default because it's slower if you
   # are using only default views.
-  config.scoped_views = true  # 複数のmodelで個別のログイン画面を使うためtrueに変更
+  config.scoped_views = true # 複数のmodelで個別のログイン画面を使うためtrueに変更
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).
@@ -252,7 +252,7 @@ Devise.setup do |config|
 
   # Set this configuration to false if you want /users/sign_out to sign out
   # only the current scope. By default, Devise signs out all scopes.
-  config.sign_out_all_scopes = false   # 複数のモデルを扱う際、いずれかがログアウトした時に全てログアウトするはfalseに変更
+  config.sign_out_all_scopes = false # 複数のモデルを扱う際、いずれかがログアウトした時に全てログアウトするはfalseに変更
 
   # ==> Navigation configuration
   # Lists the formats that should be treated as navigational. Formats like

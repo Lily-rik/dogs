@@ -13,7 +13,6 @@ describe 'ユーザーログイン後のテスト：homes_controller' do
     click_button 'LOG IN'
   end
 
-
   describe 'トップ画面のテスト' do
     before do
       visit root_path
@@ -26,14 +25,13 @@ describe 'ユーザーログイン後のテスト：homes_controller' do
       end
     end
 
-    context  'リンク内容を確認' do
+    context 'リンク内容を確認' do
       it 'YOUR DOGSリンクの内容が正しい' do
         yourdogs_link = find_all('a')[6].native.inner_text
         expect(page).to have_link yourdogs_link, href: about_path
       end
     end
   end
-
 
   describe 'みんなの投稿画面のテスト' do
     before do
@@ -93,6 +91,3 @@ describe 'ユーザーログイン後のテスト：homes_controller' do
     end
   end
 end
-
-
-

@@ -1,7 +1,6 @@
 class Public::SearchesController < ApplicationController
   before_action :authenticate_user!
 
-
   def search
     @range = params[:range]
     @search = params[:search]
@@ -13,6 +12,4 @@ class Public::SearchesController < ApplicationController
       @posts = Post.looks(@search).page(params[:page]).reverse_order
     end
   end
-
-
 end

@@ -95,7 +95,7 @@ header {
 
 main {
   margin: 50px auto 80px auto;
-  padding-top: 50px;
+  padding-top: 20px;
 	height: 100%;
 // 	text-align: center;
 	background-color: #fff;
@@ -133,7 +133,15 @@ main {
 
 // Topページ
 
+.section {
+  margin-top: 20px;
+}
 
+// Aboutページ
+
+#about-container {
+  margin-top: 25px;
+}
 
 .about-visual {
   width: 80%;
@@ -372,6 +380,7 @@ main {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  font-size: 14px;
   font-family: 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
 }
 
@@ -379,14 +388,29 @@ main {
   font-family: 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
 }
 
+.user-name {
+  font-size: 15px;
+}
+
+.comment-captions {
+  word-break : break-all;
+  font-size: 14px;
+}
+
 .heading, .form-font {
+  color: #0f2350;
   font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
 }
 
+.self-introduction {
+  line-height: 1.9;
+  font-size: 15px;
+}
 
 .show-caption, .ranking-caption {
   width: 475px;
   line-height: 1.5;
+  margin-left: 17px;
 }
 
 .ranking-caption {
@@ -503,29 +527,31 @@ main {
   padding-top: 6px;
 }
 
-
+.comment-table {
+  width: 80%;
+}
 
 .comment-table td:nth-child(1) {
   text-align: center;
   width: 15%;
-  padding: 10px 0 15px 10px;
+  padding: 10px 0 15px 0;
 
 }
 
 .comment-table td:nth-child(2) {
-  width: 15%;
-  padding: 22px 0;
-
+  width: 18%;
+  padding: 22px 0 22px 0px;
+  font-size: 14px;
 }
 .comment-table td:nth-child(3) {
-  width: 40%;
-  padding: 22px 0;
+  width: 45%;
+  padding: 22px 15px 22px 10px;
 
 }
 
 .comment-table td:nth-child(4) {
-  width: 40%;
-  padding: 20px 0 20px 5px;
+  width: 30%;
+  padding: 20px 0 20px 0px;
 
 }
 
@@ -632,7 +658,7 @@ main {
   }
 }
 
-#login-btn, #top-signup-btn, .login-btn, .sign-up-btn, .create-btn {
+#login-btn, #top-signup-btn, .login-btn, .sign-up-btn, .create-btn, .log-in-btn {
   width: 200px;
   padding: 11px 40px 12px 40px;
   text-decoration: none;
@@ -907,8 +933,13 @@ main {
 }
 
 
+.new-comment {
+  width: 80%;
+}
 
-
+.new-comment-btn {
+  margin-right: 150px;
+}
 
 // チャットページ
 
@@ -1166,11 +1197,11 @@ main {
 
 
 footer {
-	padding: 20px 0;
 	text-align: center;
 	background-color: #bed2c3;
   color: #543f32;
   font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
+  line-height: 5;
 }
 
 

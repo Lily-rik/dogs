@@ -5,6 +5,4 @@ class Admin::SearchesController < ApplicationController
     @search = params[:search]
     @users = User.looks(@search)
   end
-
-
 end

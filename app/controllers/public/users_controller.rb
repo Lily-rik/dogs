@@ -2,7 +2,6 @@ class Public::UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :ensure_correct_user, only: [:edit, :update, :edit_mypage, :update_mypage, :unsubscribe, :withdrawal]
 
-
   def index
   end
 
@@ -11,8 +10,7 @@ class Public::UsersController < ApplicationController
     @posts = Post.where(user_id: @user.id).page(params[:page]).reverse_order
   end
 
-
-# 会員情報の編集
+  # 会員情報の編集
   def edit
     @user = User.find(params[:id])
   end
@@ -25,7 +23,6 @@ class Public::UsersController < ApplicationController
       render :edit
     end
   end
-
 
   # マイページの編集
   def edit_mypage
@@ -40,8 +37,6 @@ class Public::UsersController < ApplicationController
       render :edit_mypage
     end
   end
-
-
 
   # 退会機能
   def unsubscribe
@@ -58,47 +53,36 @@ class Public::UsersController < ApplicationController
     redirect_to root_path
   end
 
-
   # フォロー・フォロワー
   def follows
-        @user  = User.find(params[:id])
-        @users = @user.following.page(params[:page]).reverse_order.per(10)
+    @user = User.find(params[:id])
+    @users = @user.following.page(params[:page]).reverse_order.per(10)
   end
 
   def followers
-        @user  = User.find(params[:id])
-        @users = @user.followers.page(params[:page]).reverse_order.per(10)
+    @user = User.find(params[:id])
+    @users = @user.followers.page(params[:page]).reverse_order.per(10)
   end
-
-
 
   # お気に入り表示
   def my_favorites
     @user = User.find(params[:id])
     favorites = @user.favorites.pluck(:post_id)
-    #@favorites_list = Post.find(favorites)
+    # @favorites_list = Post.find(favorites)
     @favorites_list = Post.where(id: favorites).page(params[:page]).reverse_order
     # @favorites_list = Post.page(params[:page]).reverse_order
   end
 
-
-
   private
-
 
   def ensure_correct_user
     @user = User.find(params[:id])
-    unless @user = current_user
+    unless @user == current_user
       redirect_to user_path(@user.id)
     end
-
   end
-
 
   def user_params
     params.require(:user).permit(:name, :email, :telephone_number, :user_name, :image, :self_introduction)
   end
-
-
-
 end

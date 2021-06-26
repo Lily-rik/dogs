@@ -28,11 +28,9 @@ class Public::PostsController < ApplicationController
     @comment = Comment.new
   end
 
-
   def edit
     @post = Post.find(params[:id])
   end
-
 
   def update
     @post = Post.find(params[:id])
@@ -43,9 +41,7 @@ class Public::PostsController < ApplicationController
     else
       render :edit
     end
-
   end
-
 
   def destroy
     post = Post.find(params[:id])
@@ -64,7 +60,6 @@ class Public::PostsController < ApplicationController
     @posts = @tag.posts.page(params[:page]).reverse_order
   end
 
-
   private
 
   def post_params
@@ -74,5 +69,4 @@ class Public::PostsController < ApplicationController
   # def image_present?
   #   post_params[:image].is_a?(ActionDispatch::Http::UploadedFile)
   # end
-
 end
