@@ -380,11 +380,16 @@ main {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  font-size: 14px;
   font-family: 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
 }
 
 .captions, .user-name, .form-control {
   font-family: 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
+}
+
+.user-name {
+  font-size: 15px;
 }
 
 .comment-captions {

@@ -53,6 +53,9 @@ describe 'ユーザーログイン後のテスト：posts_controller' do
       it 'commentフォームが表示される' do
         expect(page).to have_field 'comment[comment]'
       end
+      it 'UPDATEボタンが表示される' do
+        expect(page). to have_button 'COMMENT'
+      end
     end
   end
 
@@ -101,42 +104,24 @@ describe 'ユーザーログイン後のテスト：posts_controller' do
       it "Rankingと表示される" do
         expect(page).to have_content "Ranking"
       end
-      # it 'コメントアイコンが表示される' do
-      #   is_expected.to have_selector '#ranking'
-      # end
-      it 'プロフィール画像が表示される：自分のプロフィール画像が1つ存在する' do
-        expect(page.all(".attachment.user.image").length).to eq 1
-      end
-      it "ユーザーネームが表示される" do
-        expect(page).to have_content "#{user.user_name}"
-      end
-      # it 'いいねアイコンが表示される' do
-      #   visit post_path(other_post)
-      #   is_expected.to have_selector '.fas.fa-heart'
-      # end
-      # it 'コメントアイコンが表示される' do
-      #   is_expected.to have_selector '.far.fa-comment'
-      # end
-      it '投稿画像が表示される：自分の投稿画像が1つ存在する' do
-        expect(page.all(".attachment.post.image").length).to eq 1
-      end
-      it '投稿文章が表示される' do
-        expect(page).to have_content post.caption
-      end
-      it "Comments(0)と表示される" do
-        expect(page).to have_content "Comments(0)"
-      end
-      it "New Commentと表示される" do
-        expect(page).to have_content "New Comment"
-      end
-      it 'commentフォームが表示される' do
-        expect(page).to have_field 'comment[comment]'
-      end
     end
   end
 
 
+  # describe 'ハッシュタグ画面のテスト' do
+  #   before do
+  #     visit hashtag_path(hashname)
+  #   end
 
+  #   context '表示内容の確認' do
+  #     it 'URLが正しい' do
+  #       expect(current_path).to eq '/posts/' + post.id.to_s + '/edit'
+  #     end
+  #     it 'Post editと表示される' do
+  #       expect(page).to have_content 'Post edit'
+  #     end
+  #   end
+  # end
 
 
 
