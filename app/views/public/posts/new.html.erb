@@ -13,7 +13,7 @@
 
     <%= form_with model: @post, local: true do |f| %>
       <h4 class="label">Post image</h4>
-      <%= f.attachment_field :image, value: nil %>
+      <%= f.attachment_field :post_images_images, multiple: true %>
       <% if @post.errors.include?(:image) %>
         <p class="attention"><%= @post.errors.full_messages_for(:image).first %>
       <% end %>

@@ -133,9 +133,9 @@ main {
 
 // Topページ
 
-.section {
-  margin-top: 20px;
-}
+// .section {
+//   margin-top: 20px;
+// }
 
 // Aboutページ
 
@@ -239,7 +239,7 @@ main {
   max-width: 300px;
 }
 .slick-slide {
-  margin: 0 30px;
+  margin: 0 15px;
 }
 .slick-slide img {
   width: 100%;
@@ -329,8 +329,13 @@ main {
 
 
 
+#slider {
+  width: 80%;
+}
 
-
+// .slick-track>img {
+//   height: 450px;
+// }
 
 
 
@@ -410,7 +415,7 @@ main {
 .show-caption, .ranking-caption {
   width: 475px;
   line-height: 1.5;
-  margin-left: 17px;
+  margin-left: 20px;
 }
 
 .ranking-caption {
@@ -446,7 +451,7 @@ main {
 .show-icon {
   position: absolute;
   top: 20px;
-  right: 200px;
+  right: 170px;
 }
 
 
