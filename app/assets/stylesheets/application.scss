@@ -71,7 +71,7 @@ header {
 	font-size: 15px;
 }
 
-#nav-link1, #nav-link2, #nav-link3, #nav-link4, #nav-link5, #nav-link6, #nav-link8, #nav-link9, #nav-link7 {
+#nav-link1, #nav-link2, #nav-link3, #nav-link4, #nav-link5, #nav-link6, #nav-link8, #nav-link9, #nav-link7, #nav-link10 {
   color: #543f32;
   font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
   // border: solid 1px #8d6449;
@@ -615,13 +615,15 @@ main {
 }
 
 
-
+.fa-stack {
+  position: relative;
+}
 
 .n-circle {
   position: absolute;
-  padding-left: 1rem;
-  padding-top: 0rem;
-  color: #efa04c;
+  left: 0px;
+  top: 12px;
+  color: #f8e58c;
 }
 
 .notification-text {
@@ -629,12 +631,12 @@ main {
   margin-right: 30px;
 }
 
-#notification-link1, #notification-link2, #notification-link3 {
+#notification-link1, #notification-link2, #notification-link3, #notification-link4 {
   color: #c3d825;
 }
 
-#notifications>span, #notifications>strong {
-  font-size: 14px;
+#notifications>p {
+  margin-left: 55px;
 }
 // ボタン関連
 .button {

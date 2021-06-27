@@ -1,6 +1,6 @@
 class PostImage < ApplicationRecord
   
-  validates :image, presence: true
+  #validates :image, presence: true
   
   belongs_to :post
   attachment :image

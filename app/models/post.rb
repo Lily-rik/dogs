@@ -1,9 +1,4 @@
 class Post < ApplicationRecord
-
-  validates :user_id, presence: true
-  # validates :image, presence: true
-  validates :caption, presence: true, length: { maximum: 200 }
-
   belongs_to :user
   has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
@@ -12,6 +7,14 @@ class Post < ApplicationRecord
   has_many :post_images, dependent: :destroy
   accepts_attachments_for :post_images, attachment: :image
   has_many :notifications, dependent: :destroy
+  
+  validates_associated :post_images
+  
+  validates :user_id, presence: true
+  validates :post_images, presence: true, length: { maximum: 5 }
+  validates :caption, presence: true, length: { maximum: 200 }
+
+
 
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
