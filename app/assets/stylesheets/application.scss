@@ -624,7 +624,18 @@ main {
   color: #efa04c;
 }
 
+.notification-text {
+  text-align: right;
+  margin-right: 30px;
+}
 
+#notification-link1, #notification-link2, #notification-link3 {
+  color: #c3d825;
+}
+
+#notifications>span, #notifications>strong {
+  font-size: 14px;
+}
 // ボタン関連
 .button {
   outline:none;
