@@ -19,6 +19,7 @@ class Public::PostsController < ApplicationController
     if @post.save
       redirect_to post_path(@post.id)
     else
+      flash.now[:error] = "登録に失敗しました"
       render :new
     end
   end
