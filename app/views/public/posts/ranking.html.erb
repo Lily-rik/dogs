@@ -49,7 +49,7 @@
       <div class="ranking">
         <div class="row">
           <%= link_to post_path(post.id) do %>
-            <% post.post_images.each do |image| %>
+            <% post.post_images.first(1).each do |image| %>
               <%= attachment_image_tag image, :image, :fill, 500, 500 %>
             <% end %>
           <% end %><br>
