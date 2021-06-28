@@ -12,7 +12,7 @@
     <div class="col-lg-6">
 
     <%= form_with model: @post, local: true do |f| %>
-      <h4 class="label">Post image</h4>
+      <h4 class="label">Post image<span style="font-size: 16px;"> (５枚まで投稿できます)</span></h4>
       <%= f.attachment_field :post_images_images, multiple: true %>
       <h4 class="label mt-5">Post text</h4>
       <%= f.text_area :caption, rows:'5', class: 'form-control captions' %>
