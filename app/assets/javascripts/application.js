@@ -35,7 +35,11 @@ $(document).on('turbolinks:load', function() {
     infinite: true // スライドのループを有効にするか
   });
 
-
+  //投稿画像のスライダー 
+  $('#slider').slick({
+    dots: true, //スライドの下にドットのナビゲーションを表示
+    autoplay: false, //自動再生しない
+  });
 
   // read more...の表示
   var $text = $('.show-caption, .ranking-caption');//対象のテキスト

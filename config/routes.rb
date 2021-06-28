@@ -44,6 +44,11 @@ Rails.application.routes.draw do
     # chats
     get 'chats/:id' => 'chats#show', as: 'chat'
     resources :chats, only: [:create]
+
+    # notifications
+    resources :notifications, only: [:index]
+
+
   end
 
   namespace :admin do

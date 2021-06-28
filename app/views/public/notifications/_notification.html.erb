@@ -1,0 +1,43 @@
+
+
+<% visitor = notification.visitor %>
+<% visited = notification.visited %>
+
+<div id="notifications">
+  <div><%= link_to user_path(visitor) do %>
+    <%= attachment_image_tag visitor, :image, :fill, 40, 40, fallback: "dogs-icon.jpg", size:'40x40', class: "user-image" %>
+      <strong><%= visitor.user_name %></strong>
+    <% end %>
+    <span style="font-size: 14px;">さんが</span>
+  </div>
+
+
+
+  <% case notification.action %>
+  <% when 'follow' then %>
+    <p>あなたをフォローしました</p>
+  <% when 'like' then %>
+    <p><%= link_to 'あなたの投稿 ', notification.post, id: "notification-link1" %>にいいねしました</p>
+  <% when 'comment' then %>
+    <% if notification.post.user_id == visited.id %>
+      <p><%= link_to 'あなたの投稿 ', notification.post, id: "notification-link2" %>にコメントしました</p>
+      <p><%= Comment.find(notification.comment_id)&.comment %></p>
+    <% else %>
+      <p>
+        <%= link_to notification.post, id: "notification-link3" do %>
+          <%= notification.post.user.user_name %>
+        <% end %>
+        さんの投稿にコメントしました
+      </p>
+      <p><%= Comment.find(notification.comment_id)&.comment %></p>
+    <% end %>
+  <% when 'chat' then %>
+    <p><%= link_to 'チャットルーム ', chat_path(notification.chat.room), id: "notification-link4" %>にメッセージを送りました</p>
+    <p><%= Chat.find(notification.chat_id)&.message %></p>
+  <% end %>
+    <!--case = 対象オブジェクト = notificationのactionカラムの値を対象としている-->
+    <!--when 'α' then = 'α'と一致する場合に行う処理-->
+
+  <p class="notification-time"><%= time_ago_in_words(notification.created_at).upcase %></p>
+
+</div>

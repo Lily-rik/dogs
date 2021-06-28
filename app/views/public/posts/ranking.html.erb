@@ -49,7 +49,9 @@
       <div class="ranking">
         <div class="row">
           <%= link_to post_path(post.id) do %>
-            <p><%= attachment_image_tag post, :image, :fill, 500, 500 %></p>
+            <% post.post_images.each do |image| %>
+              <%= attachment_image_tag image, :image, :fill, 500, 500 %>
+            <% end %>
           <% end %><br>
         </div>
         <div class="row">
