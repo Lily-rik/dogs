@@ -615,18 +615,18 @@ main {
 }
 
 
-.fa-stack {
+#nav-link10 {
   position: relative;
 }
 
 .n-circle {
   position: absolute;
-  left: 0px;
+  left: 8px;
   top: 12px;
-  color: #f8e58c;
+  color: #d0576b;
 }
 
-.notification-text {
+.notification-time {
   text-align: right;
   margin-right: 30px;
 }
@@ -635,9 +635,26 @@ main {
   color: #c3d825;
 }
 
-#notifications>p {
-  margin-left: 55px;
+#notifications {
+  font-family: 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
+
 }
+
+#notifications>div {
+  margin-left: 80px;
+}
+
+
+#notifications>p {
+  margin-left: 135px;
+  margin-bottom: 0px;
+  font-size: 14px;
+}
+
+#chat_index {
+  margin-left: 20px;
+}
+
 // ボタン関連
 .button {
   outline:none;
@@ -1038,7 +1055,7 @@ main {
 
 .chat_box{
   width: 100%;
-  height: 460px;
+  height: 500px;
   padding: 0 40px 10px 240px;
   overflow: scroll;
   border: 1px solid #fff;
@@ -1048,7 +1065,7 @@ main {
 
 .form-inline {
   width: 50%;
-  margin-left: 300px;
+  margin-left: 350px;
 }
 
 #chat-text {
