@@ -1,0 +1,84 @@
+// // topスライダー
+
+
+.sliderArea {
+  width: 100%;
+}
+.slick-slide {
+  margin: 0 20px;
+}
+.slick-slide img {
+  width: 400px;
+  height: 400px;
+}
+.slick-prev, .slick-next {
+  z-index: 1;
+}
+
+
+.full-screen-o.slider {
+  width: 100%;
+  margin: 0 auto;
+}
+.full-screen-o .slick-dots {
+  bottom: -33px;
+}
+.full-screen-o .slick-dots li {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.full-screen-o .slick-dots li button {
+  font-size: 0;
+  line-height: 0;
+  padding: 0;
+  cursor: pointer;
+  color: transparent;
+  border: 0;
+  text-indent: -9999px;
+  display: block;
+  width: 8px;
+  height: 8px;
+  margin: 0 8px;
+  outline: 0;
+  border-radius: 5px;
+  transition-duration: 0.3s;
+}
+.full-screen-o .slick-dots li button:before {
+  content: none;
+}
+.full-screen-o .slick-dots li:nth-child(1) button {
+  background: #f5d1c3;
+}
+.full-screen-o .slick-dots li:nth-child(2) button {
+  background: #a9b7ba;
+}
+.full-screen-o .slick-dots li:nth-child(3) button {
+  background: #c4d7d1;
+}
+.full-screen-o .slick-dots li:nth-child(4) button {
+  background: #b4b1a0;
+}
+.full-screen-o .slick-dots li:nth-child(5) button {
+  background: #e5dfd3;
+}
+.full-screen-o .slick-dots li button:hover, .full-screen-o .slick-dots li.slick-active button {
+  border-radius: 0px;
+  width: 12px;
+  height: 12px;
+}
+
+
+
+#slider {
+  width: 80%;
+}
+
+.slick-track>img {
+  height: 450px;
+}
+

@@ -18,6 +18,7 @@
 //= require jquery_ujs
 //= require activestorage
 //= require turbolinks
+//= require jquery.slick
 //= require_tree .
 
 /*global $*/
@@ -30,12 +31,14 @@ $(document).on('turbolinks:load', function() {
     centerPadding: '5%', // センターモード時のサイドパディング。見切れるスライドの幅。’px’または’％’。
     dots: true, // ドットインジケーターの表示
     autoplay: true, // 自動再生を設定
-    autoplaySpeed: 4000, // 自動再生のスピード（ミリ秒単位）
+    autoplaySpeed: 3000, // 自動再生のスピード（ミリ秒単位）
     speed: 1000, // スライド/フェードアニメーションの速度を設定
-    infinite: true // スライドのループを有効にするか
+    infinite: true, // スライドのループを有効にするか
+    slidesToShow: 3,
+    slidesToScroll: 1,
   });
 
-  //投稿画像のスライダー 
+  //投稿画像のスライダー
   $('#slider').slick({
     dots: true, //スライドの下にドットのナビゲーションを表示
     autoplay: false, //自動再生しない

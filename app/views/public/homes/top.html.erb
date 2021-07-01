@@ -1,14 +1,13 @@
-<div class="container">
 
   <div class="section">
 
     <div class="sliderArea">
       <div class="full-screen-o slider">
+        <%= image_tag "dogs02.jpg", alt: "dogs icon", class: "slider" %>
         <%= image_tag "dogs05.jpg", alt: "dogs icon", class: "slider" %>
-        <%= image_tag "dogs01.jpg", alt: "dogs icon", class: "slider" %>
-        <%= image_tag "dogs10.jpg", alt: "dogs icon", class: "slider" %>
-        <%= image_tag "dogs11.jpg", alt: "dogs icon", class: "slider" %>
+        <%= image_tag "dogs03.jpg", alt: "dogs icon", class: "slider" %>
         <%= image_tag "dogs04.jpg", alt: "dogs icon", class: "slider" %>
+        <%= image_tag "dogs01.jpg", alt: "dogs icon", class: "slider" %>
       </div>
     </div>
 
@@ -38,18 +37,20 @@
     </div>
     <div class="col-lg-4"></div>
   <% else %>
-    <div class="col-lg-2"></div>
-    <div class="col-lg-3 button">
+    <div class="col-lg-2 mr-5"></div>
+    <div class="col-lg-3 ml-5 button">
       <%= link_to "SIGN UP", new_user_registration_path, id: "top-signup-btn" %>
     </div>
-    <div class="col-lg-1"></div>
-    <div class="col-lg-5 button">
+    <!--<div class="col-lg-1"></div>-->
+    <div class="col-lg-3 ml-5 button">
       <%= link_to "LOG IN", new_user_session_path, id: "top-login-btn" %>
     </div>
     <div class="col-lg-1"></div>
+    <div class="guet-login"><%= link_to 'ゲストログイン（閲覧用）', homes_guest_sign_in_path, method: :post, id: "guest_login" %></div>
+
+
   <% end %>
   </div>
 
 
 
-</div>
