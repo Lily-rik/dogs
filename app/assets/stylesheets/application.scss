@@ -230,6 +230,12 @@ main {
   font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
 }
 
+.center-title {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
 
 .user-image {
   border-radius: 50%;
@@ -779,10 +785,6 @@ main {
 
 
 
-// ランキングページ
-
-// rankingページ
-
 .user_name {
   font-size: 20px;
   padding-bottom: 10px;
@@ -790,41 +792,6 @@ main {
 }
 
 
-
-
-
-#ranking {
-  position: relative;
-  background-image: image-url("ranking.jpg");
-  background-size: contain;  width: 70px;
-  height: 70px;
-  margin-right: 20px;
-}
-
-#ranking span {
-  position: absolute;
-  top: 12px;
-  left: 26px;
-  font-size: 32px;
-  color: #583822;
-  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
-}
-
-.ranking {
-  position: relative;
-}
-
-.rank-fav-icon {
-  position: absolute;
-  top: 5px;
-  right: 70px;
-}
-
-.rank-comment-icon {
-  position: absolute;
-  top: 5px;
-  right: -40px;
-}
 
 
 .unsubscribe-text {

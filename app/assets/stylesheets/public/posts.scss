@@ -1,3 +1,53 @@
 // Place all the styles related to the public/posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+// ランキングページ
+
+#ranking {
+  position: absolute;
+  top: -8px;
+  left: 10px;
+  background-image: image-url("ranking.jpg");
+  background-size: contain;  width: 50px;
+  height: 50px;
+  display: inline-block;
+}
+
+#ranking span {
+  position: absolute;
+  top: 12px;
+  left: 20px;
+  font-size: 24px;
+  color: #583822;
+  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
+}
+
+.rank-user {
+  width: 75%;
+  text-align: center;
+}
+
+
+.ranking-posts {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.rank-fav-icon {
+  position: absolute;
+  bottom: 70px;
+  left: 50px;
+}
+
+.rank-comment-icon {
+  position: absolute;
+  bottom: 70px;
+  left: 125px;
+}
+
+
+

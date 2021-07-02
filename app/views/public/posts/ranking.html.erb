@@ -1,71 +1,52 @@
 <div class="container">
+  <div id="title" class="center-title">Ranking</div>
+
+
   <div class="row">
-    <div class="col-lg-2"></div>
-    <div class="col-lg-4">
-      <div id="title">Ranking</div>
-    </div>
-    <div class="col-lg-6"></div>
-  </div>
+    <div class="col-lg-1"></div>
+    <div class="col-lg-11">
 
-  <% @ranking.each.with_index(1) do |post, i| %>
-  <div class="row mt-5">
-    <div class="col-lg-2"></div>
-    <div class="col-lg-8">
+
+      <div class="ranking">
         <div class="row">
-          <div class="col-lg-1">
-            <p id="ranking"><span><%= i %></span></p>
-          </div>
-          <div class="col-lg-1 ml-4 mt-2">
-            <%= attachment_image_tag post.user, :image, :fill, 60, 60, fallback: "dogs-icon.jpg", size:'60x60', class: "user-image" %>
-          </div>
-          <div class="user-name col-lg-6 mt-4">
-            <%= link_to user_path(post.user.id), class: "user_name" do %>
-              <%= post.user.user_name %>
-            <% end %>
+          <% @ranking.each.with_index(1) do |post, i,| %>
+            <div class="col-lg-4">
 
-            <%# if post.user_id != current_user.id %>
-              <p id="favorite_button_<%= post.id %>" class="rank-fav-icon">
+              <div class="rank-user">
+                <div id="ranking"><span><%= i %></span></div>
+                <%= attachment_image_tag post.user, :image, :fill, 45, 45, fallback: "dogs-icon.jpg", size:'45x45', class: "user-image" %>
+                <%= link_to user_path(post.user.id) do %>
+                  <span class="user-name"><%= post.user.user_name %></span>
+                <% end %>
+              </div>
+
+              <!--<div class="col-lg-4 pt-4">-->
+              <!--  <p><%#= post.favorites.count %>Favorites</p>-->
+              <!--</div>-->
+              <div class="ranking-posts mt-2">
+                <%= link_to post_path(post.id) do %>
+                  <% post.post_images.first(1).each do |image| %>
+                    <%= attachment_image_tag image, :image, :fill, 200, 200 %>
+                  <% end %>
+                <% end %>
+              </div>
+              <div id="favorite_button_<%= post.id %>" class="rank-fav-icon">
                 <%= render 'public/favorites/favorite', post: post %>
-              </p>
-            <%# end %>
-              <p class="rank-comment-icon">
+              </div>
+              <div class="rank-comment-icon">
                 <%= link_to post_path(post.id), id: "rank-comment-btn" do %>
                   <i class="far fa-comment fa-2x" style="color: #2a4073;"></i>
                   <span><%= post.comments.count %></span>
                 <% end %>
-              </p>
-          </div>
-          <!--<div class="col-lg-4 pt-4">-->
-          <!--  <p><%#= post.favorites.count %>Favorites</p>-->
-          <!--</div>-->
-        </div>
-    </div>
-    <div class="col-lg-2"></div>
-  </div>
+              </div>
 
-  <div class="row">
-    <div class="col-lg-3"></div>
-    <div class="col-lg-7">
-      <div class="ranking">
-        <div class="row">
-          <%= link_to post_path(post.id) do %>
-            <% post.post_images.first(1).each do |image| %>
-              <%= attachment_image_tag image, :image, :fill, 500, 500 %>
-            <% end %>
-          <% end %><br>
-        </div>
-        <div class="row">
-          <%= simple_format(render_with_hashtags(post.caption), class: "ranking-caption captions") %>
-          <a href="" class="more ranking-more heading">Read more...</a>
+              <p class="post-caption mb-5"><%= post.caption %></p>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
-    <div class="col-lg-2"></div>
   </div>
-  <% end %>
-
-</div>
-
 
 
 

@@ -7,9 +7,9 @@ class Post < ApplicationRecord
   has_many :post_images, dependent: :destroy
   accepts_attachments_for :post_images, attachment: :image
   has_many :notifications, dependent: :destroy
-  
+
   validates_associated :post_images
-  
+
   validates :user_id, presence: true
   validates :post_images, presence: true, length: { maximum: 5 }
   validates :caption, presence: true, length: { maximum: 200 }
@@ -22,7 +22,7 @@ class Post < ApplicationRecord
 
   # ランキング機能
   def self.create_ranking # Postクラスからデータを取ってくる処理なのでクラスメソッド
-    Post.find(Favorite.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
+    Post.find(Favorite.group(:post_id).order('count(post_id) desc').limit(15).pluck(:post_id))
     ## Favoriteモデルの中から記事の番号(post_id)が同じものにグループを分ける → group(:post_id)
     ## 番号の多い順に並びかえる → order('count(post_id) desc') ：descは降順（多い順）になる
     ## 表示する数を3個に指定する → limit(3)
