@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   scope module: :public do
     root 'homes#top'
+    post 'homes/guest_sign_in', to: 'homes#guest_sign_in'
     get 'search' => 'searches#search', as: 'search'
     get 'homes/about' => 'homes#about', as: 'about'
 
