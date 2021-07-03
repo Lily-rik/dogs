@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+      <div id="title"><%= current_user.user_name %><span>'s notification</span></div>
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-5">
+      <!--自分の投稿に対するいいね、コメントは通知に表示しない-->
+      <% notifications = @notifications.where.not(visitor_id: current_user.id) %>
+      <% if notifications.exists? %>
+        <%= render notifications %>
+        <div class="mt-4"><%= paginate notifications %></div>
+      <% else %>
+        <p>通知はありません</p>
+      <% end %>
+    </div>
+    <div class="col-lg-4"></div>
+  </div>
+</div>
+
+
+
+

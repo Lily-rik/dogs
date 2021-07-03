@@ -25,7 +25,9 @@
 
 
           <%= link_to post_path(post.id) do %>
-            <p class="mt-2"><%= attachment_image_tag post, :image, :fill, 200, 200 %></p>
+            <% post.post_images.first(1).each do |image| %>
+              <p class="mt-2"><%= attachment_image_tag image, :image, :fill, 200, 200 %></p>
+            <% end %>
           <% end %>
 
           <p class="post-caption mb-5"><%= post.caption %></p>

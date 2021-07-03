@@ -37,8 +37,18 @@
               <li class="nav-item"><%= link_to 'RANKING', ranking_path, class: 'nav-link', id: 'nav-link5' %></li>
               <li class="nav-item"><%= link_to 'LOG OUT', destroy_user_session_path, class: 'nav-link', id: 'nav-link6' %></li>
               <li class="nav-item">
+                <%= link_to notifications_path, class: 'nav-link', id: 'nav-link10' do %>
+                  <% if unchecked_notifications.any? %>
+                      <i class="far fa-bell fa-lg 2x"></i>
+                      <i class="fas fa-circle n-circle fa-stack-1x"></i>
+                  <% else %>
+                      <i class="far fa-bell fa-lg"></i>
+                  <% end %>
+                <% end %>
+              </li>
+              <li class="nav-item">
                 <%= link_to "/users/#{current_user.id}/edit", class: 'nav-link', id: 'nav-link7' do %>
-                  <i class="fas fa-cog" style="color: #543f32;"></i>
+                  <i class="fas fa-cog fa-lg 2x"></i>
                 <% end %>
               </li>
             <% else %>

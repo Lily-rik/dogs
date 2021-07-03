@@ -19,6 +19,7 @@ class Public::PostsController < ApplicationController
     if @post.save
       redirect_to post_path(@post.id)
     else
+      flash.now[:error] = "登録に失敗しました"
       render :new
     end
   end
@@ -63,7 +64,7 @@ class Public::PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:image, :caption)
+    params.require(:post).permit(:caption, post_images_images: [])
   end
 
   # def image_present?

@@ -26,8 +26,13 @@ class Public::ChatsController < ApplicationController
 
     @chat = current_user.chats.new(chat_params)
     @chat.save
-    # redirect_to request.referer
+    @chat.create_notification_chat!(current_user, @chat.id, @user.id) # 通知
   end
+
+
+
+
+
 
   private
 

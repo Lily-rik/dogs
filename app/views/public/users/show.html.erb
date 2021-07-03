@@ -93,7 +93,9 @@
         <div class="col-lg-4">
 
           <%= link_to post_path(post.id) do %>
-            <p><%= attachment_image_tag post, :image, :fill, 200, 200 %></p>
+            <% post.post_images.first(1).each do |image| %>
+              <%= attachment_image_tag image, :image, :fill, 200, 200 %>
+            <% end %>
           <% end %>
 
 
