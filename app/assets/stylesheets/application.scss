@@ -14,13 +14,13 @@
  *= require_self
  */
 
+
  @import "bootstrap";
  @import 'slick';
 
 
 a {
   color: #0f2350;
-
 }
 
 a:link, a:visited, a:hover, a:active {
@@ -28,40 +28,12 @@ a:link, a:visited, a:hover, a:active {
 }
 
 
-
-
 // ヘッダー
-// header {
-// 	position: fixed;
-// 	top: 0px;
-// 	left: 0;
-// 	padding: 100px 0 50px 0;
-// 	width: 100%;
-//   background-color: #ede4cd;
-// 	font-size: 24px;
-// 	text-align: center;
-// 	color: #fff;
-// 	z-index: 30;
-// }
-
 header {
   width: 100%;
   padding: 20px 0;
   background-color: #bed2c3;
 }
-
-// スクロールでremove
-// .center-nav-title {
-//   color: #fff;
-//   position: absolute;
-//   width: 100%;
-//   left: 0;
-//   top: 0;
-//   text-align:center;
-//   margin: auto;
-// 	font-size: 36px;
-// 	z-index: 10;
-// }
 
 .navbar {
   margin-right: 80px;
@@ -72,50 +44,46 @@ header {
 	font-size: 15px;
 }
 
-#nav-link1, #nav-link2, #nav-link3, #nav-link4, #nav-link5, #nav-link6, #nav-link8, #nav-link9, #nav-link7, #nav-link10, #nav-link11 {
+#nav-link1, #nav-link2, #nav-link3, #nav-link4, #nav-link5, #nav-link6, #nav-link7, #nav-link8, #nav-link9, #nav-link10, #nav-link11 {
   color: #543f32;
   font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
-  // border: solid 1px #8d6449;
-  // border-radius: 5px;
   margin-right: 10px;
   &:hover {
     color: #eaedf7;
   }
 }
 
+#nav-link10 {
+  position: relative;
+}
 
-// // スクロールでremove
-// .nav-list {
-//   margin: 0 auto;
-//   padding-top: 80px;
-//   text-align: center;
-//   font-size: 15px;
-// 	z-index: 10;
-// }
+.n-circle {
+  position: absolute;
+  left: 8px;
+  top: 12px;
+  color: #d0576b;
+}
 
 
+// メイン
 main {
-
   margin: 50px auto 80px auto;
   padding-top: 20px;
 	height: 100%;
-// 	text-align: center;
-	background-color: #fff;
-	z-index: 20;
 }
-
 
 
 // ログインページ
-
 .remember-me {
   color: #0f2350;
+  font-family: 'Comic Sans MS', fantasy, sans-serif;
 }
 
+
+// エラーの表示
 .error {
   color: #a22041;
 }
-
 
 .attention, .user-attention {
   color: #a22041;
@@ -133,97 +101,7 @@ main {
 }
 
 
-.guet-login {
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  margin-top: 50px;
-}
-
-#guest_login {
-  color: #006e54;
-  font-family: 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
-}
-
-
-// Topページ
-
-// .section {
-//   margin-top: 20px;
-// }
-
-// Aboutページ
-
-#about-container {
-  margin-top: 25px;
-}
-
-.about-visual {
-  width: 80%;
-  height: 600px;
-  margin: 0 auto;
-  background-size: cover;
-  background-position: center;
-}
-
-
-.about-visual {
-  position: relative;
-  background-image: image-url("dogs06.jpg");
-  margin-bottom: 70px;
-}
-
-
-
-.about-visual-content {
-  width: 100%;
-  height: 600px;
-  background-color: rgba(255,255,255,0.3);
-}
-
-
-
-
-#web-title {
-  width: 80%;
-  margin: 50px auto 50px auto;
-  text-align: center;
-  font-size: 60px;
-  font-family: 'Comic Sans MS', fantasy, sans-serif;
-  color: #543f32;
-}
-
-
-.text {
-  font-size: 14px;
-  color: #2a4073;
-  padding-left: 15px;
-}
-
-
-
-
-
-.web-text, .about-text {
-  width: 80%;
-  margin: 0 auto;
-  padding-bottom: 30px;
-  text-align: center;
-  font-size: 14px;
-  font-family: 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
-  color: #543f32;
-}
-
-.about-text {
-  font-size: 16px;
-  padding-bottom: 40px;
-  font-family: 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
-  color: #543f32;
-}
-
-
-// 投稿ページ全体
-
+// タイトル、見出し
 #title {
   color: #0f2350;
   font-size: 32px;
@@ -236,9 +114,9 @@ main {
   text-align: center;
 }
 
-
-.user-image {
-  border-radius: 50%;
+.heading, .form-font {
+  color: #0f2350;
+  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
 }
 
 .label {
@@ -247,6 +125,14 @@ main {
   font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
 }
 
+
+// 文章
+.text {
+  font-size: 14px;
+  color: #2a4073;
+  padding-left: 15px;
+  font-family: 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
+}
 
 .post-caption {
   width: 190px;
@@ -263,23 +149,9 @@ main {
   font-family: 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
 }
 
-.user-name {
-  font-size: 15px;
-}
-
 .comment-captions {
   word-break : break-all;
   font-size: 14px;
-}
-
-.heading, .form-font {
-  color: #0f2350;
-  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
-}
-
-.self-introduction {
-  line-height: 1.9;
-  font-size: 15px;
 }
 
 .show-caption, .ranking-caption {
@@ -297,34 +169,9 @@ main {
 }
 
 
-
-
-.more {
-  display: inline-block;
-  width: 100%;
-  text-align: right;
-  padding-right: 150px;
-}
-
-.ranking-more {
-  margin-right: 50px;
-}
-
-
-
 // showページ
 
-.post {
-  position: relative;
-}
-
-.show-icon {
-  position: absolute;
-  top: 20px;
-  right: 170px;
-}
-
-
+// posts
 .favorite-icon {
   position: absolute;
   top: 10px;
@@ -332,481 +179,21 @@ main {
 }
 
 
-#favorite-btn {
-  position: relative;
-  text-decoration: none;
-  margin-right: -10px;
-}
 
-#rank-comment-btn {
-  position: relative;
-  text-decoration: none;
-  margin-right: 15px;
-}
 
 
-#favorite-btn span, #rank-comment-btn span {
-  position: absolute;
-  top: -7px;
-  right: -25px;
-  font-size: 20px;
-  color: #2a4073;
-}
 
 
 
 
 
-.table{
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 100%;
-}
 
-.table tr{
-  border-bottom: solid 1px #eee;
-  cursor: pointer;
-}
 
 
-.table tr:hover{
-  background-color: #f8fbf8;
-  transition: 2s;
-}
 
-.users-table td, .user-table td {
-  padding: 20px 0 5px 10px;
-}
 
-.users-table td:nth-child(1) {
-  width: 10%;
-}
 
-.users-table td:nth-child(2) {
-  width: 20%;
-}
 
-.users-table td:nth-child(3) {
-  width: 32%;
-}
-
-.users-table td:nth-child(4) {
-  width: 20%;
-}
-
-.users-table td:nth-child(5) {
-  width: 20%;
-}
-
-.user-table td:nth-child(2) {
-  padding-top: 6px;
-}
-
-.comment-table {
-  width: 80%;
-}
-
-.comment-table td:nth-child(1) {
-  text-align: center;
-  width: 15%;
-  padding: 10px 0 15px 0;
-
-}
-
-.comment-table td:nth-child(2) {
-  width: 18%;
-  padding: 22px 0 22px 0px;
-  font-size: 14px;
-}
-.comment-table td:nth-child(3) {
-  width: 45%;
-  padding: 22px 15px 22px 10px;
-
-}
-
-.comment-table td:nth-child(4) {
-  width: 30%;
-  padding: 20px 0 20px 0px;
-
-}
-
-
-.follow-table {
-  width: 70%;
-  margin: 0 auto;
-}
-
-.follow-table td:nth-child(1) {
-  width: 10%;
-  padding: 15px 0 15px 10px;
-
-}
-
-
-.follow-table td:nth-child(2) {
-  width: 15%;
-  padding: 15px 0 15px 10px;
-
-}
-
-.follow-table td:nth-child(3) {
-  width: 20%;
-  padding: 30px 0 10px 0;
-
-}
-.follow-table td:nth-child(4) {
-  width: 30%;
-  padding: 30px 0 10px 0;
-
-}
-
-
-.info-edit-table th, .user-edit-table th {
-  text-align: center;
-  width: 30%;
-  height: 70px;
-}
-
-.info-edit-table td, .user-edit-table td {
-  width: 40%;
-  height: 70px;
-}
-
-.search {
-  margin-right: 120px;
-  padding-bottom: 20px;
-}
-
-
-
-.admin-search {
-  width: 300px;
-  margin: 0 auto;
-}
-
-
-#nav-link10 {
-  position: relative;
-}
-
-.n-circle {
-  position: absolute;
-  left: 8px;
-  top: 12px;
-  color: #d0576b;
-}
-
-.notification-time {
-  text-align: right;
-  margin-right: 30px;
-}
-
-#notification-link1, #notification-link2, #notification-link3, #notification-link4 {
-  color: #c3d825;
-}
-
-#notifications {
-  font-family: 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
-
-}
-
-#notifications>div {
-  margin-left: 80px;
-}
-
-
-#notifications>p {
-  margin-left: 135px;
-  margin-bottom: 0px;
-  font-size: 14px;
-}
-
-#chat_index {
-  margin-left: 20px;
-}
-
-// ボタン関連
-.button {
-  outline:none;
-  height: 40px;
-  text-align: center;
-  width: 130px;
-	background-color: #fff;
-  letter-spacing:1px;
-  text-shadow:0;
-  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
-  font:{
-    size:12px;
-    weight:bold;
-  }
-  cursor: pointer;
-  transition: all 0.25s ease;
-  &:hover {
-    color:white;
-  }
-  &:active {
-    letter-spacing: 2px ;
-  }
-}
-
-
-#top-login-btn {
-  text-decoration: none;
-  border: 1px solid #e7609e;
-  color: #e7609e;
-  &:hover {
-    color: #fff;
-    background: #e7609e;
-  }
-}
-
-
-#signup-btn, #log-in-btn, #user-edit-btn {
-  padding: 12px 20px 11px 20px;
-  text-decoration: none;
-  border: 1px solid #c1d8ac;
-  color: #c1d8ac;
-  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
-  &:hover {
-    color: #fff;
-    background: #c1d8ac;
-  }
-}
-
-#login-btn, #top-signup-btn, .login-btn, .sign-up-btn, .create-btn, .log-in-btn {
-  width: 200px;
-  padding: 11px 40px 12px 40px;
-  text-decoration: none;
-  border: 1px solid #e9546b;
-  color: #e9546b;
-  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
-  &:hover {
-    color: #fff;
-    background: #e9546b;
-  }
-}
-
-#top-about-btn {
-  text-align: center;
-  padding: 20px 45px 20px 45px;
-  text-decoration: none;
-  border: 1px solid  #e9546b;
-  font-size: 20px;
-  color:  #e9546b;
-  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
-  &:hover {
-    color: #fff;
-    background:  #e9546b;
-  }
-}
-
-
-
-#top-login-btn {
-  text-decoration: none;
-  font-size: 20px;
-  text-align: center;
-  padding: 25px 70px 25px 70px;
-  border: 1px solid #006e54;
-  color: #006e54;
-  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
-  &:hover {
-    color: #fff;
-    background: #006e54;
-  }
-}
-
-
-
-#top-signup-btn {
-  text-decoration: none;
-  font-size: 20px;
-  text-align: center;
-  padding: 25px 60px 25px 60px;
-  border: 1px solid #006e54;
-  color: #006e54;
-  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
-  &:hover {
-    color: #fff;
-    background: #006e54;
-  }
-}
-
-
-.action-signup, .action-log-in, .action-unsubscribe, .action-edit {
-  text-align: right;
-  margin-right: 50px;
-}
-
-
-
-#user-btn, #chat-btn {
-  padding: 15px;
-  text-decoration: none;
-  border: 1px solid #c1d8ac;
-  color: #c1d8ac;
-  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
-  &:hover {
-    color: #fff;
-    background: #c1d8ac;
-  }
-}
-
-#chat-btn {
-  padding: 15px 33px;
-}
-
-
-
-
-.edit-btn, .update-btn {
-  width: 200px;
-  border: 1px solid #f9c89b;
-  color: #f9c89b;
-  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
-  &:hover {
-    background: #f9c89b;
-  }
-}
-
-#user-edit-btn {
-  text-decoration: none;
-  padding: 15px 30px;
-  &:hover {
-    color: white;
-  }
-}
-
-
-.prf-edit-btn {
-  width: 120px;
-  margin: 0 auto;
-  border: 1px solid #dddcd6;
-  color: #dddcd6;
-  &:hover {
-    background: #dddcd6;
-  }
-
-}
-
-#unfollow-btn, #follow-btn, #detail-btn, #user-detail-btn, {
-  text-decoration: none;
-  padding: 8px 20px;
-  color: #e9546b;
-  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
-  &:hover {
-    color: white;
-    background: #e9546b;
-  }
-}
-
-#unfollow-btn {
-  border: 1px solid #83ccd2;
-  color: #83ccd2;
-  &:hover {
-    background: #83ccd2;
-  }
-}
-
-#follow-btn {
-  border: 1px solid #e9546b;
-  color: #e9546b;
-  &:hover {
-    background: #e9546b;
-  }
-}
-
-
-#detail-btn, #user-detail-btn {
-  border: 1px solid #c1d8ac;
-  color: #c1d8ac;
-  &:hover {
-    background: #c1d8ac;
-  }
-}
-
-#user-detail-btn {
-  font-size: 12px;
-}
-
-
-
-#destroy-btn, #withdraw-btn, #post-destroy-btn, #unsubscribe-btn {
-  text-decoration: none;
-  border: 1px solid #83ccd2;
-  color: #83ccd2;
-  &:hover {
-    color: white;
-    background: #83ccd2;
-  }
-}
-
-#destroy-btn {
-  padding: 7px 20px 8px 20px;
-}
-
-
-#withdraw-btn, #post-destroy-btn {
-  padding: 12px 22px 10px 22px;
-}
-
-#withdraw-btn {
-  border: 1px solid #dddcd6;
-  color: #dddcd6;
-  &:hover {
-    background: #dddcd6;
-  }
-}
-
-
-
-#unsubscribe-btn {
-  font-size: 20px;
-  padding: 20px 60px;
-  border: 1px solid #e9546b;
-  color: #e9546b;
-  &:hover {
-    background: #e9546b;
-  }
-}
-
-
-#no-btn {
-  font-size: 20px;
-  padding: 20px 60px;
-  text-decoration: none;
-  border: 1px solid #83ccd2;
-  color: #83ccd2;
-  &:hover {
-    color: white;
-    background: #83ccd2;
-  }
-}
-
-
-
-.user_name {
-  font-size: 20px;
-  padding-bottom: 10px;
-  padding-left: 20px;
-}
-
-
-
-
-.unsubscribe-text {
-  margin-top: 50px;
-  font-size: 32px;
-  text-align: center;
-  color: #2a4073;
-}
-
-.unsubscribe-caption {
-  margin-top: 20px;
-  font-size: 12px;
-  text-align: center;
-  color: #2a4073;
-}
 
 
 .new-comment {
@@ -817,107 +204,12 @@ main {
   margin-right: 150px;
 }
 
-// チャットページ
-
-
-// 自分のメッセージの吹き出し
-.says {
-  float: right;
-  position: relative;
-  right: 5px;
-  padding: 10px 30px;
-  margin: 5px 0 5px 0;
-  background: #fdeff2;
-  border-radius: 15px;
-  line-height: 1.5;
-  word-break: break-all;
-  text-align: right;
-}
-.says:after {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  top: 3px;
-  right: -19px;
-  border: 8px solid transparent;
-  border-right: 18px solid #fdeff2;
-  -webkit-transform: rotate(145deg);
-  transform: rotate(145deg);
-}
-
-
-
-
-// 相手のメッセージの吹き出し
-.other-user-says {
-  float: left;
-  position: relative;
-  padding: 10px 30px;
-  margin: 5px 0 5px 0;
-  background: #ebf6f7;
-  border-radius: 15px;
-  line-height: 1.5;
-  word-break: break-all;
-}
-.other-user-says:after {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  top: 3px;
-  left: -19px;
-  border: 8px solid transparent;
-  border-right: 18px solid #ebf6f7;
-  -webkit-transform: rotate(35deg);
-  transform: rotate(35deg);
-}
-
-.other-user-says p, .says p {
-  margin-bottom: 3px;
-}
-.other-user-says span, .says span {
-  font-size: 10px;
-}
-
-
-
-.my-chat {
-  width: 800px;
-}
-
-.chat_box{
-  width: 100%;
-  height: 500px;
-  padding: 0 40px 10px 240px;
-  overflow: scroll;
-  border: 1px solid #fff;
-  font-size: 14px;
-  background: #fff;
-}
-
-.form-inline {
-  width: 50%;
-  margin-left: 350px;
-}
-
-#chat-text {
-  width: 350px;
-  margin-bottom: 10px;
-}
-
-.chat-btn {
-  width: 50px;
-  height: 38px;
-  border: 1px solid #fff;
-  background-color: #fff;
-}
-
 
 // ページネーション
 .paginate {
   width: 55%;
   margin: 0 auto;
   font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
-
 }
 
 .user-paginate {
@@ -926,7 +218,6 @@ main {
   padding-left: 40px;
   font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
 }
-
 
 .pagination>li>a {
   padding: 10px 15px;
@@ -951,120 +242,6 @@ main {
 
 
 
-// 検索ボタン
-
-.search-form {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  width: 350px;
-  height: 40px;
-  border-radius: 40px;
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-  transform: translate(-50%, -50%);
-  background: #fff;
-  transition: all 0.3s ease;
-
-  &.focus {
-    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
-  }
-}
-
-.search-input {
-  position: absolute;
-  top: 10px;
-  left: 85px;
-  font-size: 14px;
-  background: none;
-  color: #5a6674;
-  width: 195px;
-  height: 20px;
-  border: none;
-  appearance: none;
-  outline: none;
-
-  &::-webkit-search-cancel-button {
-    appearance: none;
-  }
-}
-
-.search-button {
-  position: absolute;
-  top: 10px;
-  right: 40px;
-  height: 20px;
-  width: 20px;
-  padding: 0;
-  margin: 0;
-  border: none;
-  background: none;
-  outline: none!important;
-  cursor: pointer;
-
-}
-
-.search-option {
-  position: relative;
-  position: absolute;
-  text-align: right;
-  top: 10px;
-  right: 15px;
-
-  div {
-    position: absolute;
-    top: 0;
-    left: -260px;
-    position: relative;
-    display: inline-block;
-    margin: 0 1px;
-    cursor: pointer;
-
-    input {
-      position: absolute;
-      top: 8px;
-      left: 3px;
-      opacity: 0.01;
-      cursor: pointer;
-    }
-
-    span {
-      position: absolute;
-      display: block;
-      text-align: center;
-      left: 50%;
-      transform: translateX(-50%);
-      opacity: 0;
-      background: #929AA3;
-      color: #fff;
-      font-size: 9px;
-      letter-spacing: 1px;
-      line-height: 1;
-      text-transform: uppercase;
-      padding: 4px 7px;
-      border-radius: 12px;
-      top: -18px;
-      transition: all .2s ease-in-out;
-
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: -3px;
-        left: 50%;
-        transform: translateX(-50%);
-        border-top: 4px solid #929AA3;
-        border-left: 4px solid transparent;
-        border-right: 4px solid transparent;
-        transition: all .2s ease-in-out;
-      }
-    }
-
-    &:hover span {
-      opacity: 1;
-      top: -21px;
-    }
-
-  }
-}
 
 
 .unsubscribe-container, .admin-new-container {

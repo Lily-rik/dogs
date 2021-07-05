@@ -1,15 +1,10 @@
 <div class="container admin-show-container">
-  <div class="row">
-    <div class="col-lg-2"></div>
-    <div class="col-lg-4">
-      <div id="title">User detail</span></div>
-    </div>
-    <div class="col-lg-6"></div>
-  </div>
 
   <div class="row mt-5">
     <div class="col-lg-1"></div>
     <div class="col-lg-10">
+
+      <div id="title" class="text-center mb-5">User detail</span></div>
 
       <table class="table user-table" >
 
@@ -40,7 +35,7 @@
         </tr>
 
       </table>
-      <div class="action-edit mt-5 pt-3">
+      <div class="mt-5 pt-3 text-center">
         <%= link_to 'EDIT', edit_admin_user_path(@user.id), class: "button", id: "user-edit-btn" %>
       </div>
 

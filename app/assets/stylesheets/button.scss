@@ -1,0 +1,254 @@
+
+
+// ボタン関連
+.button {
+  outline:none;
+  height: 40px;
+  text-align: center;
+  width: 130px;
+	background-color: #fff;
+  letter-spacing:1px;
+  text-shadow:0;
+  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
+  font:{
+    size:12px;
+    weight:bold;
+  }
+  cursor: pointer;
+  transition: all 0.25s ease;
+  &:hover {
+    color:white;
+  }
+  &:active {
+    letter-spacing: 2px ;
+  }
+}
+
+
+#top-login-btn {
+  text-decoration: none;
+  border: 1px solid #e7609e;
+  color: #e7609e;
+  &:hover {
+    color: #fff;
+    background: #e7609e;
+  }
+}
+
+
+#signup-btn, #log-in-btn, #user-edit-btn {
+  padding: 12px 20px 11px 20px;
+  text-decoration: none;
+  border: 1px solid #c1d8ac;
+  color: #c1d8ac;
+  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
+  &:hover {
+    color: #fff;
+    background: #c1d8ac;
+  }
+}
+
+#login-btn, #top-signup-btn, .login-btn, .sign-up-btn, .create-btn, .log-in-btn {
+  width: 200px;
+  padding: 11px 40px 12px 40px;
+  text-decoration: none;
+  border: 1px solid #e9546b;
+  color: #e9546b;
+  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
+  &:hover {
+    color: #fff;
+    background: #e9546b;
+  }
+}
+
+#top-about-btn {
+  text-align: center;
+  padding: 20px 45px 20px 45px;
+  text-decoration: none;
+  border: 1px solid  #e9546b;
+  font-size: 20px;
+  color:  #e9546b;
+  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
+  &:hover {
+    color: #fff;
+    background:  #e9546b;
+  }
+}
+
+
+
+#top-login-btn {
+  text-decoration: none;
+  font-size: 20px;
+  text-align: center;
+  padding: 25px 70px 25px 70px;
+  border: 1px solid #006e54;
+  color: #006e54;
+  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
+  &:hover {
+    color: #fff;
+    background: #006e54;
+  }
+}
+
+
+
+#top-signup-btn {
+  text-decoration: none;
+  font-size: 20px;
+  text-align: center;
+  padding: 25px 60px 25px 60px;
+  border: 1px solid #006e54;
+  color: #006e54;
+  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
+  &:hover {
+    color: #fff;
+    background: #006e54;
+  }
+}
+
+
+
+#user-btn, #chat-btn {
+  padding: 15px;
+  text-decoration: none;
+  border: 1px solid #c1d8ac;
+  color: #c1d8ac;
+  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
+  &:hover {
+    color: #fff;
+    background: #c1d8ac;
+  }
+}
+
+#chat-btn {
+  padding: 15px 33px;
+}
+
+
+
+
+.edit-btn, .update-btn {
+  width: 200px;
+  border: 1px solid #f9c89b;
+  color: #f9c89b;
+  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
+  &:hover {
+    background: #f9c89b;
+  }
+}
+
+#user-edit-btn {
+  text-decoration: none;
+  padding: 15px 30px;
+  &:hover {
+    color: white;
+  }
+}
+
+
+.prf-edit-btn {
+  width: 120px;
+  margin: 0 auto;
+  border: 1px solid #dddcd6;
+  color: #dddcd6;
+  &:hover {
+    background: #dddcd6;
+  }
+
+}
+
+#unfollow-btn, #follow-btn, #detail-btn, #user-detail-btn, {
+  text-decoration: none;
+  padding: 8px 20px;
+  color: #e9546b;
+  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
+  &:hover {
+    color: white;
+    background: #e9546b;
+  }
+}
+
+#unfollow-btn {
+  border: 1px solid #83ccd2;
+  color: #83ccd2;
+  &:hover {
+    background: #83ccd2;
+  }
+}
+
+#follow-btn {
+  border: 1px solid #e9546b;
+  color: #e9546b;
+  &:hover {
+    background: #e9546b;
+  }
+}
+
+
+#detail-btn, #user-detail-btn {
+  border: 1px solid #c1d8ac;
+  color: #c1d8ac;
+  &:hover {
+    background: #c1d8ac;
+  }
+}
+
+#user-detail-btn {
+  font-size: 12px;
+}
+
+
+
+#destroy-btn, #withdraw-btn, #post-destroy-btn, #unsubscribe-btn {
+  text-decoration: none;
+  border: 1px solid #83ccd2;
+  color: #83ccd2;
+  &:hover {
+    color: white;
+    background: #83ccd2;
+  }
+}
+
+#destroy-btn {
+  padding: 7px 20px 8px 20px;
+}
+
+
+#withdraw-btn, #post-destroy-btn {
+  padding: 12px 22px 10px 22px;
+}
+
+#withdraw-btn {
+  border: 1px solid #a58f86;
+  color: #a58f86;
+  &:hover {
+    background: #a58f86;
+  }
+}
+
+
+
+#unsubscribe-btn {
+  font-size: 20px;
+  padding: 20px 60px;
+  border: 1px solid #e9546b;
+  color: #e9546b;
+  &:hover {
+    background: #e9546b;
+  }
+}
+
+
+#no-btn {
+  font-size: 20px;
+  padding: 20px 60px;
+  text-decoration: none;
+  border: 1px solid #83ccd2;
+  color: #83ccd2;
+  &:hover {
+    color: white;
+    background: #83ccd2;
+  }
+}
+

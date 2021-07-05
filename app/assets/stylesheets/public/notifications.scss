@@ -1,3 +1,29 @@
 // Place all the styles related to the notifications controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.notification-time {
+  text-align: right;
+  margin-right: 30px;
+}
+
+#notification-link1, #notification-link2, #notification-link3, #notification-link4 {
+  color: #c3d825;
+}
+
+#notifications {
+  font-family: 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
+
+}
+
+#notifications>div {
+  margin-left: 80px;
+}
+
+
+#notifications>p {
+  margin-left: 135px;
+  margin-bottom: 0px;
+  font-size: 14px;
+}
