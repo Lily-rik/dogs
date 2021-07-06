@@ -262,3 +262,10 @@ footer {
 }
 
 
+.container::-webkit-scrollbar {
+    display:none;
+}
+
+// タブレット縦置きサイズ（768px）以下の際に適用される設定
+@media screen and (max-width:768px) {
+}

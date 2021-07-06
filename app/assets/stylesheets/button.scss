@@ -25,15 +25,6 @@
 }
 
 
-#top-login-btn {
-  text-decoration: none;
-  border: 1px solid #e7609e;
-  color: #e7609e;
-  &:hover {
-    color: #fff;
-    background: #e7609e;
-  }
-}
 
 
 #signup-btn, #log-in-btn, #user-edit-btn {
@@ -77,7 +68,7 @@
 
 
 
-#top-login-btn {
+#top-login-btn, #top-signup-btn {
   text-decoration: none;
   font-size: 20px;
   text-align: center;
@@ -91,20 +82,8 @@
   }
 }
 
-
-
 #top-signup-btn {
-  text-decoration: none;
-  font-size: 20px;
-  text-align: center;
   padding: 25px 60px 25px 60px;
-  border: 1px solid #006e54;
-  color: #006e54;
-  font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
-  &:hover {
-    color: #fff;
-    background: #006e54;
-  }
 }
 
 
@@ -252,3 +231,21 @@
   }
 }
 
+
+// タブレット縦置きサイズ（768px）以下の際に適用される設定
+@media screen and (max-width:768px) {
+
+  #top-signup-btn {
+    width: 100px;
+    padding: 5px 20px 6px 20px;
+    text-decoration: none;
+  }
+
+
+
+
+
+
+
+
+}
