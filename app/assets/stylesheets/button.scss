@@ -235,15 +235,11 @@
 // タブレット縦置きサイズ（768px）以下の際に適用される設定
 @media screen and (max-width:768px) {
 
-  #top-signup-btn {
+  #top-signup-btn, #top-login-btn {
     width: 100px;
     padding: 5px 20px 6px 20px;
     text-decoration: none;
   }
-
-
-
-
 
 
 
