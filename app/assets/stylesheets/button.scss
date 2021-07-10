@@ -72,7 +72,7 @@
   text-decoration: none;
   font-size: 20px;
   text-align: center;
-  padding: 25px 70px 25px 70px;
+  padding: 25px 70px;
   border: 1px solid #006e54;
   color: #006e54;
   font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
@@ -83,7 +83,7 @@
 }
 
 #top-signup-btn {
-  padding: 25px 60px 25px 60px;
+  padding: 25px 60px;
 }
 
 
@@ -236,11 +236,14 @@
 @media screen and (max-width:768px) {
 
   #top-signup-btn, #top-login-btn {
-    width: 100px;
-    padding: 5px 20px 6px 20px;
+    padding: 15px 35px;
     text-decoration: none;
+    font-size: 12px;
   }
 
+  #top-signup-btn {
+    padding: 15px 28px;
+  }
 
 
 

@@ -20,15 +20,15 @@
 
   <body>
 
-    <header>
-      <nav class="navbar navbar-expand">
+    <header class="sticky-top">
+      <nav class="navbar navbar-light navbar-expand-md">
         <div class="container">
-          <a class="navbar-brand center-nav-title left-nav-title" id="navbar-content-center" href="/"><%= image_tag "logo.png"%></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+            <a class="navbar-brand center-nav-title left-nav-title" id="navbar-content-center" href="/"><%= image_tag "logo.png"%></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto nav-list" id="navbar">
+            <ul class="navbar-nav ml-auto text-right">
             <% if admin_signed_in? %>
               <li class="nav-item"><%= link_to 'MEMBERS', admin_users_path, class: 'nav-link', id: 'nav-link1' %></li>
               <li class="nav-item"><%= link_to 'LOGOUT', destroy_admin_session_path, class: 'nav-link', id: 'nav-link2' %></li>

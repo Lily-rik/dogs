@@ -268,4 +268,11 @@ footer {
 
 // タブレット縦置きサイズ（768px）以下の際に適用される設定
 @media screen and (max-width:768px) {
+  .signup-container {
+    margin-bottom: 100px;
+  }
+
+  .login-conteiner {
+    margin-bottom: 320px;
+  }
 }
