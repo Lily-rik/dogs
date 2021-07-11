@@ -3,55 +3,45 @@
 
 
   <div class="row">
-    <div class="col-lg-1"></div>
-    <div class="col-lg-11">
-
-
-      <div class="ranking">
-        <div class="ranking2 row">
-          <% @ranking.each.with_index(1) do |post, i,| %>
-          <% if i < 4
-              background_img = "ranking#{i}.png"
-            else
-              background_img = "ranking4.png"
-            end
-
-          %>
-            <div class="col-lg-4">
-
-              <div class="rank-user">
-                <div class="ranking-img" style="background-image: url('<%= asset_path "#{background_img}" %>')"><span><%= i %></span></div>
-
-                <%= attachment_image_tag post.user, :image, :fill, 45, 45, fallback: "dogs-icon.jpg", size:'45x45', class: "user-image" %>
-                <%= link_to user_path(post.user.id) do %>
-                  <span class="user-name"><%= post.user.user_name %></span>
-                <% end %>
-              </div>
-
-              <!--<div class="col-lg-4 pt-4">-->
-              <!--  <p><%#= post.favorites.count %>Favorites</p>-->
-              <!--</div>-->
-              <div class="ranking-posts mt-2">
-                <%= link_to post_path(post.id) do %>
-                  <% post.post_images.first(1).each do |image| %>
-                    <%= attachment_image_tag image, :image, :fill, 200, 200 %>
-                  <% end %>
-                <% end %>
-              </div>
-              <div id="favorite_button_<%= post.id %>" class="rank-fav-icon">
-                <%= render 'public/favorites/favorite', post: post %>
-              </div>
-              <div class="rank-comment-icon">
-                <%= link_to post_path(post.id), id: "rank-comment-btn" do %>
-                  <i class="far fa-comment fa-2x" style="color: #2a4073;"></i>
-                  <span><%= post.comments.count %></span>
-                <% end %>
-              </div>
-
-              <p class="post-caption mb-5"><%= post.caption %></p>
-            </div>
+    <div class="ranking">
+      <div class="row">
+        <% @ranking.each.with_index(1) do |post, i,| %>
+          <% if i < 4 %>
+          <% background_img = "ranking#{i}.png" %>
+          <% else %>
+          <% background_img = "ranking4.png" %>
           <% end %>
-        </div>
+          <div class="col-lg-4 col-md-12">
+
+            <div class="rank-user">
+              <div class="ranking-img" style="background-image: url('<%= asset_path "#{background_img}" %>')"><span><%= i %></span></div>
+
+              <%= attachment_image_tag post.user, :image, :fill, 45, 45, fallback: "dogs-icon.jpg", size:'45x45', class: "user-image ranking-user-img" %>
+              <%= link_to user_path(post.user.id) do %>
+                <span class="user-name"><%= post.user.user_name %></span>
+              <% end %>
+            </div>
+
+            <div class="ranking-posts text-center mt-2">
+              <%= link_to post_path(post.id) do %>
+                <% post.post_images.first(1).each do |image| %>
+                  <%= attachment_image_tag image, :image, :fill, 200, 200 %>
+                <% end %>
+              <% end %>
+            </div>
+            <div id="favorite_button_<%= post.id %>" class="rank-fav-icon">
+              <%= render 'public/favorites/favorite', post: post %>
+            </div>
+            <div class="rank-comment-icon">
+              <%= link_to post_path(post.id), id: "rank-comment-btn" do %>
+                <i class="far fa-comment fa-2x" style="color: #2a4073;"></i>
+                <span><%= post.comments.count %></span>
+              <% end %>
+            </div>
+
+            <p class="post-caption rank-post-caption my-5"><%= post.caption %></p>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

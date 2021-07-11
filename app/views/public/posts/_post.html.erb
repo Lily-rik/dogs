@@ -1,43 +1,36 @@
-<div class="row">
-  <div class="col-lg-1"></div>
+<div class="posts">
+  <div class="row">
+  <% posts.each do |post|%>
+    <div class="col-lg-4 col-md-6">
 
-  <div class="col-lg-11">
+      <%= attachment_image_tag post.user, :image, :fill, 50, 50, fallback: "dogs-icon.jpg", size:'50x50', class: "user-image mr-1 post-user-image"%>
 
-    <div class="posts">
-      <div class="row">
-      <% posts.each do |post|%>
-        <div class="col-lg-4">
-
-          <%= attachment_image_tag post.user, :image, :fill, 50, 50, fallback: "dogs-icon.jpg", size:'50x50', class: "user-image mr-1"%>
-
-          <%= link_to user_path(post.user.id) do %>
-            <span class="user-name"><%= post.user.user_name %></span>
-          <% end %>
+      <%= link_to user_path(post.user.id) do %>
+        <span class="user-name"><%= post.user.user_name %></span>
+      <% end %>
 
 
-          <% if post.user != current_user %>
-            <div id="favorite_button_<%= post.id %>" class="favorite-icon">
-              <%= render 'public/favorites/favorite', post: post %>
-            </div>
-          <% end %>
-
-
-
-
-          <%= link_to post_path(post.id) do %>
-            <% post.post_images.first(1).each do |image| %>
-              <p class="mt-2"><%= attachment_image_tag image, :image, :fill, 200, 200 %></p>
-            <% end %>
-          <% end %>
-
-          <p class="post-caption mb-5"><%= post.caption %></p>
-
+      <% if post.user != current_user %>
+        <div id="favorite_button_<%= post.id %>" class="favorite-icon">
+          <%= render 'public/favorites/favorite', post: post %>
         </div>
       <% end %>
-      </div>
+
+
+
+
+      <%= link_to post_path(post.id) do %>
+        <% post.post_images.first(1).each do |image| %>
+          <p class="text-center mt-2 mb-1"><%= attachment_image_tag image, :image, :fill, 200, 200 %></p>
+        <% end %>
+      <% end %>
+
+      <p class="post-caption mb-5"><%= post.caption %></p>
+
     </div>
-    <div class="paginate mt-3">
-      <%= paginate posts %>
-    </div>
+  <% end %>
   </div>
+</div>
+<div class="paginate mt-3">
+  <%= paginate posts %>
 </div>

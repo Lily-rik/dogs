@@ -134,16 +134,6 @@ main {
   font-family: 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
 }
 
-.post-caption {
-  width: 190px;
-  padding-left: 10px;
-  display: block;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  font-size: 14px;
-  font-family: 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
-}
 
 .captions, .user-name, .form-control {
   font-family: 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
@@ -154,29 +144,9 @@ main {
   font-size: 14px;
 }
 
-.show-caption, .ranking-caption {
-  width: 475px;
-  line-height: 1.5;
-  margin-left: 20px;
-}
-
-.ranking-caption {
-  margin-left: 14px;
-}
-
-.show-caption>a, .ranking-caption>a {
-  color: #007bff;
-}
 
 
-// showページ
 
-// posts
-.favorite-icon {
-  position: absolute;
-  top: 10px;
-  right: 160px;
-}
 
 
 
@@ -244,7 +214,7 @@ main {
 
 
 
-.unsubscribe-container, .admin-new-container {
+.admin-new-container {
   margin-bottom: 220px;
 }
 

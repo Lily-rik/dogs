@@ -1,11 +1,8 @@
-<div class="container">
-  <div class="row">
-    <div class="col-lg-2"></div>
-    <div class="col-lg-4">
-      <div id="title"><%= @user.user_name %><span>'s followers</span></div>
-    </div>
-    <div class="col-lg-6"></div>
+<div class="container follows-container">
+  <div class="mb-3 text-center">
+    <%= render 'public/searches/user_search' %>
   </div>
+  <div id="title" class="text-center mb-3"><%= @user.user_name %><span>'s followers</span></div>
 
   <div class="row">
     <div class="col-lg-2"></div>

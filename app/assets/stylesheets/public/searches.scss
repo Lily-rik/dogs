@@ -3,6 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.search-container {
+  margin-bottom: 370px;
+}
+
+
+
 .search {
   margin-right: 120px;
   padding-bottom: 20px;
@@ -120,4 +126,17 @@
     }
 
   }
+}
+
+
+
+
+
+
+// タブレット縦置きサイズ（768px）以下の際に適用される設定
+@media screen and (max-width:768px) {
+  .search-container {
+    margin-bottom: 600px;
+  }
+
 }

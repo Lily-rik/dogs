@@ -42,6 +42,7 @@ $(document).on('turbolinks:load', function() {
   $('#slider').slick({
     dots: true, //スライドの下にドットのナビゲーションを表示
     autoplay: false, //自動再生しない
+    slidesToShow: 1,
   });
 
   // read more...の表示

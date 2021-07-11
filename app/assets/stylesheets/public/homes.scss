@@ -72,3 +72,23 @@
 
 
 
+
+// タブレット縦置きサイズ（768px）以下の際に適用される設定
+@media screen and (max-width:768px) {
+  .top-btns {
+    margin-bottom: 140px;
+  }
+
+
+  .about-visual {
+    height: 400px;
+  }
+
+  .about-visual {
+    margin-bottom: 40px;
+  }
+
+  .about-visual-content {
+    height: 400px;
+  }
+}

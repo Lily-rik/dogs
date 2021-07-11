@@ -1,11 +1,5 @@
-<div class="container">
-  <div class="row mb-5">
-    <div class="col-lg-2"></div>
-    <div class="col-lg-8">
-      <div id="title">Search results <span class="ml-5">"<%= @search %>"</span></div>
-    </div>
-    <div class="col-lg-2"></div>
-  </div>
+<div class="container search-container">
+  <div id="title" class="text-center">Search results <span class="ml-5">"<%= @search %>"</span></div>
 
   <div class="results mt-5">
     <% if @range == "User" %>

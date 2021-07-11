@@ -56,12 +56,12 @@ class Public::UsersController < ApplicationController
   # フォロー・フォロワー
   def follows
     @user = User.find(params[:id])
-    @users = @user.following.page(params[:page]).reverse_order.per(10)
+    @users = @user.following.page(params[:page]).reverse_order.per(5)
   end
 
   def followers
     @user = User.find(params[:id])
-    @users = @user.followers.page(params[:page]).reverse_order.per(10)
+    @users = @user.followers.page(params[:page]).reverse_order.per(5)
   end
 
   # お気に入り表示

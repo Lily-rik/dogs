@@ -2,15 +2,15 @@
   <div class="row">
     <div class="col-lg-2"></div>
     <div class="col-lg-4 mb-5">
-      <div id="title"><%= @user.user_name %><span>'s page</span></div>
+      <div id="title" class="user-show-title"><%= @user.user_name %><span>'s page</span></div>
     </div>
     <div class="col-lg-6"></div>
   </div>
   <div class="row">
     <div class="col-lg-2"></div>
-    <div class="col-lg-2">
+    <div class="col-lg-2 col-md-2 mypage-info">
 
-      <div class="user-info" style="text-align: center;">
+      <div class="user-info text-center">
         <p>
           <%= attachment_image_tag @user, :image, :fill, 100, 100, fallback: "dogs-icon.jpg", size:'100x100', class: "user-image" %>
         </p>
@@ -29,30 +29,30 @@
         <% end %>
       </div>
     </div>
-    <div class="col-lg-7">
+    <div class="col-lg-7 col-md-10">
 
       <div class="user_buttons">
         <div class="row mt-2">
-          <div class="col-lg-3 mt-5">
+          <div class="col-lg-3 col-md-3 mt-5">
             <p id="following_button">
               <%= link_to follows_user_path(@user.id), id: "user-btn", class: "button" do %>
                 <span>FOLLOW </span><%= @user.following.count %>
               <% end %>
             </p>
           </div>
-          <div class="col-lg-3 mt-5">
+          <div class="col-lg-3 col-md-3 mt-5">
             <p id="follower_button">
               <%= link_to followers_user_path(@user.id), id: "user-btn", class: "button"  do %>
                 <span>FOLLWER </span><%= @user.followers.count %>
               <% end %>
             </p>
           </div>
-          <div class="col-lg-3 mt-5">
+          <div class="col-lg-3 col-md-3 mt-5">
             <p>
               <%= link_to 'FAVORITES', my_favorites_path(@user.id), id: "user-btn", class: "button"  %>
             </p>
           </div>
-          <div class="col-lg-3 mt-5">
+          <div class="col-lg-3 col-md-3 mt-5">
             <% if @user == current_user %>
               <%= link_to 'NEW POST', new_post_path, id: "user-btn", class: "button"  %>
             <% else %>
@@ -69,7 +69,7 @@
     <div class="col-lg-9">
 
       <div class="captions mt-4 mb-5 d-flex">
-        <h5 class="heading mb-3 mx-4">Introduction</h5>
+        <h5 class="heading mb-4 mx-4">Introduction</h5>
         <p class="self-introduction" ><%= simple_format(@user.self_introduction) %></p>
       </div>
     </div>
@@ -86,36 +86,27 @@
 
 
   <div class="row">
-    <div class="col-lg-1"></div>
-    <div class="col-lg-11">
+    <div class="posts">
+      <div class="row">
+      <% @posts.each do |post|%>
+      <div class="col-lg-4 col-md-6">
 
-
-      <div class="posts">
-
-
-
-
-        <div class="row">
-        <% @posts.each do |post|%>
-        <div class="col-lg-4">
-
-          <%= link_to post_path(post.id) do %>
-            <% post.post_images.first(1).each do |image| %>
-              <%= attachment_image_tag image, :image, :fill, 200, 200 %>
-            <% end %>
+        <%= link_to post_path(post.id) do %>
+          <% post.post_images.first(1).each do |image| %>
+            <p class="text-center mb-2"><%= attachment_image_tag image, :image, :fill, 200, 200 %></p>
           <% end %>
-
-
-          <p class="post-caption mb-5"><%= post.caption %></p>
-        </div>
         <% end %>
 
-        </div>
+
+        <p class="post-caption show-post-caption mb-5"><%= post.caption %></p>
+      </div>
+      <% end %>
 
       </div>
-      <div class="paginate">
-        <%= paginate @posts %>
-      </div>
+
+    </div>
+    <div class="paginate">
+      <%= paginate @posts %>
     </div>
   </div>
 </div>

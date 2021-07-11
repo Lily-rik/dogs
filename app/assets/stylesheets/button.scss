@@ -234,7 +234,6 @@
 
 // タブレット縦置きサイズ（768px）以下の際に適用される設定
 @media screen and (max-width:768px) {
-
   #top-signup-btn, #top-login-btn {
     padding: 15px 35px;
     text-decoration: none;
@@ -245,6 +244,12 @@
     padding: 15px 28px;
   }
 
+  .prf-edit-btn {
+    width: 100px;
+  }
 
+  #unsubscribe-btn, #no-btn {
+    font-size: 14px;
+  }
 
 }

@@ -78,9 +78,8 @@
 }
 
 .follow-table td:nth-child(1) {
-  width: 10%;
+  width: 20%;
   padding: 15px 0 15px 10px;
-
 }
 
 
@@ -96,7 +95,7 @@
 
 }
 .follow-table td:nth-child(4) {
-  width: 30%;
+  width: 35%;
   padding: 30px 0 10px 0;
 
 }
@@ -123,4 +122,9 @@
   .info-edit-table {
     margin-left: 70px;
   }
+
+  .follow-table td:nth-child(1) {
+    width: 20%;
+  }
+
 }

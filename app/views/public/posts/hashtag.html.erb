@@ -1,11 +1,5 @@
 <div class="container">
-  <div class="row">
-    <div class="col-lg-2"></div>
-    <div class="col-lg-8 mb-5">
-      <div id="title" class="mb-2">#<%= @tag.hashname %></div>
-    </div>
-    <div class="col-lg-2"></div>
-  </div>
+  <div id="title" class="text-center mb-4">#<%= @tag.hashname %></div>
 
   <%= render 'public/posts/post', posts: @posts %>
 
