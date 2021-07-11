@@ -1,0 +1,130 @@
+.table{
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.table tr{
+  border-bottom: solid 1px #eee;
+  cursor: pointer;
+}
+
+
+.table tr:hover{
+  background-color: #f8fbf8;
+  transition: 2s;
+}
+
+.users-table td, .user-table td {
+  padding: 20px 0 5px 10px;
+}
+
+.users-table td:nth-child(1) {
+  width: 10%;
+}
+
+.users-table td:nth-child(2) {
+  width: 20%;
+}
+
+.users-table td:nth-child(3) {
+  width: 32%;
+}
+
+.users-table td:nth-child(4) {
+  width: 20%;
+}
+
+.users-table td:nth-child(5) {
+  width: 20%;
+}
+
+.user-table td:nth-child(2) {
+  padding-top: 6px;
+}
+
+.comment-table {
+  width: 80%;
+}
+
+.comment-table td:nth-child(1) {
+  text-align: center;
+  width: 15%;
+  padding: 10px 0 15px 0;
+
+}
+
+.comment-table td:nth-child(2) {
+  width: 18%;
+  padding: 22px 0 22px 0px;
+  font-size: 14px;
+}
+.comment-table td:nth-child(3) {
+  width: 45%;
+  padding: 22px 15px 22px 10px;
+
+}
+
+.comment-table td:nth-child(4) {
+  width: 30%;
+  padding: 20px 0 20px 0px;
+
+}
+
+
+.follow-table {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.follow-table td:nth-child(1) {
+  width: 20%;
+  padding: 15px 0 15px 10px;
+}
+
+
+.follow-table td:nth-child(2) {
+  width: 15%;
+  padding: 15px 0 15px 10px;
+
+}
+
+.follow-table td:nth-child(3) {
+  width: 20%;
+  padding: 30px 0 10px 0;
+
+}
+.follow-table td:nth-child(4) {
+  width: 35%;
+  padding: 30px 0 10px 0;
+
+}
+
+.info-edit-table {
+  margin-right: 70px;
+}
+
+
+.info-edit-table th, .user-edit-table th {
+  text-align: center;
+  width: 30%;
+  height: 70px;
+}
+
+.info-edit-table td, .user-edit-table td {
+  width: 40%;
+  height: 70px;
+}
+
+
+// タブレット縦置きサイズ（768px）以下の際に適用される設定
+@media screen and (max-width:768px) {
+  .info-edit-table {
+    margin-left: 70px;
+  }
+
+  .follow-table td:nth-child(1) {
+    width: 20%;
+  }
+
+}

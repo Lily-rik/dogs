@@ -9,14 +9,14 @@
   </div>
 
   <div class="row mt-5 pt-5">
-    <div class="col-lg-3"></div>
-    <div class="col-lg-3 text-center">
+    <div class="col-lg-3 col-md-1"></div>
+    <div class="col-lg-3 col-md-5 text-center">
       <%= link_to 'YES', withdrawal_path(@user.id), method: :patch, "data-confirm" => "本当に退会しますか？", id: "unsubscribe-btn", class: "button" %>
     </div>
-    <div class="col-lg-3" style="text-align: center;">
+    <div class="col-lg-3 col-md-5 text-center">
       <%= link_to 'NO', user_path(@user.id), id: "no-btn", class: "button" %>
     </div>
-    <div class="col-lg-3"></div>
+    <div class="col-lg-3 col-md-1"></div>
   </div>
 
 

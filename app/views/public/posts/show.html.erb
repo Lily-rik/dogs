@@ -1,18 +1,12 @@
 <div class="container">
-  <div class="row">
-    <div class="col-lg-2"></div>
-    <div class="col-lg-4">
-      <div id="title"><%= @post.user.user_name %><span>'s dog</span></div>
-    </div>
-    <div class="col-lg-6"></div>
-  </div>
+  <div id="title" class="text-center"><%= @post.user.user_name %><span>'s dog</span></div>
 
   <div class="row">
-    <div class="col-lg-3"></div>
-    <div class="col-lg-7">
+    <div class="col-lg-3 col-md-2"></div>
+    <div class="col-lg-7 col-md-10">
 
       <div class="post user-name my-5">
-        <%= attachment_image_tag @post.user, :image, :fill, 60, 60, fallback: "dogs-icon.jpg", size:'60x60', class: "user-image mr-3 ml-4"%>
+        <p class="show-user-image"><%= attachment_image_tag @post.user, :image, :fill, 60, 60, fallback: "dogs-icon.jpg", size:'60x60', class: "user-image mr-3 ml-4"%></p>
         <%= link_to user_path(@post.user.id) do %>
           <span style="font-size: 18px;"><%= @post.user.user_name %></span>
         <% end %>
@@ -29,15 +23,15 @@
         <% end %>
 
 
-        <div class="user-post my-3">
+        <div class="user-post mt-2 mb-3">
           <div id="slider">
             <% @post.post_images.each do |image| %>
-              <%= attachment_image_tag image, :image, :fill, 500, 500 %>
+              <%= attachment_image_tag image, :image, :fill, 500, 500, class: "show-image" %>
             <% end %>
           </div>
         </div>
         <div></div>
-        <div class="my-3">
+        <div class="show-captions my-5">
           <%= simple_format(render_with_hashtags(@post.caption), class: "show-caption captions") %>
           <a href="" class="more captions">Read more...</a>
         </div>

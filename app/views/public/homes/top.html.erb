@@ -1,56 +1,59 @@
+<div class="section">
 
-  <div class="section">
-
-    <div class="sliderArea">
-      <div class="full-screen-o slider">
-        <%= image_tag "dogs02.jpg", alt: "dogs icon", class: "slider" %>
-        <%= image_tag "dogs05.jpg", alt: "dogs icon", class: "slider" %>
-        <%= image_tag "dogs03.jpg", alt: "dogs icon", class: "slider" %>
-        <%= image_tag "dogs04.jpg", alt: "dogs icon", class: "slider" %>
-        <%= image_tag "dogs01.jpg", alt: "dogs icon", class: "slider" %>
-      </div>
+  <div class="sliderArea">
+    <div class="full-screen-o slider">
+      <%= image_tag "dogs02.jpg", alt: "dogs icon", class: "slider" %>
+      <%= image_tag "dogs05.jpg", alt: "dogs icon", class: "slider" %>
+      <%= image_tag "dogs03.jpg", alt: "dogs icon", class: "slider" %>
+      <%= image_tag "dogs04.jpg", alt: "dogs icon", class: "slider" %>
+      <%= image_tag "dogs01.jpg", alt: "dogs icon", class: "slider" %>
     </div>
-
   </div>
 
-  <div id="web-title">
-    <p>Welcome to DOG'S</p>
+</div>
+
+<div id="web-title">
+  <p>Welcome to DOG'S</p>
+</div>
+
+<div class="web-text">
+  <p>ようこそDOG'Sへ！！<br>
+     このサイトではたくさんの可愛いわんちゃんたちに出会うことができます<br>
+     わんちゃんたちに癒されながら楽しいひとときをお過ごしください<br>
+     素敵な投稿も楽しみにしております<br>
+  </p>
+</div>
+
+
+
+
+
+<div class="row mt-5 top-btns">
+<% if user_signed_in? %>
+  <div class="col-lg-4"></div>
+  <div class="col-lg-4 button">
+    <%= link_to "YOUR DOGS", about_path, id: "top-about-btn" %>
   </div>
-
-  <div class="web-text">
-    <p>ようこそDOG'Sへ！！<br>
-       このサイトではたくさんの可愛いわんちゃんたちに出会うことができます<br>
-       わんちゃんたちに癒されながら楽しいひとときをお過ごしください<br>
-       素敵な投稿も楽しみにしております<br>
-    </p>
+  <div class="col-lg-4"></div>
+<% else %>
+  <div class="col-md-3"></div>
+  <div class="col-md-3 text-center">
+    <%= link_to "SIGN UP", new_user_registration_path, id: "top-signup-btn" %>
   </div>
-
-
-
-
-
-  <div class="row mt-5 top-btns">
-  <% if user_signed_in? %>
-    <div class="col-lg-4"></div>
-    <div class="col-lg-4 button">
-      <%= link_to "YOUR DOGS", about_path, id: "top-about-btn" %>
-    </div>
-    <div class="col-lg-4"></div>
-  <% else %>
-    <div class="col-lg-2 mr-5"></div>
-    <div class="col-lg-3 ml-5 button">
-      <%= link_to "SIGN UP", new_user_registration_path, id: "top-signup-btn" %>
-    </div>
-    <!--<div class="col-lg-1"></div>-->
-    <div class="col-lg-3 ml-5 button">
-      <%= link_to "LOG IN", new_user_session_path, id: "top-login-btn" %>
-    </div>
-    <div class="col-lg-1"></div>
-    <div class="guet-login"><%= link_to 'ゲストログイン（閲覧用）', homes_guest_sign_in_path, method: :post, id: "guest_login" %></div>
-
-
-  <% end %>
+  <div class="col-md-3 text-center">
+    <%= link_to "LOG IN", new_user_session_path, id: "top-login-btn" %>
   </div>
+  <div class="col-md-3"></div>
+  <div class="guet-login"><%= link_to 'ゲストログイン（閲覧用）', homes_guest_sign_in_path, method: :post, id: "guest_login" %></div>
 
 
+<% end %>
+</div>
 
+
+<style>
+  .row {
+      margin-right: 0px;
+      margin-left: 0px;
+  }
+</style>

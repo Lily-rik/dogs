@@ -1,3 +1,65 @@
 // Place all the styles related to the public/users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+// マイページ
+.user-image {
+  border-radius: 50%;
+}
+
+.user-name {
+  font-size: 15px;
+}
+
+.self-introduction {
+  line-height: 1.9;
+  font-size: 15px;
+}
+
+// 退会ページ
+.unsubscribe-text {
+  margin-top: 50px;
+  font-size: 32px;
+  text-align: center;
+  color: #2a4073;
+}
+
+.unsubscribe-caption {
+  margin-top: 20px;
+  font-size: 12px;
+  text-align: center;
+  color: #2a4073;
+}
+
+
+// 退会画面
+.unsubscribe-container {
+  margin-bottom: 220px;
+}
+
+
+
+// タブレット縦置きサイズ（768px）以下の際に適用される設定
+@media screen and (max-width:768px) {
+  .user-show-title {
+    text-align: center;
+  }
+
+  .mypage-edit-container {
+    margin-bottom: 230px;
+  }
+
+  .info-edit-container {
+    margin-bottom: 320px;
+  }
+
+  .follows-container {
+    margin-bottom: 170px;
+  }
+
+  .unsubscribe-container {
+    margin-bottom: 470px;
+  }
+}

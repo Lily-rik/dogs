@@ -22,7 +22,7 @@ class Post < ApplicationRecord
 
   # ランキング機能
   def self.create_ranking # Postクラスからデータを取ってくる処理なのでクラスメソッド
-    Post.find(Favorite.group(:post_id).order('count(post_id) desc').limit(15).pluck(:post_id))
+    Post.find(Favorite.group(:post_id).order('count(post_id) desc').limit(9).pluck(:post_id))
     ## Favoriteモデルの中から記事の番号(post_id)が同じものにグループを分ける → group(:post_id)
     ## 番号の多い順に並びかえる → order('count(post_id) desc') ：descは降順（多い順）になる
     ## 表示する数を3個に指定する → limit(3)

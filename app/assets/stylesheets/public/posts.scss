@@ -3,24 +3,63 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+// Showページ
+.post {
+  position: relative;
+}
+
+.show-user-image {
+  display: inline-block;
+  margin-bottom: 0px;
+}
+
+.show-icon {
+  position: absolute;
+  top: 15px;
+  right: 170px;
+}
+
+.more {
+  display: inline-block;
+  width: 100%;
+  text-align: right;
+  padding-right: 150px;
+}
+
+.show-caption, .ranking-caption {
+  width: 475px;
+  line-height: 1.5;
+  margin-left: 20px;
+}
+
+.show-caption>a, .ranking-caption>a {
+  color: #007bff;
+}
+
+
+
+// New postページ
+.new-post-container {
+  margin-bottom: 110px;
+}
+
 
 
 // ランキングページ
-
-#ranking {
+.ranking-img {
   position: absolute;
   top: -8px;
-  left: 10px;
-  background-image: image-url("ranking.jpg");
+  left: 90px;
+  background-image: image-url("ranking4.png");
   background-size: contain;  width: 50px;
   height: 50px;
   display: inline-block;
 }
 
-#ranking span {
+.ranking-img span {
   position: absolute;
   top: 12px;
-  left: 20px;
+  left: 18px;
   font-size: 24px;
   color: #583822;
   font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
@@ -31,6 +70,9 @@
   text-align: center;
 }
 
+.ranking-user-img {
+  margin-left: 80px;
+}
 
 .ranking-posts {
   position: relative;
@@ -39,15 +81,153 @@
 
 .rank-fav-icon {
   position: absolute;
-  bottom: 70px;
-  left: 50px;
+  bottom: 75px;
+  left: 120px;
+}
+
+#rank-comment-btn {
+  position: relative;
+  text-decoration: none;
+  margin-right: 15px;
 }
 
 .rank-comment-icon {
   position: absolute;
-  bottom: 70px;
-  left: 125px;
+  bottom: 75px;
+  left: 210px;
+}
+
+#favorite-btn span, #rank-comment-btn span {
+  position: absolute;
+  top: -7px;
+  right: -30px;
+  font-size: 20px;
+  color: #2a4073;
+}
+
+.rank-post-caption {
+  padding-left: 15px;
+}
+
+.ranking-more {
+  margin-right: 50px;
 }
 
 
+
+
+
+// posts
+.post-user-image {
+  margin-left: 70px;
+}
+
+.favorite-icon {
+  position: absolute;
+  top: 10px;
+  right: 120px;
+}
+
+// 部分テンプレートのFavoriteボタン
+#favorite-btn {
+  position: relative;
+  text-decoration: none;
+  margin-right: 0px;
+}
+
+.post-caption {
+  width: 190px;
+  margin-left: 82px;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  font-family: 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
+}
+
+.show-post-caption {
+  margin: 0 auto;
+}
+
+
+
+// タブレット縦置きサイズ（768px）以下の際に適用される設定
+@media screen and (max-width:768px) {
+  .post-caption {
+    margin-left: 72px;
+  }
+
+  .show-post-caption {
+    margin-left: 80px;
+  }
+
+  .new-post-container {
+    margin-bottom: 350px;
+  }
+
+  .ranking-img {
+    position: absolute;
+    left: 200px;
+  }
+
+  .rank-user {
+    width: 28%;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .ranking-user-img {
+    margin-left: 0px;
+  }
+
+
+  .rank-post-caption {
+    margin: 0 auto;
+  }
+
+  .rank-fav-icon {
+    position: absolute;
+    left: 300px;
+  }
+
+  .rank-comment-icon {
+    position: absolute;
+    left: 390px;
+  }
+
+  .post-edit-container {
+    margin-bottom: 210px;
+  }
+
+  .slick-slider {
+    width: 360px !important;
+    height: 360px;
+  }
+
+  .user-post {
+    width: 50%;
+    margin-left: 50px;
+    text-align: center;
+  }
+
+  .show-user-image {
+    margin-left: 50px;
+  }
+
+  .show-icon {
+    position: absolute;
+    right: 190px;
+  }
+
+  .show-captions {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .show-caption {
+    width: 300px;
+  }
+
+}
 

@@ -3,7 +3,7 @@
     <% chats.each do |chat| %>
       <% if chat.user == current_user %>
         <tr class="row justify-content-right my-chat">
-          <td class="col-lg-8">
+          <td class="col-lg-8 col-md-8">
             <div class="col-11 float-right text-right user-name">
               <%= link_to user_path(chat.user.id) do %>
                 <%= chat.user.user_name %><br>
@@ -20,10 +20,10 @@
         </tr>
       <% else %>
         <tr class="row justify-content-right my-chat">
-          <td class="col-lg-1">
+          <td class="col-lg-1 col-md-1">
             <%= link_to attachment_image_tag(chat.user, :image, :fill, 50, 50, fallback: "dogs-icon.jpg", size:'50x50', class: "profile-image align-top user-image"), user_path(chat.user.id) %>
           </td>
-          <td class="col-lg-10 user-name">
+          <td class="col-lg-10 col-md-5 user-name">
             <%= link_to user_path(chat.user.id) do %>
               <%= chat.user.user_name %><br>
             <% end %>

@@ -1,3 +1,136 @@
 // Place all the styles related to the public/chats controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#chat_index {
+  margin-left: 20px;
+}
+
+.my-chat {
+  width: 800px;
+}
+
+.chat_box{
+  width: 100%;
+  height: 500px;
+  padding: 0 40px 10px 260px;
+  overflow: scroll;
+  border: 1px solid #fff;
+  font-size: 14px;
+  background: #fff;
+}
+
+.form-inline {
+  width: 45%;
+  margin-left: 380px;
+}
+
+#chat-text {
+  width: 350px;
+  margin-bottom: 10px;
+}
+
+.chat-btn {
+  width: 50px;
+  height: 38px;
+  border: 1px solid #fff;
+  background-color: #fff;
+}
+
+
+// 自分のメッセージの吹き出し
+.says {
+  float: right;
+  position: relative;
+  right: 5px;
+  padding: 10px 30px;
+  margin: 5px 0 5px 0;
+  background: #fdeff2;
+  border-radius: 15px;
+  line-height: 1.5;
+  word-break: break-all;
+  text-align: right;
+}
+.says:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 3px;
+  right: -19px;
+  border: 8px solid transparent;
+  border-right: 18px solid #fdeff2;
+  -webkit-transform: rotate(145deg);
+  transform: rotate(145deg);
+}
+
+
+// 相手のメッセージの吹き出し
+.other-user-says {
+  float: left;
+  position: relative;
+  padding: 10px 30px;
+  margin: 5px 0 5px 0;
+  background: #ebf6f7;
+  border-radius: 15px;
+  line-height: 1.5;
+  word-break: break-all;
+}
+
+.other-user-says:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 3px;
+  left: -19px;
+  border: 8px solid transparent;
+  border-right: 18px solid #ebf6f7;
+  -webkit-transform: rotate(35deg);
+  transform: rotate(35deg);
+}
+
+.other-user-says p, .says p {
+  margin-bottom: 3px;
+}
+
+.other-user-says span, .says span {
+  font-size: 10px;
+}
+
+
+// タブレット縦置きサイズ（768px）以下の際に適用される設定
+@media screen and (max-width:768px) {
+  #chat_index {
+    margin: 0px;
+  }
+
+  .my-chat {
+    width: 100%;
+  }
+
+  .my-chat td:nth-child(1) {
+    margin-left: 100px;
+  }
+
+  .chat_box{
+    width: 100%;
+    height: 600px;
+    padding: 0px;
+  }
+
+  .chat_box table {
+    width: 100%;
+  }
+
+  .form-inline {
+    width: 60%;
+    margin: 0 auto;
+    padding-top: 30px;
+    text-align: center;
+  }
+
+  main {
+    margin-bottom: 30px !important;
+  }
+
+}
