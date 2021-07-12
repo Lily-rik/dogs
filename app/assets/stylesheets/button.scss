@@ -251,5 +251,26 @@
   #unsubscribe-btn, #no-btn {
     font-size: 14px;
   }
+}
 
+// スマートフォンサイズ（425px）以下の際に適用される設定
+@media screen and (max-width:425px) {
+  #top-about-btn {
+    font-size: 12px;
+  }
+
+  .your-dogs-btn {
+    margin-bottom: 50px;
+  }
+
+
+
+
+  .prf-edit-btn {
+    width: 100px;
+  }
+
+  #unsubscribe-btn, #no-btn {
+    font-size: 14px;
+  }
 }

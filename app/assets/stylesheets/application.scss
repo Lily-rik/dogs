@@ -145,27 +145,6 @@ main {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .new-comment {
   width: 80%;
 }
@@ -236,6 +215,8 @@ footer {
     display:none;
 }
 
+
+
 // タブレット縦置きサイズ（768px）以下の際に適用される設定
 @media screen and (max-width:768px) {
   .signup-container {
@@ -244,5 +225,41 @@ footer {
 
   .login-conteiner {
     margin-bottom: 320px;
+  }
+}
+
+
+// スマートフォンサイズ（425px）以下の際に適用される設定
+@media screen and (max-width:425px) {
+  .navbar {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .nav-title img {
+    width: 80%;
+  }
+
+  .signup-container {
+    margin-bottom: 50px;
+  }
+
+  .login-conteiner {
+    margin-bottom: 130px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+  footer {
+    font-size: 12px;
   }
 }

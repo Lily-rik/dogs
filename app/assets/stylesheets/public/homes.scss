@@ -79,7 +79,6 @@
     margin-bottom: 140px;
   }
 
-
   .about-visual {
     height: 400px;
   }
@@ -91,4 +90,28 @@
   .about-visual-content {
     height: 400px;
   }
+}
+
+
+// スマートフォンサイズ（425px）以下の際に適用される設定
+@media screen and (max-width:425px) {
+  #web-title {
+    margin: 70px auto 50px auto;
+    font-size: 32px;
+  }
+
+  .web-text {
+    font-size: 12px;
+  }
+
+  .guet-login {
+    font-size: 14px;
+    margin-top: 40px;
+  }
+
+    .top-btns {
+      margin-bottom: 0px;
+    }
+
+
 }

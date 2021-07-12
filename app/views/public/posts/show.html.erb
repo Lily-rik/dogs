@@ -24,7 +24,7 @@
 
 
         <div class="user-post mt-2 mb-3">
-          <div id="slider">
+          <div id="slider" class="show-slider">
             <% @post.post_images.each do |image| %>
               <%= attachment_image_tag image, :image, :fill, 500, 500, class: "show-image" %>
             <% end %>
@@ -38,7 +38,7 @@
 
       </div>
 
-      <div id="comment_button_<%= @post.id %>" class="mt-5 mb-3">
+      <div id="comment_button_<%= @post.id %>" class="comments mt-5 mb-3">
         <%= render 'public/comments/comment', post: @post %>
       </div>
 

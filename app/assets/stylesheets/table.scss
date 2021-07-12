@@ -128,3 +128,11 @@
   }
 
 }
+
+
+// スマートフォンサイズ（425px）以下の際に適用される設定
+@media screen and (max-width:425px) {
+  .info-edit-table {
+    margin: 0 15px 0 0;
+  }
+}

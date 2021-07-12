@@ -94,3 +94,25 @@
 .slick-prev:before, .slick-next:before {
   color: #000;
 }
+
+
+
+// タブレット縦置きサイズ（768px）以下の際に適用される設定
+@media screen and (max-width:768px) {
+  .slick-slide img {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+// スマートフォンサイズ（425px）以下の際に適用される設定
+@media screen and (max-width:425px) {
+  .top-slider {
+    width: 100% ;
+    height: 100px;
+  }
+
+  .slider {
+    margin: 0 10px;
+  }
+}
