@@ -145,13 +145,6 @@ main {
 }
 
 
-.new-comment {
-  width: 80%;
-}
-
-.new-comment-btn {
-  margin-right: 150px;
-}
 
 
 // ページネーション
@@ -248,9 +241,13 @@ footer {
     margin-bottom: 130px;
   }
 
+  #title {
+    font-size: 26px ;
+  }
 
-
-
+  .heading, .label {
+    font-size: 22px;
+  }
 
 
 

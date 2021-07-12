@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-2"></div>
-    <div class="col-lg-4 mb-5">
+    <div class="user-show-title-box col-lg-4">
       <div id="title" class="user-show-title"><%= @user.user_name %><span>'s page</span></div>
     </div>
     <div class="col-lg-6"></div>
@@ -29,30 +29,30 @@
         <% end %>
       </div>
     </div>
-    <div class="col-lg-7 col-md-10">
+    <div class="col-lg-7 col-md-10 col-12">
 
       <div class="user_buttons">
         <div class="row mt-2">
-          <div class="col-lg-3 col-md-3 mt-5">
+          <div class="col-lg-3 col-md-3 col-6 mt-5 text-center">
             <p id="following_button">
               <%= link_to follows_user_path(@user.id), id: "user-btn", class: "button" do %>
                 <span>FOLLOW </span><%= @user.following.count %>
               <% end %>
             </p>
           </div>
-          <div class="col-lg-3 col-md-3 mt-5">
+          <div class="col-lg-3 col-md-3 col-6 mt-5 text-center">
             <p id="follower_button">
               <%= link_to followers_user_path(@user.id), id: "user-btn", class: "button"  do %>
                 <span>FOLLWER </span><%= @user.followers.count %>
               <% end %>
             </p>
           </div>
-          <div class="col-lg-3 col-md-3 mt-5">
+          <div class="col-lg-3 col-md-3 col-6 mt-5 text-center">
             <p>
               <%= link_to 'FAVORITES', my_favorites_path(@user.id), id: "user-btn", class: "button"  %>
             </p>
           </div>
-          <div class="col-lg-3 col-md-3 mt-5">
+          <div class="col-lg-3 col-md-3 col-6 mt-5 text-center">
             <% if @user == current_user %>
               <%= link_to 'NEW POST', new_post_path, id: "user-btn", class: "button"  %>
             <% else %>
@@ -68,7 +68,7 @@
     <div class="col-lg-2"></div>
     <div class="col-lg-9">
 
-      <div class="captions mt-4 mb-5 d-flex">
+      <div class="captions introduction-caption">
         <h5 class="heading mb-4 mx-4">Introduction</h5>
         <p class="self-introduction" ><%= simple_format(@user.self_introduction) %></p>
       </div>
@@ -77,7 +77,7 @@
   </div>
 
 
-  <div class="mb-3 text-center">
+  <div class="search-box text-center">
     <%= render 'public/searches/search' %>
   </div>
 
@@ -89,7 +89,7 @@
     <div class="posts">
       <div class="row">
       <% @posts.each do |post|%>
-      <div class="col-lg-4 col-md-6">
+      <div class="col-lg-4 col-md-6 col-12">
 
         <%= link_to post_path(post.id) do %>
           <% post.post_images.first(1).each do |image| %>
@@ -111,3 +111,9 @@
   </div>
 </div>
 
+<style>
+  .row {
+      margin-right: 0px;
+      margin-left: 0px;
+  }
+</style>

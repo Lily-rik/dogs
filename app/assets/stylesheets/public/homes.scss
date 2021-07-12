@@ -51,13 +51,6 @@
   background-color: rgba(255,255,255,0.3);
 }
 
-.about-text {
-  font-size: 16px;
-  padding-bottom: 40px;
-  font-family: 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
-  color: #543f32;
-}
-
 
 // Top、Aboutページ
 .web-text, .about-text {
@@ -81,9 +74,6 @@
 
   .about-visual {
     height: 400px;
-  }
-
-  .about-visual {
     margin-bottom: 40px;
   }
 
@@ -109,9 +99,22 @@
     margin-top: 40px;
   }
 
-    .top-btns {
-      margin-bottom: 0px;
-    }
+  .top-btns {
+    margin-bottom: 0px;
+  }
+
+  .about-visual {
+    height: 200px;
+    margin-bottom: 40px;
+  }
+
+  .about-visual-content {
+    height: 200px;
+  }
+
+  .about-text {
+    font-size: 12px;
+  }
 
 
 }

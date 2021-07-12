@@ -2,6 +2,6 @@
 <%= form_with(model:[post, comment], remote: true) do |f| %>
   <%= f.text_area :comment, rows:'3', id: 'textarea', class: 'form-control captions mt-3 new-comment' %>
   <div class="text-right mt-4 new-comment-btn">
-    <%= f.submit 'COMMENT', class: "create-btn button" %>
+    <%= f.submit 'COMMENT', class: "comment-btn button" %>
   </div>
 <% end %>

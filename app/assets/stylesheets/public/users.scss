@@ -5,6 +5,10 @@
 
 
 // マイページ
+.user-show-title-box {
+  margin-bottom: 48px;
+}
+
 .user-image {
   border-radius: 50%;
 }
@@ -13,10 +17,25 @@
   font-size: 15px;
 }
 
+.introduction-caption {
+  display: flex;
+  margin-top: 24px;
+  margin-bottom: 48px;
+}
+
 .self-introduction {
   line-height: 1.9;
   font-size: 15px;
 }
+
+.search-box {
+  margin-bottom: 16px;
+}
+
+.show-post-caption {
+  margin: 0 auto;
+}
+
 
 // 退会ページ
 .unsubscribe-text {
@@ -62,4 +81,42 @@
   .unsubscribe-container {
     margin-bottom: 470px;
   }
+
+  .show-post-caption {
+    margin-left: 80px;
+  }
+
+
+
+}
+
+// スマートフォンサイズ（425px）以下の際に適用される設定
+@media screen and (max-width:425px) {
+  .mypage-edit-container {
+    margin-bottom: 45px;
+  }
+
+  .follows-container {
+    margin-bottom: 0px;
+  }
+
+  .user-show-title-box {
+    margin-bottom: 20px;
+  }
+
+  .introduction-caption {
+    display: block;
+    margin: 30px auto;
+    text-align: center;
+  }
+
+  .search-box {
+    margin-top: 25px;
+    margin-bottom: 45px;
+  }
+
+  .show-post-caption {
+    margin-left: 73px;
+  }
+
 }

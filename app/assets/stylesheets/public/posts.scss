@@ -36,6 +36,9 @@
   color: #007bff;
 }
 
+.comments, #new-comment {
+  width: 80%;
+}
 
 
 // New postページ
@@ -146,9 +149,6 @@
   font-family: 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
 }
 
-.show-post-caption {
-  margin: 0 auto;
-}
 
 
 
@@ -158,9 +158,6 @@
     margin-left: 72px;
   }
 
-  .show-post-caption {
-    margin-left: 80px;
-  }
 
   .comments,  {
     width: 80%;
@@ -235,3 +232,57 @@
 
 }
 
+
+// スマートフォンサイズ（425px）以下の際に適用される設定
+@media screen and (max-width:425px) {
+  .new-post-container {
+    margin-bottom: 160px;
+  }
+
+  .post-edit-container {
+    margin-bottom: 0px;
+  }
+
+  .post-caption {
+    width: 180px;
+    margin-left: 90px;
+  }
+
+  .show-slider {
+    width: 250px !important;
+    height: 250px;
+  }
+
+  .comments, #new-comment  {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+
+
+
+
+
+
+  .ranking-img {
+    position: absolute;
+    left: 100px;
+  }
+
+  .rank-user {
+    width: 80%;
+    margin-right: 20px;
+    text-align: center;
+  }
+
+  .rank-fav-icon {
+    position: absolute;
+    left: 120px;
+  }
+
+  .rank-comment-icon {
+    position: absolute;
+    left: 220px;
+  }
+
+}

@@ -62,7 +62,6 @@
   background: none;
   outline: none!important;
   cursor: pointer;
-
 }
 
 .search-option {
@@ -138,5 +137,34 @@
   .search-container {
     margin-bottom: 600px;
   }
+
+}
+
+
+// スマートフォンサイズ（425px）以下の際に適用される設定
+@media screen and (max-width:425px) {
+  .search-form {
+    width: 80%;
+  }
+
+  .search-option div {
+    position: absolute;
+    left: -180px;
+    position: relative;
+  }
+
+  .search-input {
+    position: absolute;
+    left: 95px;
+    width: 120px;
+  }
+
+  .search-button {
+    position: absolute;
+    right: 30px;
+  }
+
+
+
 
 }

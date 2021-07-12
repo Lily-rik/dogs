@@ -39,7 +39,7 @@
   }
 }
 
-#login-btn, #top-signup-btn, .login-btn, .sign-up-btn, .create-btn, .log-in-btn {
+#login-btn, #top-signup-btn, .login-btn, .sign-up-btn, .create-btn, .log-in-btn, .comment-btn {
   width: 200px;
   padding: 11px 40px 12px 40px;
   text-decoration: none;
@@ -263,14 +263,14 @@
     margin-bottom: 50px;
   }
 
-
-
-
   .prf-edit-btn {
-    width: 100px;
+    width: 120px;
   }
 
-  #unsubscribe-btn, #no-btn {
-    font-size: 14px;
+  .comment-btn {
+    width: 100px;
+    padding: 0px 20px;
+    font-size: 10px;
+
   }
 }
