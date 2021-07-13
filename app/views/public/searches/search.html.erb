@@ -2,8 +2,9 @@
   <div id="title" class="text-center">Search results <span class="ml-5">"<%= @search %>"</span></div>
 
   <div class="results mt-5">
-    <% if @range == "User" %>
-      <table class="table follow-table">
+    
+ <!--==== User検索結果 ====-->
+       <table class="table follow-table">
         <% @users.each do |user| %>
           <tr>
             <td></td>
@@ -26,8 +27,8 @@
       <div class="user-paginate mt-5">
         <%= paginate @users %>
       </div>
-    <% else %>
-    <%= render 'public/posts/post', posts: @posts %>
-    <% end %>
+      
+ <!--==== Post検索結果 ====-->
+      <%= render 'public/posts/post', posts: @posts %>
   </div>
 </div>

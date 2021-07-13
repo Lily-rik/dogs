@@ -2,14 +2,24 @@ class Public::SearchesController < ApplicationController
   before_action :authenticate_user!
 
   def search
-    @range = params[:range]
     @search = params[:search]
-    if @range == "User"
-      @users = User.looks(@search).page(params[:page]).reverse_order.per(10)
-    elsif @search == "#"
-      @posts = Hashtag.looks(@search).page(params[:page]).reverse_order
-    else
-      @posts = Post.looks(@search).page(params[:page]).reverse_order
+    redirect_to request.referer if @search.blank? # キーワードが入力されていないと遷移元に
+    split_keyword = params[:search].split(/[[:blank:]]+/) # splitで配列にして対応 blankは全角スペースの対応
+    users = []
+    posts = []
+
+    split_keyword.each do |keyword|
+      next if keyword == ""
+      users += User.where("name LIKE ? OR user_name LIKE ?", "%#{keyword}%", "%#{keyword}%").order(created_at: :desc)
+      posts += Post.where("caption LIKE ?", "%#{keyword}%").order(created_at: :desc)
+      posts += Hashtag.where("hashname LIKE ?", "%#{keyword}%").order(created_at: :desc)
     end
+
+    users.uniq!
+    posts.uniq!
+    
+    @users = Kaminari.paginate_array(users).page(params[:page]).per(10)
+    @posts = Kaminari.paginate_array(posts).page(params[:page]).per(12)
   end
+
 end
