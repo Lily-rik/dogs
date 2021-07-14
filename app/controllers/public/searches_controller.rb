@@ -15,7 +15,7 @@ class Public::SearchesController < ApplicationController
       posts += Hashtag.where("hashname LIKE ?", "%#{keyword}%").order(created_at: :desc)
     end
 
-    users.uniq!
+    users.uniq! #uniqメソッド：配列の要素の中で重複している要素を削除して、削除後の配列として返す
     posts.uniq!
     
     @users = Kaminari.paginate_array(users).page(params[:page]).per(10)
