@@ -88,7 +88,7 @@
 
 
 
-#user-btn, #chat-btn {
+#user-btn, #follower-btn, #favorites-btn, #new-post-btn, #chat-btn {
   padding: 15px;
   text-decoration: none;
   border: 1px solid #c1d8ac;
@@ -232,11 +232,19 @@
 }
 
 
+@media screen and (max-width:1210px) {
+  #user-btn, #follower-btn, #favorites-btn, #new-post-btn, #chat-btn {
+    font-size: 12px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+
 // タブレット縦置きサイズ（768px）以下の際に適用される設定
 @media screen and (max-width:768px) {
   #top-signup-btn, #top-login-btn {
     padding: 15px 35px;
-    text-decoration: none;
     font-size: 12px;
   }
 

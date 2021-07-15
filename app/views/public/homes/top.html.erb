@@ -1,3 +1,4 @@
+<div class="container">
 <div class="section">
 
   <div class="sliderArea">
@@ -36,18 +37,18 @@
   </div>
   <div class="col-lg-4"></div>
 <% else %>
-  <div class="col-md-3"></div>
-  <div class="col-md-3 col-6 text-center">
+  <div class="col-lg-6 col-md-6 col-6 text-center">
     <%= link_to "SIGN UP", new_user_registration_path, id: "top-signup-btn" %>
   </div>
-  <div class="col-md-3 col-6 text-center">
+  <div class="col-lg-6 col-md-6 col-6 text-center">
     <%= link_to "LOG IN", new_user_session_path, id: "top-login-btn" %>
   </div>
-  <div class="col-md-3"></div>
   <div class="guet-login"><%= link_to 'ゲストログイン（閲覧用）', homes_guest_sign_in_path, method: :post, id: "guest_login" %></div>
 
 
 <% end %>
+</div>
+
 </div>
 
 
@@ -57,3 +58,4 @@
       margin-left: 0px;
   }
 </style>
+

@@ -2,19 +2,20 @@
   <div class="row">
   <% posts.each do |post|%>
     <div class="col-lg-4 col-md-6">
+      <div>
+        <%= attachment_image_tag post.user, :image, :fill, 50, 50, fallback: "dogs-icon.jpg", size:'50x50', class: "user-image mr-1 post-user-image"%>
 
-      <%= attachment_image_tag post.user, :image, :fill, 50, 50, fallback: "dogs-icon.jpg", size:'50x50', class: "user-image mr-1 post-user-image"%>
-
-      <%= link_to user_path(post.user.id) do %>
-        <span class="user-name"><%= post.user.user_name %></span>
-      <% end %>
+        <%= link_to user_path(post.user.id) do %>
+          <span class="user-name"><%= post.user.user_name %></span>
+        <% end %>
 
 
-      <% if post.user != current_user %>
-        <div id="favorite_button_<%= post.id %>" class="favorite-icon">
-          <%= render 'public/favorites/favorite', post: post %>
-        </div>
-      <% end %>
+        <% if post.user != current_user %>
+          <div id="favorite_button_<%= post.id %>" class="favorite-icon">
+            <%= render 'public/favorites/favorite', post: post %>
+          </div>
+        <% end %>
+      </div>
 
 
 

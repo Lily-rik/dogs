@@ -33,28 +33,28 @@
 
       <div class="user_buttons">
         <div class="row mt-2">
-          <div class="col-lg-3 col-md-3 col-6 mt-5 text-center">
+          <div class="col-lg-3 col-md-6 col-6 mt-5 text-center">
             <p id="following_button">
               <%= link_to follows_user_path(@user.id), id: "user-btn", class: "button" do %>
                 <span>FOLLOW </span><%= @user.following.count %>
               <% end %>
             </p>
           </div>
-          <div class="col-lg-3 col-md-3 col-6 mt-5 text-center">
+          <div class="col-lg-3 col-md-6 col-6 mt-5 text-center">
             <p id="follower_button">
-              <%= link_to followers_user_path(@user.id), id: "user-btn", class: "button"  do %>
+              <%= link_to followers_user_path(@user.id), id: "follower-btn", class: "button"  do %>
                 <span>FOLLWER </span><%= @user.followers.count %>
               <% end %>
             </p>
           </div>
-          <div class="col-lg-3 col-md-3 col-6 mt-5 text-center">
+          <div class="col-lg-3 col-md-6 col-6 mt-5 text-center">
             <p>
-              <%= link_to 'FAVORITES', my_favorites_path(@user.id), id: "user-btn", class: "button"  %>
+              <%= link_to 'FAVORITES', my_favorites_path(@user.id), id: "favorites-btn", class: "button"  %>
             </p>
           </div>
-          <div class="col-lg-3 col-md-3 col-6 mt-5 text-center">
+          <div class="col-lg-3 col-md-6 col-6 mt-5 text-center">
             <% if @user == current_user %>
-              <%= link_to 'NEW POST', new_post_path, id: "user-btn", class: "button"  %>
+              <%= link_to 'NEW POST', new_post_path, id: "new-post-btn", class: "button"  %>
             <% else %>
               <%= link_to 'CHAT', chat_path(@user.id), id: "chat-btn", class: "button"  %>
             <% end %>
@@ -62,7 +62,6 @@
         </div>
       </div>
     </div>
-    <div class="col-lg-1"></div>
   </div>
   <div class="row">
     <div class="col-lg-2"></div>
