@@ -1,8 +1,7 @@
-<div class="container">
+<div class="container min-vh-100">
   <div id="title" class="center-title mb-5">Ranking</div>
 
 
-  <div class="row">
     <div class="ranking">
       <div class="row">
         <% @ranking.each.with_index(1) do |post, i,| %>
@@ -11,15 +10,14 @@
           <% else %>
           <% background_img = "ranking4.png" %>
           <% end %>
+
           <div class="col-lg-4 col-md-12 col-12">
-
-            <div class="rank-user">
-              <div class="ranking-img" style="background-image: url('<%= asset_path "#{background_img}" %>')"><span><%= i %></span></div>
-
-              <%= attachment_image_tag post.user, :image, :fill, 45, 45, fallback: "dogs-icon.jpg", size:'45x45', class: "user-image ranking-user-img" %>
-              <%= link_to user_path(post.user.id) do %>
-                <span class="user-name"><%= post.user.user_name %></span>
-              <% end %>
+            <div class="rank-post-heading d-flex">
+              <span class="ranking-img mr-2" style="background-image: url('<%= asset_path "#{background_img}" %>')"><span><%= i %></span></span>
+                <%= attachment_image_tag post.user, :image, :fill, 45, 45, fallback: "dogs-icon.jpg", size:'45x45', class: "user-image" %>
+                <%= link_to user_path(post.user.id) do %>
+                  <span class="user-name"><%= post.user.user_name %></span>
+                <% end %>
             </div>
 
             <div class="ranking-posts text-center mt-2">
@@ -29,22 +27,22 @@
                 <% end %>
               <% end %>
             </div>
-            <div id="favorite_button_<%= post.id %>" class="rank-fav-icon">
-              <%= render 'public/favorites/favorite', post: post %>
+            <div class="rank-icons d-flex mt-2">
+              <div id="favorite_button_<%= post.id %>" class="w-50 text-center">
+                <%= render 'public/favorites/favorite', post: post %>
+              </div>
+              <div class="w-50 text-center">
+                <%= link_to post_path(post.id), id: "rank-comment-btn" do %>
+                  <i class="far fa-comment fa-2x" style="color: #2a4073;"></i>
+                  <span><%= post.comments.count %></span>
+                <% end %>
+              </div>
             </div>
-            <div class="rank-comment-icon">
-              <%= link_to post_path(post.id), id: "rank-comment-btn" do %>
-                <i class="far fa-comment fa-2x" style="color: #2a4073;"></i>
-                <span><%= post.comments.count %></span>
-              <% end %>
-            </div>
-
-            <p class="post-caption rank-post-caption my-5"><%= post.caption %></p>
+            <p class="post-caption mt-2 mb-5"><%= post.caption %></p>
           </div>
         <% end %>
       </div>
     </div>
-  </div>
 
 
 

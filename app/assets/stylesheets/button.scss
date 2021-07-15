@@ -244,12 +244,12 @@
 // タブレット縦置きサイズ（768px）以下の際に適用される設定
 @media screen and (max-width:768px) {
   #top-signup-btn, #top-login-btn {
-    padding: 15px 35px;
-    font-size: 12px;
+    padding: 15px 40px;
+    font-size: 20px;
   }
 
   #top-signup-btn {
-    padding: 15px 28px;
+    padding: 15px 30px;
   }
 
   .prf-edit-btn {
@@ -263,6 +263,20 @@
 
 // スマートフォンサイズ（425px）以下の際に適用される設定
 @media screen and (max-width:425px) {
+  #top-signup-btn, #top-login-btn {
+    padding: 15px 35px;
+    font-size: 12px;
+  }
+
+  #top-signup-btn {
+    padding: 15px 28px;
+  }
+
+
+
+
+
+
   #top-about-btn {
     font-size: 12px;
   }

@@ -64,14 +64,8 @@
 }
 
 
-
-
-// タブレット縦置きサイズ（768px）以下の際に適用される設定
-@media screen and (max-width:768px) {
-  // .top-btns {
-  //   margin-bottom: 140px;
-  // }
-
+/* タブレット横置きサイズ（1024px）以下の際に適用される設定 */
+@media screen and (max-width:1024px) {
   .about-visual {
     height: 400px;
     margin-bottom: 40px;
@@ -79,6 +73,19 @@
 
   .about-visual-content {
     height: 400px;
+  }
+}
+
+
+// タブレット縦置きサイズ（768px）以下の際に適用される設定
+@media screen and (max-width:768px) {
+  .about-visual {
+    height: 300px;
+    margin-bottom: 40px;
+  }
+
+  .about-visual-content {
+    height: 300px;
   }
 }
 
@@ -98,10 +105,6 @@
     font-size: 14px;
     margin-top: 40px;
   }
-
-  // .top-btns {
-  //   margin-bottom: 0px;
-  // }
 
   .about-visual {
     height: 200px;

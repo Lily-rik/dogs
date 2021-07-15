@@ -50,9 +50,7 @@
 
 // ランキングページ
 .ranking-img {
-  position: absolute;
-  top: -8px;
-  left: 90px;
+  position: relative;
   background-image: image-url("ranking4.png");
   background-size: contain;  width: 50px;
   height: 50px;
@@ -68,48 +66,9 @@
   font-family: 'Comic Sans MS', 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
 }
 
-.rank-user {
-  width: 75%;
-  text-align: center;
-}
-
-.ranking-user-img {
-  margin-left: 80px;
-}
-
-.ranking-posts {
-  position: relative;
-  margin-bottom: 40px;
-}
-
-.rank-fav-icon {
-  position: absolute;
-  bottom: 75px;
-  left: 120px;
-}
-
-#rank-comment-btn {
-  position: relative;
-  text-decoration: none;
-  margin-right: 15px;
-}
-
-.rank-comment-icon {
-  position: absolute;
-  bottom: 75px;
-  left: 210px;
-}
-
 #favorite-btn span, #rank-comment-btn span {
-  position: absolute;
-  top: -7px;
-  right: -30px;
   font-size: 20px;
   color: #2a4073;
-}
-
-.rank-post-caption {
-  padding-left: 15px;
 }
 
 .ranking-more {
@@ -118,29 +77,21 @@
 
 
 
-
-
-// posts
-.post-user-image {
-  margin-left: 70px;
+.post-heading, .rank-post-heading, .rank-icons {
+  width: 200px;
+  margin: 0 auto;
 }
 
-.favorite-icon {
-  position: absolute;
-  top: 10px;
-  right: 120px;
-}
 
 // 部分テンプレートのFavoriteボタン
 #favorite-btn {
-  position: relative;
   text-decoration: none;
-  margin-right: 0px;
 }
 
 .post-caption {
-  width: 190px;
-  margin-left: 82px;
+  width: 180px;
+  margin: 0 auto;
+  text-align: left;
   display: block;
   overflow: hidden;
   white-space: nowrap;
@@ -154,10 +105,6 @@
 
 // タブレット縦置きサイズ（768px）以下の際に適用される設定
 @media screen and (max-width:768px) {
-  .post-caption {
-    margin-left: 72px;
-  }
-
 
   .comments,  {
     width: 80%;
@@ -165,36 +112,6 @@
 
   .new-post-container {
     margin-bottom: 350px;
-  }
-
-  .ranking-img {
-    position: absolute;
-    left: 200px;
-  }
-
-  .rank-user {
-    width: 28%;
-    margin: 0 auto;
-    text-align: left;
-  }
-
-  .ranking-user-img {
-    margin-left: 0px;
-  }
-
-
-  .rank-post-caption {
-    margin: 0 auto;
-  }
-
-  .rank-fav-icon {
-    position: absolute;
-    left: 300px;
-  }
-
-  .rank-comment-icon {
-    position: absolute;
-    left: 390px;
   }
 
   .post-edit-container {
@@ -243,11 +160,6 @@
     margin-bottom: 0px;
   }
 
-  .post-caption {
-    width: 180px;
-    margin-left: 90px;
-  }
-
   .show-slider {
     width: 250px !important;
     height: 250px;
@@ -257,32 +169,4 @@
     width: 90%;
     margin: 0 auto;
   }
-
-
-
-
-
-
-
-  .ranking-img {
-    position: absolute;
-    left: 100px;
-  }
-
-  .rank-user {
-    width: 80%;
-    margin-right: 20px;
-    text-align: center;
-  }
-
-  .rank-fav-icon {
-    position: absolute;
-    left: 120px;
-  }
-
-  .rank-comment-icon {
-    position: absolute;
-    left: 220px;
-  }
-
 }
