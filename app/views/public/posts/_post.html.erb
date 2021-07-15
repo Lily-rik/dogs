@@ -4,11 +4,9 @@
     <div class="col-lg-4 col-md-6">
       <div class="post-heading d-flex">
         <%= attachment_image_tag post.user, :image, :fill, 50, 50, fallback: "dogs-icon.jpg", size:'50x50', class: "user-image mr-2"%>
-
         <%= link_to user_path(post.user.id) do %>
           <span class="user-name"><%= post.user.user_name %></span>
         <% end %>
-
 
         <% if post.user != current_user %>
           <div id="favorite_button_<%= post.id %>" class="ml-auto mt-2">
@@ -16,18 +14,12 @@
           </div>
         <% end %>
       </div>
-
-
-
-
       <%= link_to post_path(post.id) do %>
         <% post.post_images.first(1).each do |image| %>
           <p class="text-center mt-2 mb-1"><%= attachment_image_tag image, :image, :fill, 200, 200 %></p>
         <% end %>
       <% end %>
-
       <p class="post-caption mb-5"><%= post.caption %></p>
-
     </div>
   <% end %>
   </div>

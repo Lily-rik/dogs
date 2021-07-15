@@ -48,39 +48,17 @@
 
 .unsubscribe-caption {
   margin-top: 20px;
+  margin-bottom: 100px;
   font-size: 12px;
   text-align: center;
   color: #2a4073;
 }
 
 
-// 退会画面
-.unsubscribe-container {
-  margin-bottom: 220px;
-}
-
-
-
 // タブレット縦置きサイズ（768px）以下の際に適用される設定
 @media screen and (max-width:768px) {
   .user-show-title {
     text-align: center;
-  }
-
-  .mypage-edit-container {
-    margin-bottom: 230px;
-  }
-
-  .info-edit-container {
-    margin-bottom: 320px;
-  }
-
-  .follows-container {
-    margin-bottom: 170px;
-  }
-
-  .unsubscribe-container {
-    margin-bottom: 470px;
   }
 
   .show-post-caption {
@@ -93,14 +71,6 @@
 
 // スマートフォンサイズ（425px）以下の際に適用される設定
 @media screen and (max-width:425px) {
-  .mypage-edit-container {
-    margin-bottom: 45px;
-  }
-
-  .follows-container {
-    margin-bottom: 0px;
-  }
-
   .user-show-title-box {
     margin-bottom: 20px;
   }

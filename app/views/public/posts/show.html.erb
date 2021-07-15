@@ -1,53 +1,55 @@
-<div class="container">
+<div class="container min-vh-100">
   <div id="title" class="text-center"><%= @post.user.user_name %><span>'s dog</span></div>
 
-  <div class="row">
-    <div class="col-lg-3 col-md-2"></div>
-    <div class="col-lg-7 col-md-10">
+  <div class="user-show">
+    <div class="row">
+      <div class="col-lg-3 col-md-3 col-sm-1 mr-3"></div>
+      <div class="col-lg-7 col-md-7 col-sm-7">
 
-      <div class="post user-name my-5">
-        <p class="show-user-image"><%= attachment_image_tag @post.user, :image, :fill, 60, 60, fallback: "dogs-icon.jpg", size:'60x60', class: "user-image mr-3 ml-4"%></p>
-        <%= link_to user_path(@post.user.id) do %>
-          <span style="font-size: 18px;"><%= @post.user.user_name %></span>
-        <% end %>
-
-        <!--ログインユーザーなら編集ボタン、そうでなければお気に入りボタンを表示-->
-        <% if @post.user_id == current_user.id %>
-          <%= link_to edit_post_path(@post.id) do %>
-            <i class="fas fa-edit show-icon fa-2x" style="color: #0f2350;"></i>
+        <div class="post user-name my-5">
+          <p class="show-user-image"><%= attachment_image_tag @post.user, :image, :fill, 60, 60, fallback: "dogs-icon.jpg", size:'60x60', class: "user-image mr-3 ml-4"%></p>
+          <%= link_to user_path(@post.user.id) do %>
+            <span style="font-size: 18px;"><%= @post.user.user_name %></span>
           <% end %>
-        <% else %>
-          <p id="favorite_button_<%= @post.id %>" class="show-icon">
-            <%= render 'public/favorites/favorite', post: @post %>
-          </p>
-        <% end %>
 
-
-        <div class="user-post mt-2 mb-3">
-          <div id="slider" class="show-slider">
-            <% @post.post_images.each do |image| %>
-              <%= attachment_image_tag image, :image, :fill, 500, 500, class: "show-image" %>
+          <!--ログインユーザーなら編集ボタン、そうでなければお気に入りボタンを表示-->
+          <% if @post.user_id == current_user.id %>
+            <%= link_to edit_post_path(@post.id) do %>
+              <i class="fas fa-edit show-icon fa-2x" style="color: #0f2350;"></i>
             <% end %>
+          <% else %>
+            <p id="favorite_button_<%= @post.id %>" class="show-icon">
+              <%= render 'public/favorites/favorite', post: @post %>
+            </p>
+          <% end %>
+
+
+          <div class="user-post mt-2 mb-3">
+            <div id="slider" class="show-slider">
+              <% @post.post_images.each do |image| %>
+                <%= attachment_image_tag image, :image, :fill, 500, 500, class: "show-image" %>
+              <% end %>
+            </div>
           </div>
+          <div></div>
+          <div class="show-captions my-5">
+            <%= simple_format(render_with_hashtags(@post.caption), class: "show-caption captions") %>
+            <a href="" class="more captions">Read more...</a>
+          </div>
+
         </div>
-        <div></div>
-        <div class="show-captions my-5">
-          <%= simple_format(render_with_hashtags(@post.caption), class: "show-caption captions") %>
-          <a href="" class="more captions">Read more...</a>
+
+        <div id="comment_button_<%= @post.id %>" class="comments mt-5 mb-3">
+          <%= render 'public/comments/comment', post: @post %>
+        </div>
+
+        <div id="new-comment" class="mb-3">
+          <%= render 'public/comments/new_comment', {post: @post, comment: @comment} %>
         </div>
 
       </div>
-
-      <div id="comment_button_<%= @post.id %>" class="comments mt-5 mb-3">
-        <%= render 'public/comments/comment', post: @post %>
-      </div>
-
-      <div id="new-comment" class="mb-3">
-        <%= render 'public/comments/new_comment', {post: @post, comment: @comment} %>
-      </div>
-
+      <div class="col-lg-2"></div>
     </div>
-    <div class="col-lg-2"></div>
   </div>
 </div>
 

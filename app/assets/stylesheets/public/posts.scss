@@ -110,14 +110,6 @@
     width: 80%;
   }
 
-  .new-post-container {
-    margin-bottom: 350px;
-  }
-
-  .post-edit-container {
-    margin-bottom: 210px;
-  }
-
   .show-slider {
     width: 360px !important;
     height: 360px;
@@ -152,14 +144,6 @@
 
 // スマートフォンサイズ（425px）以下の際に適用される設定
 @media screen and (max-width:425px) {
-  .new-post-container {
-    margin-bottom: 160px;
-  }
-
-  .post-edit-container {
-    margin-bottom: 0px;
-  }
-
   .show-slider {
     width: 250px !important;
     height: 250px;
