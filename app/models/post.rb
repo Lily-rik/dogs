@@ -54,13 +54,6 @@ class Post < ApplicationRecord
     end
   end
 
-  # 検索
-  def self.looks(searchs)
-    if searchs != "#"
-      @post = Post.where("caption LIKE ?", "%#{searchs}%")
-    end
-  end
-
   # 通知
   def create_notification_favorite!(current_user)
     ## すでに「いいね」されているか検索

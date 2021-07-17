@@ -39,7 +39,7 @@
   }
 }
 
-#login-btn, #top-signup-btn, .login-btn, .sign-up-btn, .create-btn, .log-in-btn {
+#login-btn, #top-signup-btn, .login-btn, .sign-up-btn, .create-btn, .log-in-btn, .comment-btn {
   width: 200px;
   padding: 11px 40px 12px 40px;
   text-decoration: none;
@@ -88,7 +88,7 @@
 
 
 
-#user-btn, #chat-btn {
+#user-btn, #follower-btn, #favorites-btn, #new-post-btn, #chat-btn {
   padding: 15px;
   text-decoration: none;
   border: 1px solid #c1d8ac;
@@ -232,16 +232,24 @@
 }
 
 
+@media screen and (max-width:1210px) {
+  #user-btn, #follower-btn, #favorites-btn, #new-post-btn, #chat-btn {
+    font-size: 12px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+
 // タブレット縦置きサイズ（768px）以下の際に適用される設定
 @media screen and (max-width:768px) {
   #top-signup-btn, #top-login-btn {
-    padding: 15px 35px;
-    text-decoration: none;
-    font-size: 12px;
+    padding: 15px 40px;
+    font-size: 20px;
   }
 
   #top-signup-btn {
-    padding: 15px 28px;
+    padding: 15px 30px;
   }
 
   .prf-edit-btn {
@@ -251,5 +259,48 @@
   #unsubscribe-btn, #no-btn {
     font-size: 14px;
   }
+}
 
+// スマートフォンサイズ（425px）以下の際に適用される設定
+@media screen and (max-width:425px) {
+  #top-signup-btn, #top-login-btn {
+    padding: 15px 35px;
+    font-size: 12px;
+  }
+
+  #top-signup-btn {
+    padding: 15px 28px;
+  }
+
+  #unsubscribe-btn, #no-btn {
+    padding: 15px 40px;
+  }
+
+
+
+
+
+
+
+
+
+
+  #top-about-btn {
+    font-size: 12px;
+  }
+
+  .your-dogs-btn {
+    margin-bottom: 50px;
+  }
+
+  .prf-edit-btn {
+    width: 120px;
+  }
+
+  .comment-btn {
+    width: 100px;
+    padding: 0px 20px;
+    font-size: 10px;
+
+  }
 }

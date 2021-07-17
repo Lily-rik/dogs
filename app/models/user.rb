@@ -60,11 +60,6 @@ class User < ApplicationRecord
     super && (is_deleted == false)
   end
 
-  # 検索
-  def self.looks(searchs)
-    @user = User.where("name LIKE ? OR user_name LIKE ? OR email LIKE ?", "%#{searchs}%", "%#{searchs}%", "%#{searchs}%")
-  end
-
   # 通知
   def create_notification_follow!(current_user)
     temp = Notification.where(["visitor_id = ? and visited_id = ? and action = ?", current_user.id, id, 'follow'])

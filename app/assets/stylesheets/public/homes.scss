@@ -51,13 +51,6 @@
   background-color: rgba(255,255,255,0.3);
 }
 
-.about-text {
-  font-size: 16px;
-  padding-bottom: 40px;
-  font-family: 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
-  color: #543f32;
-}
-
 
 // Top、Aboutページ
 .web-text, .about-text {
@@ -71,24 +64,60 @@
 }
 
 
-
-
-// タブレット縦置きサイズ（768px）以下の際に適用される設定
-@media screen and (max-width:768px) {
-  .top-btns {
-    margin-bottom: 140px;
-  }
-
-
+/* タブレット横置きサイズ（1024px）以下の際に適用される設定 */
+@media screen and (max-width:1024px) {
   .about-visual {
     height: 400px;
-  }
-
-  .about-visual {
     margin-bottom: 40px;
   }
 
   .about-visual-content {
     height: 400px;
   }
+}
+
+
+// タブレット縦置きサイズ（768px）以下の際に適用される設定
+@media screen and (max-width:768px) {
+  .about-visual {
+    height: 300px;
+    margin-bottom: 40px;
+  }
+
+  .about-visual-content {
+    height: 300px;
+  }
+}
+
+
+// スマートフォンサイズ（425px）以下の際に適用される設定
+@media screen and (max-width:425px) {
+  #web-title {
+    margin: 70px auto 50px auto;
+    font-size: 32px;
+  }
+
+  .web-text {
+    font-size: 12px;
+  }
+
+  .guet-login {
+    font-size: 14px;
+    margin-top: 40px;
+  }
+
+  .about-visual {
+    height: 200px;
+    margin-bottom: 40px;
+  }
+
+  .about-visual-content {
+    height: 200px;
+  }
+
+  .about-text {
+    font-size: 12px;
+  }
+
+
 }

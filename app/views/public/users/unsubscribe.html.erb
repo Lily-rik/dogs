@@ -1,25 +1,19 @@
-<div class="container mt-5 unsubscribe-container">
-  <div class="row mt-5">
-    <div class="col-lg-3"></div>
-    <div class="col-lg-6">
-      <p class="unsubscribe-text captions">退会しますか？</p>
-      <p class="unsubscribe-caption captions">退会すると今までの投稿や友達のデータは全て見れなくなってしまいます</p>
-    </div>
-    <div class="col-lg-3"></div>
+<div class="container mt-5 min-vh-100">
+  <div class="mx-auto text-center">
+    <p class="unsubscribe-text captions">退会しますか？</p>
+    <p class="unsubscribe-caption captions">退会すると今までの投稿や友達のデータは全て見れなくなってしまいます</p>
   </div>
 
   <div class="row mt-5 pt-5">
-    <div class="col-lg-3 col-md-1"></div>
-    <div class="col-lg-3 col-md-5 text-center">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-4 col-md-6 col-6 text-center">
       <%= link_to 'YES', withdrawal_path(@user.id), method: :patch, "data-confirm" => "本当に退会しますか？", id: "unsubscribe-btn", class: "button" %>
     </div>
-    <div class="col-lg-3 col-md-5 text-center">
+    <div class="col-lg-4 col-md-6 col-6 text-center">
       <%= link_to 'NO', user_path(@user.id), id: "no-btn", class: "button" %>
     </div>
-    <div class="col-lg-3 col-md-1"></div>
+    <div class="col-lg-2"></div>
   </div>
-
-
 
 </div>
 

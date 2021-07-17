@@ -1,7 +1,7 @@
 <div class="section">
 
   <div class="sliderArea">
-    <div class="full-screen-o slider">
+    <div class="full-screen-o slider top-slider">
       <%= image_tag "dogs02.jpg", alt: "dogs icon", class: "slider" %>
       <%= image_tag "dogs05.jpg", alt: "dogs icon", class: "slider" %>
       <%= image_tag "dogs03.jpg", alt: "dogs icon", class: "slider" %>
@@ -31,19 +31,17 @@
 <div class="row mt-5 top-btns">
 <% if user_signed_in? %>
   <div class="col-lg-4"></div>
-  <div class="col-lg-4 button">
+  <div class="col-lg-4 button your-dogs-btn">
     <%= link_to "YOUR DOGS", about_path, id: "top-about-btn" %>
   </div>
   <div class="col-lg-4"></div>
 <% else %>
-  <div class="col-md-3"></div>
-  <div class="col-md-3 text-center">
+  <div class="col-lg-6 col-md-6 col-6 text-center">
     <%= link_to "SIGN UP", new_user_registration_path, id: "top-signup-btn" %>
   </div>
-  <div class="col-md-3 text-center">
+  <div class="col-lg-6 col-md-6 col-6 text-center">
     <%= link_to "LOG IN", new_user_session_path, id: "top-login-btn" %>
   </div>
-  <div class="col-md-3"></div>
   <div class="guet-login"><%= link_to 'ゲストログイン（閲覧用）', homes_guest_sign_in_path, method: :post, id: "guest_login" %></div>
 
 
@@ -57,3 +55,4 @@
       margin-left: 0px;
   }
 </style>
+
