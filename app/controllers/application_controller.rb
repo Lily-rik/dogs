@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  add_flash_types :success, :info, :danger
+
   # devise機能（ログインなど）がが使われる場合、その前にconfigure_permitted_parametersが実行される
   before_action :configure_permitted_parameters, if: :devise_controller?
 
