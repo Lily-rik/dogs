@@ -43,7 +43,7 @@ class Public::PostsController < ApplicationController
     # return render :edit unless image_present?
     @post.user_id = current_user.id
     if @post.update(post_params)
-      redirect_to post_path(@post.id), success: "投稿に成功しました"
+      redirect_to post_path(@post.id), success: "投稿を更新しました"
     else
       flash.now[:danger] = "投稿に失敗しました"
       render :edit
