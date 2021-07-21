@@ -19,7 +19,7 @@ ja:
         email: メールアドレス
         password: パスワード
       post:
-        image: 画像
+        image: 画像s
         caption: 文章
 
   devise:

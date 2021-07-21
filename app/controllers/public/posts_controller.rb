@@ -19,7 +19,7 @@ class Public::PostsController < ApplicationController
     if @post.save
       redirect_to post_path(@post.id), success: "投稿に成功しました"
     else
-      flash.now[:danger] = "投稿に失敗しました"
+      flash.now[:info] = "投稿に失敗しました"
       render :new
     end
   end
@@ -34,7 +34,7 @@ class Public::PostsController < ApplicationController
     if @post.user_id == current_user.id
       render :edit
     else
-      redirect_to about_path, danger: "自分の投稿以外は編集できません"
+      redirect_to about_path, info: "自分の投稿以外は編集できません"
     end
   end
 
@@ -45,7 +45,7 @@ class Public::PostsController < ApplicationController
     if @post.update(post_params)
       redirect_to post_path(@post.id), success: "投稿を更新しました"
     else
-      flash.now[:danger] = "投稿に失敗しました"
+      flash.now[:info] = "投稿に失敗しました"
       render :edit
     end
   end
