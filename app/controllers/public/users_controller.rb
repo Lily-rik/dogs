@@ -46,13 +46,17 @@ class Public::UsersController < ApplicationController
   end
 
   def withdrawal
-    user = User.find(params[:id])
-    ## is_deletedカラムをtrueに更新してフラグを立てる(defaultはfalse)
-    user.update(is_deleted: true)
-    ## ログアウト
-    reset_session
-    flash[:warning] = "ご利用ありがとうございました。またのご利用を心よりお待ちしております。"
-    redirect_to root_path
+    user = current_user
+    if user.email == "guest@dogs.com"
+      redirect_to user_path(current_user), info: "ゲストユーザーは退会することができません。"
+    else
+      ## is_deletedカラムをtrueに更新してフラグを立てる(defaultはfalse)
+      user.update(is_deleted: true)
+      ## ログアウト
+      reset_session
+      flash[:danger] = "退会しました。"
+      redirect_to root_path
+    end
   end
 
   # フォロー・フォロワー

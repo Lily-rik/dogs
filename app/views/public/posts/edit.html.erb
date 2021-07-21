@@ -7,7 +7,8 @@
 
     <%= form_with model: @post, local: true do |f| %>
       <h4 class="label">Post image<span style="font-size: 16px;"> (５枚まで投稿できます)</span></h4>
-      <%= f.attachment_field :post_images_images, multiple: true %>
+      <%#= f.file_field :profile_images_images, class: 'img_field', style: 'display:none;' %>
+      <%= f.attachment_field :post_images_images, multiple: true, onClick: "$('.img_field').click()", class: 'center-block img-thumbnail img-responsive img_prev' %>
       <h4 class="label mt-5">Post text</h4>
       <%= f.text_area :caption, rows:'5', class: 'form-control captions' %>
       <% if @post.errors.include?(:caption) %>
