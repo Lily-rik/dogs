@@ -17,7 +17,7 @@ class Public::SearchesController < ApplicationController
 
     users.uniq! #uniqメソッド：配列の要素の中で重複している要素を削除して、削除後の配列として返す
     posts.uniq!
-    
+
     @users = Kaminari.paginate_array(users).page(params[:page]).per(10)
     @posts = Kaminari.paginate_array(posts).page(params[:page]).per(12)
   end

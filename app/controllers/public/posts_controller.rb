@@ -40,7 +40,6 @@ class Public::PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    # return render :edit unless image_present?
     @post.user_id = current_user.id
     if @post.update(post_params)
       redirect_to post_path(@post.id), success: "投稿を更新しました"
@@ -58,14 +57,16 @@ class Public::PostsController < ApplicationController
   end
 
   def ranking
-    @ranking = Post.create_ranking
+    @ranking = Post.includes(:user).create_ranking
   end
 
   def hashtag
     @user = current_user
     @tag = Hashtag.find_by(hashname: params[:name])
-    @posts = @tag.posts.page(params[:page]).reverse_order
+    @posts = @tag.posts.includes(:user).page(params[:page]).reverse_order
   end
+
+
 
   private
 
@@ -73,7 +74,4 @@ class Public::PostsController < ApplicationController
     params.require(:post).permit(:caption, post_images_images: [])
   end
 
-  # def image_present?
-  #   post_params[:image].is_a?(ActionDispatch::Http::UploadedFile)
-  # end
 end

@@ -105,14 +105,14 @@ $(document).on('turbolinks:load', function() {
                                             // iは数字、eはidがpost_post_images_imagesになっている場所からデータを引き出している
           reader[i].readAsDataURL(e.target.files[i]); // 『ファイルの読み込み』と『ファイルを参照するためのURL生成』を行い、
                                                       // ファイルを配列（複数）で受け取っている
-                                                      // onloadは読み込みが発生しないと動かないためこの記述が
+                                                      // onloadは読み込みが発生しないと動かないためこの記述が必要
 
           // onloadは別関数で準備しないとfor文内では使用できないので、関数を準備。
           function finisher(i,e){
             return function(e){
             $(`#preview_${i}`).attr('src', e.target.result); // idがpreview_{数字}になっているところに、画像データの取得結果を反映させるよう設定
             }                                                // imgタグはsrcの指定で画像を読み込むため、srcの部分にe = post_post_images_imagesのデータを反映させている
-          }                                                  
+          }
         }
      }
   });

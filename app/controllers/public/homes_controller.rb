@@ -5,8 +5,9 @@ class Public::HomesController < ApplicationController
   end
 
   def about
-    @posts = Post.page(params[:page]).reverse_order
+    @posts = Post.includes(:user, :post_images).page(params[:page]).reverse_order #favorites?
   end
+
 
   def guest_sign_in
     user = User.find_or_create_by!(email: 'guest@dogs.com') do |user|
