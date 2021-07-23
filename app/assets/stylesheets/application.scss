@@ -81,9 +81,9 @@ main {
 
 
 // エラーの表示
-.error {
-  color: #a22041;
-}
+// .error {
+//   color: #a22041;
+// }
 
 .attention, .user-attention {
   color: #a22041;
@@ -176,11 +176,6 @@ main {
   color: #fff;
 }
 
-
-
-
-
-
 .admin-new-container {
   margin-bottom: 220px;
 }
@@ -205,17 +200,6 @@ footer {
 
 
 
-// タブレット縦置きサイズ（768px）以下の際に適用される設定
-@media screen and (max-width:768px) {
-  .signup-container {
-    margin-bottom: 100px;
-  }
-
-  .login-conteiner {
-    margin-bottom: 320px;
-  }
-}
-
 
 // スマートフォンサイズ（425px）以下の際に適用される設定
 @media screen and (max-width:425px) {
@@ -226,14 +210,6 @@ footer {
 
   .nav-title img {
     width: 80%;
-  }
-
-  .signup-container {
-    margin-bottom: 50px;
-  }
-
-  .login-conteiner {
-    margin-bottom: 130px;
   }
 
   #title {

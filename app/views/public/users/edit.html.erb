@@ -39,9 +39,11 @@
       <div class="mt-5 text-center">
         <%= f.submit "UPDATE", class: "edit-btn button" %>
       </div>
-      <div class="mt-5 pt-3 text-right">
-        <%= link_to "退会", unsubscribe_path(current_user), id: "withdraw-btn", class: "button" %>
-      </div>
+      <% if @user.email != "guest@dogs.com" %>
+        <div class="mt-5 pt-3 text-right">
+          <%= link_to "退会", unsubscribe_path(current_user), id: "withdraw-btn", class: "button" %>
+        </div>
+      <% end %>
       <div class="col-lg-2"></div>
       </div>
     <% end %>

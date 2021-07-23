@@ -18,8 +18,9 @@ class Public::UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to user_path(@user.id)
+      redirect_to user_path(@user.id), success: "会員情報を更新しました"
     else
+      flash.now[:info] = "更新に失敗しました"
       render :edit
     end
   end
@@ -32,8 +33,9 @@ class Public::UsersController < ApplicationController
   def update_mypage
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to user_path(@user.id)
+      redirect_to user_path(@user.id), success: "マイページ情報を更新しました"
     else
+      flash.now[:info] = "更新に失敗しました"
       render :edit_mypage
     end
   end
@@ -44,13 +46,17 @@ class Public::UsersController < ApplicationController
   end
 
   def withdrawal
-    user = User.find(params[:id])
-    ## is_deletedカラムをtrueに更新してフラグを立てる(defaultはfalse)
-    user.update(is_deleted: true)
-    ## ログアウト
-    reset_session
-    flash[:notice] = "ご利用ありがとうございました。またのご利用を心よりお待ちしております。"
-    redirect_to root_path
+    user = current_user
+    if user.email == "guest@dogs.com"
+      redirect_to user_path(current_user), info: "ゲストユーザーは退会することができません。"
+    else
+      ## is_deletedカラムをtrueに更新してフラグを立てる(defaultはfalse)
+      user.update(is_deleted: true)
+      ## ログアウト
+      reset_session
+      flash[:danger] = "退会しました。"
+      redirect_to root_path
+    end
   end
 
   # フォロー・フォロワー

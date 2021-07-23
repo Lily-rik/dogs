@@ -17,9 +17,9 @@ class Public::PostsController < ApplicationController
     # return render :new unless image_present?
     @post.user_id = current_user.id
     if @post.save
-      redirect_to post_path(@post.id)
+      redirect_to post_path(@post.id), success: "投稿に成功しました"
     else
-      flash.now[:error] = "登録に失敗しました"
+      flash.now[:info] = "投稿に失敗しました"
       render :new
     end
   end
@@ -34,7 +34,7 @@ class Public::PostsController < ApplicationController
     if @post.user_id == current_user.id
       render :edit
     else
-      redirect_to about_path
+      redirect_to about_path, info: "自分の投稿以外は編集できません"
     end
   end
 
@@ -43,8 +43,9 @@ class Public::PostsController < ApplicationController
     # return render :edit unless image_present?
     @post.user_id = current_user.id
     if @post.update(post_params)
-      redirect_to post_path(@post.id)
+      redirect_to post_path(@post.id), success: "投稿を更新しました"
     else
+      flash.now[:info] = "投稿に失敗しました"
       render :edit
     end
   end
@@ -53,7 +54,7 @@ class Public::PostsController < ApplicationController
     post = Post.find(params[:id])
     post.user_id = current_user.id
     post.destroy
-    redirect_to user_path(post.user_id)
+    redirect_to user_path(post.user_id), info: "投稿を削除しました"
   end
 
   def ranking

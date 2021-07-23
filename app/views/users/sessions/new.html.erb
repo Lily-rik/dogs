@@ -1,11 +1,17 @@
-<div class="container login-conteiner">
+<div class="container min-vh-100">
   <div id="title" class="center-title">Log in</div>
 
   <div class="row mt-4">
     <div class="col-lg-3"></div>
     <div class="col-lg-6">
 
-    <p class="error"><%= flash[:error] %></p>
+    <!--<div class="alert alert-warning alert-dismissible fade show" role="alert">-->
+      <%#= flash[:error] %>
+    <!--  <button type="button" class="close" data-dismiss="alert" aria-label="Close">-->
+    <!--    <span aria-hidden="true">&times;</span>-->
+    <!--  </button>-->
+    <!--</div>-->
+
     <%= form_with model: @user, url: user_session_path, local: true do |f| %>
       <table class="info-edit-table">
         <tr>
