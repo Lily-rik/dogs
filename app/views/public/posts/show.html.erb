@@ -1,49 +1,46 @@
 <div class="container min-vh-100">
-  <div id="title" class="text-center"><%= @post.user.user_name %><span>'s dog</span></div>
+  <div id="title" class="text-center mb-4"><%= @post.user.user_name %><span>'s dog</span></div>
 
   <div class="user-show">
     <div class="row">
-      <div class="col-lg-3 col-md-3 col-sm-1 mr-3"></div>
-      <div class="col-lg-7 col-md-7 col-sm-7">
+      <div class="col-lg-12 col-md-8 col-10 mx-auto">
 
-        <div class="post user-name my-5">
-          <p class="show-user-image"><%= attachment_image_tag @post.user, :image, :fill, 60, 60, fallback: "dogs-icon.jpg", size:'60x60', class: "user-image mr-3 ml-4"%></p>
+        <div class="post-show-heading d-flex">
+          <%= attachment_image_tag @post.user, :image, :fill, 60, 60, fallback: "dogs-icon.jpg", size:'60x60', class: "user-image mr-3 ml-4"%>
           <%= link_to user_path(@post.user.id) do %>
             <span style="font-size: 18px;"><%= @post.user.user_name %></span>
           <% end %>
 
           <!--ログインユーザーなら編集ボタン、そうでなければお気に入りボタンを表示-->
           <% if @post.user_id == current_user.id %>
-            <%= link_to edit_post_path(@post.id) do %>
-              <i class="fas fa-edit show-icon fa-2x" style="color: #0f2350;"></i>
-            <% end %>
+            <div class="ml-auto mt-2">
+              <%= link_to edit_post_path(@post.id) do %>
+                <i class="fas fa-edit fa-2x" style="color: #0f2350;"></i>
+              <% end %>
+            </div>
           <% else %>
             <p id="favorite_button_<%= @post.id %>" class="show-icon">
               <%= render 'public/favorites/favorite', post: @post %>
             </p>
           <% end %>
-
-
-          <div class="user-post mt-2 mb-3">
-            <div id="slider" class="show-slider">
-              <% @post.post_images.each do |image| %>
-                <%= attachment_image_tag image, :image, :fill, 500, 500, class: "show-image" %>
-              <% end %>
-            </div>
+        </div>
+        <div class="user-post mt-2 mb-3 mx-auto d-flex">
+          <div id="slider" class="show-slider">
+            <% @post.post_images.each do |image| %>
+              <%= attachment_image_tag image, :image, :fill, 500, 500, class: "show-image" %>
+            <% end %>
           </div>
-          <div></div>
-          <div class="show-captions my-5">
-            <%= simple_format(render_with_hashtags(@post.caption), class: "show-caption captions") %>
-            <a href="" class="more captions">Read more...</a>
-          </div>
-
+        </div>
+        <div class="show-captions mx-auto">
+          <%= simple_format(render_with_hashtags(@post.caption), class: "show-caption captions mx-auto") %>
+          <a href="" class="more captions">Read more...</a>
         </div>
 
-        <div id="comment_button_<%= @post.id %>" class="comments mt-5 mb-3">
+        <div id="comment_button_<%= @post.id %>" class="comments col-lg-6 col-md-12 col-12 mt-5 mb-3 mx-auto text-center">
           <%= render 'public/comments/comment', post: @post %>
         </div>
 
-        <div id="new-comment" class="mb-3">
+        <div id="new-comment" class="mb-3 mx-auto col-lg-6 col-md-12 col-12 text-center">
           <%= render 'public/comments/new_comment', {post: @post, comment: @comment} %>
         </div>
 
