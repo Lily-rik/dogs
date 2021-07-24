@@ -50,10 +50,8 @@ class Public::UsersController < ApplicationController
     if user.email == "guest@dogs.com"
       redirect_to user_path(current_user), info: "ゲストユーザーは退会することができません。"
     else
-      ## is_deletedカラムをtrueに更新してフラグを立てる(defaultはfalse)
-      user.update(is_deleted: true)
-      ## ログアウト
-      reset_session
+      user.update(is_deleted: true) ## is_deletedカラムをtrueに更新してフラグを立てる(defaultはfalse)
+      reset_session ## ログアウト
       flash[:danger] = "退会しました。"
       redirect_to root_path
     end
@@ -62,7 +60,7 @@ class Public::UsersController < ApplicationController
   # フォロー・フォロワー
   def follows
     @user = User.find(params[:id])
-    @users = @user.following.page(params[:page]).reverse_order.per(5)
+    @users = @user.followers.page(params[:page]).reverse_order.per(5)
   end
 
   def followers
@@ -74,9 +72,7 @@ class Public::UsersController < ApplicationController
   def my_favorites
     @user = User.find(params[:id])
     favorites = @user.favorites.pluck(:post_id)
-    # @favorites_list = Post.find(favorites)
-    @favorites_list = Post.where(id: favorites).page(params[:page]).reverse_order
-    # @favorites_list = Post.page(params[:page]).reverse_order
+    @favorites_list = Post.where(id: favorites).includes(:user).page(params[:page]).reverse_order
   end
 
   private

@@ -4,8 +4,10 @@
 
 
 // Showページ
-.post {
-  position: relative;
+.post-show-heading {
+  width: 400px;
+  margin: 0 auto;
+  padding-right: 30px;
 }
 
 .show-user-image {
@@ -13,10 +15,8 @@
   margin-bottom: 0px;
 }
 
-.show-icon {
-  position: absolute;
-  top: 15px;
-  right: 170px;
+.user-post {
+  width: 500px;
 }
 
 .more {
@@ -26,10 +26,10 @@
   padding-right: 150px;
 }
 
-.show-caption, .ranking-caption {
-  width: 475px;
+.show-caption {
+  width: 340px;
+  margin: 0 auto;
   line-height: 1.5;
-  margin-left: 20px;
 }
 
 .show-caption>a, .ranking-caption>a {
@@ -82,6 +82,7 @@
 }
 
 
+
 // 部分テンプレートのFavoriteボタン
 #favorite-btn {
   text-decoration: none;
@@ -102,9 +103,7 @@
 
 
 
-// タブレット縦置きサイズ（768px）以下の際に適用される設定
 @media screen and (max-width:768px) {
-
   .comments,  {
     width: 80%;
   }
@@ -114,19 +113,12 @@
     height: 360px;
   }
 
-  .user-post {
-    width: 50%;
-    margin-left: 50px;
-    text-align: center;
-  }
-
   .show-user-image {
     margin-left: 50px;
   }
 
-  .show-icon {
-    position: absolute;
-    right: 190px;
+  .user-post {
+    width: 400px;
   }
 
   .show-captions {
@@ -140,9 +132,26 @@
 
 }
 
+@media screen and (max-width:550px) {
+  .post-show-heading {
+    width: 330px;
+  }
 
-// スマートフォンサイズ（425px）以下の際に適用される設定
+  .user-post {
+    width: 350px;
+  }
+}
+
+
 @media screen and (max-width:425px) {
+  .post-show-heading {
+    width: 250px;
+  }
+
+  .user-post {
+    width: 250px;
+  }
+
   .show-slider {
     width: 250px !important;
     height: 250px;

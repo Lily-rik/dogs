@@ -3,37 +3,25 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-#chat_index {
-  margin-left: 20px;
-}
-
-.my-chat {
-  width: 800px;
-}
-
 .chat_box{
   width: 100%;
   height: 500px;
-  padding: 0 40px 10px 260px;
   overflow: scroll;
   border: 1px solid #fff;
   font-size: 14px;
-  background: #fff;
-}
-
-.form-inline {
-  width: 45%;
-  margin-left: 380px;
 }
 
 #chat-text {
-  width: 350px;
-  margin-bottom: 10px;
+  width: 30%;
+  display: inline-block;
+}
+
+.text-form {
 }
 
 .chat-btn {
+  position: absolute;
   width: 50px;
-  height: 38px;
   border: 1px solid #fff;
   background-color: #fff;
 }
@@ -98,39 +86,29 @@
 }
 
 
-// タブレット縦置きサイズ（768px）以下の際に適用される設定
-@media screen and (max-width:768px) {
-  #chat_index {
-    margin: 0px;
+@media screen and (max-width:1024px) {
+  #chat-text {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width:992px) {
+  .chat-caption-box {
+    margin-left: 30px;
+  }
+}
+
+@media screen and (max-width:425px) {
+  #chat-text {
+    width: 70%;
+    margin-right: 50px;
   }
 
-  .my-chat {
-    width: 100%;
+  .chat-btn {
+    right: 30px;
   }
 
-  .my-chat td:nth-child(1) {
-    margin-left: 100px;
+  .chat-caption-box {
+    margin-left: 20px;
   }
-
-  .chat_box{
-    width: 100%;
-    height: 600px;
-    padding: 0px;
-  }
-
-  .chat_box table {
-    width: 100%;
-  }
-
-  .form-inline {
-    width: 60%;
-    margin: 0 auto;
-    padding-top: 30px;
-    text-align: center;
-  }
-
-  main {
-    margin-bottom: 30px !important;
-  }
-
 }

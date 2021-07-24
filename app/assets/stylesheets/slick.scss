@@ -95,6 +95,9 @@
   color: #000;
 }
 
+.show-slider {
+  margin: 0 auto !important;
+}
 
 
 // タブレット縦置きサイズ（768px）以下の際に適用される設定
@@ -104,6 +107,7 @@
     height: 200px;
   }
 }
+
 
 // スマートフォンサイズ（425px）以下の際に適用される設定
 @media screen and (max-width:425px) {

@@ -13,13 +13,13 @@
           <div class="col-lg-4 col-md-12 col-12">
             <div class="rank-post-heading d-flex">
               <span class="ranking-img mr-2" style="background-image: url('<%= asset_path "#{background_img}" %>')"><span><%= i %></span></span>
-                <%= attachment_image_tag post.user, :image, :fill, 45, 45, fallback: "dogs-icon.jpg", size:'45x45', class: "user-image" %>
+                <%= attachment_image_tag post.user, :image, :fill, 45, 45, fallback: "dogs-icon.jpg", size:'45x45', class: "user-image mt-1 mx-2" %>
                 <%= link_to user_path(post.user.id) do %>
-                  <span class="user-name"><%= post.user.user_name %></span>
+                  <p class="user-name mt-1 mb-0"><%= post.user.user_name %></p>
                 <% end %>
             </div>
 
-            <div class="ranking-posts text-center mt-2">
+            <div class="ranking-posts text-center">
               <%= link_to post_path(post.id) do %>
                 <% post.post_images.first(1).each do |image| %>
                   <%= attachment_image_tag image, :image, :fill, 200, 200 %>

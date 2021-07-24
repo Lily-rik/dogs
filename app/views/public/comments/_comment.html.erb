@@ -1,9 +1,9 @@
-  <h4 class="label">Comments (<%= post.comments.count%>)</h4>
+  <h4 class="label">Comments (<%= comments.count%>)</h4>
   <table class="table comment-table">
-  <% post.comments.each do |comment| %>
+  <% comments.each do |comment| %>
     <tr>
       <td>
-        <%= attachment_image_tag comment.user, :image, :fill, 50, 50, fallback: "dogs-icon.jpg", size:'50x50', class: "user-image" %>
+        <%= attachment_image_tag comment.user, :image, :fill, 50, 50, fallback: "dogs-icon.jpg", size:'50x50', class: "user-image mt-2" %>
       </td>
       <td class="user-name">
         <%= link_to user_path(comment.user.id) do %>
@@ -11,10 +11,10 @@
         <% end %>
       </td>
       <td class="captions comment-captions">
-        <%= simple_format(comment.comment) %>
+        <p><%= simple_format(comment.comment) %></p>
       </td>
       <td>
-        <div class="mt-1">
+        <div class="mt-2">
         <% if comment.user == current_user %>
           <%= link_to 'DESTROY', post_comment_path(comment.post.id, comment.id), method: :delete, remote: true, id: "destroy-btn", class: "button" %>
         <% end %>

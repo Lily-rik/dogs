@@ -1,10 +1,10 @@
-<table>
+<table class="col-lg-12 col-md-12 col-sm-12 col-11">
   <tbody>
     <% chats.each do |chat| %>
       <% if chat.user == current_user %>
-        <tr class="row justify-content-right my-chat">
-          <td class="col-lg-8 col-md-8">
-            <div class="col-11 float-right text-right user-name">
+        <tr class="row justify-content-center">
+          <td class="col-lg-6 col-md-8 col-sm-9 col-10">
+            <div class="col-12 float-right text-right user-name">
               <%= link_to user_path(chat.user.id) do %>
                 <%= chat.user.user_name %><br>
               <% end %>
@@ -14,19 +14,21 @@
               <span><%= l chat.created_at, format: :short %></span>
             </div>
           </td>
-          <td>
+          <td class="col-lg-1 col-md-1 col-sm-1 col-1 text-left">
             <%= link_to attachment_image_tag(chat.user, :image, :fill, 50, 50, fallback: "dogs-icon.jpg", size:'50x50', class: "profile-image align-top user-image"), user_path(chat.user.id) %>
           </td>
         </tr>
       <% else %>
-        <tr class="row justify-content-right my-chat">
-          <td class="col-lg-1 col-md-1">
+        <tr class="row justify-content-center">
+          <td class="col-lg-1 col-md-1 col-sm-1 col-1 text-right">
             <%= link_to attachment_image_tag(chat.user, :image, :fill, 50, 50, fallback: "dogs-icon.jpg", size:'50x50', class: "profile-image align-top user-image"), user_path(chat.user.id) %>
           </td>
-          <td class="col-lg-10 col-md-5 user-name">
-            <%= link_to user_path(chat.user.id) do %>
-              <%= chat.user.user_name %><br>
-            <% end %>
+          <td class="chat-caption-box col-lg-6 col-md-8 col-sm-9 col-10">
+            <div class="col-12 float-left text-left user-name">
+              <%= link_to user_path(chat.user.id) do %>
+                <%= chat.user.user_name %><br>
+              <% end %>
+            </div>
             <div class="other-user-says captions">
               <p><%= simple_format(chat.message) %></p>
               <span><%= l chat.created_at, format: :short %></span>
