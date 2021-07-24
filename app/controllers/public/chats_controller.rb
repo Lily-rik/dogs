@@ -13,7 +13,7 @@ class Public::ChatsController < ApplicationController
       @room = user_rooms.room
     end
 
-    @chats = @room.chats.last(20)
+    @chats = @room.chats.includes(:user).last(20)
     @chat = Chat.new(room_id: @room.id)
   end
 
@@ -22,7 +22,7 @@ class Public::ChatsController < ApplicationController
     rooms = current_user.user_rooms.pluck(:room_id)
     user_rooms = UserRoom.find_by(user_id: @user.id, room_id: rooms)
     @room = user_rooms.room
-    @chats = @room.chats
+    @chats = @room.chats.includes(:user)
 
     @chat = current_user.chats.new(chat_params)
     @chat.save

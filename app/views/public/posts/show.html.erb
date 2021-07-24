@@ -8,23 +8,23 @@
         <div class="post-show-heading d-flex">
           <%= attachment_image_tag @post.user, :image, :fill, 60, 60, fallback: "dogs-icon.jpg", size:'60x60', class: "user-image mr-3 ml-4"%>
           <%= link_to user_path(@post.user.id) do %>
-            <span style="font-size: 18px;"><%= @post.user.user_name %></span>
+            <div class="mt-3" style="font-size: 18px;"><%= @post.user.user_name %></div>
           <% end %>
 
           <!--ログインユーザーなら編集ボタン、そうでなければお気に入りボタンを表示-->
           <% if @post.user_id == current_user.id %>
-            <div class="ml-auto mt-2">
+            <div class="ml-auto mt-3">
               <%= link_to edit_post_path(@post.id) do %>
                 <i class="fas fa-edit fa-2x" style="color: #0f2350;"></i>
               <% end %>
             </div>
           <% else %>
-            <p id="favorite_button_<%= @post.id %>" class="show-icon">
+            <p id="favorite_button_<%= @post.id %>" class="ml-auto mt-3">
               <%= render 'public/favorites/favorite', post: @post %>
             </p>
           <% end %>
         </div>
-        <div class="user-post mt-2 mb-3 mx-auto d-flex">
+        <div class="user-post mb-3 mx-auto d-flex">
           <div id="slider" class="show-slider">
             <% @post.post_images.each do |image| %>
               <%= attachment_image_tag image, :image, :fill, 500, 500, class: "show-image" %>
@@ -32,12 +32,12 @@
           </div>
         </div>
         <div class="show-captions mx-auto">
-          <%= simple_format(render_with_hashtags(@post.caption), class: "show-caption captions mx-auto") %>
+          <%= simple_format(render_with_hashtags(@post.caption), class: "show-caption captions mx-auto mt-5") %>
           <a href="" class="more captions">Read more...</a>
         </div>
 
         <div id="comment_button_<%= @post.id %>" class="comments col-lg-6 col-md-12 col-12 mt-5 mb-3 mx-auto text-center">
-          <%= render 'public/comments/comment', post: @post %>
+          <%= render 'public/comments/comment', {post: @post, comments: @comments} %>
         </div>
 
         <div id="new-comment" class="mb-3 mx-auto col-lg-6 col-md-12 col-12 text-center">
