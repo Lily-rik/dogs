@@ -1,6 +1,5 @@
 
 
-// ボタン関連
 .button {
   outline:none;
   height: 40px;
@@ -241,7 +240,6 @@
 }
 
 
-// タブレット縦置きサイズ（768px）以下の際に適用される設定
 @media screen and (max-width:768px) {
   #top-signup-btn, #top-login-btn {
     padding: 15px 40px;
@@ -261,7 +259,6 @@
   }
 }
 
-// スマートフォンサイズ（425px）以下の際に適用される設定
 @media screen and (max-width:425px) {
   #top-signup-btn, #top-login-btn {
     padding: 15px 35px;
