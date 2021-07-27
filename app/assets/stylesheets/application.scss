@@ -197,7 +197,6 @@ footer {
 
 
 
-// スマートフォンサイズ（425px）以下の際に適用される設定
 @media screen and (max-width:425px) {
   .navbar {
     margin-right: 10px;
@@ -219,13 +218,6 @@ footer {
   .label {
     font-size: 14px;
   }
-
-
-
-
-
-
-
 
   footer {
     font-size: 12px;
