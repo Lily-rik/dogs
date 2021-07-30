@@ -1,5 +1,3 @@
-
-
 .sliderArea {
   width: 100%;
 }
@@ -100,7 +98,7 @@
 }
 
 
-// タブレット縦置きサイズ（768px）以下の際に適用される設定
+
 @media screen and (max-width:768px) {
   .slick-slide img {
     width: 200px;
@@ -109,7 +107,6 @@
 }
 
 
-// スマートフォンサイズ（425px）以下の際に適用される設定
 @media screen and (max-width:425px) {
   .top-slider {
     width: 100% ;

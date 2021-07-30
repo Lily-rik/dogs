@@ -1,5 +1,3 @@
-
-
 .button {
   outline:none;
   height: 40px;
@@ -22,9 +20,6 @@
     letter-spacing: 2px ;
   }
 }
-
-
-
 
 #signup-btn, #log-in-btn, #user-edit-btn {
   padding: 12px 20px 11px 20px;
@@ -65,8 +60,6 @@
   }
 }
 
-
-
 #top-login-btn, #top-signup-btn {
   text-decoration: none;
   font-size: 20px;
@@ -85,8 +78,6 @@
   padding: 25px 60px;
 }
 
-
-
 #user-btn, #follower-btn, #favorites-btn, #new-post-btn, #chat-btn {
   padding: 15px;
   text-decoration: none;
@@ -102,9 +93,6 @@
 #chat-btn {
   padding: 15px 30px !important;
 }
-
-
-
 
 .edit-btn, .update-btn {
   width: 200px;
@@ -124,7 +112,6 @@
   }
 }
 
-
 .prf-edit-btn {
   width: 120px;
   margin: 0 auto;
@@ -133,7 +120,6 @@
   &:hover {
     background: #dddcd6;
   }
-
 }
 
 #unfollow-btn, #follow-btn, #detail-btn, #user-detail-btn, {
@@ -163,7 +149,6 @@
   }
 }
 
-
 #detail-btn, #user-detail-btn {
   border: 1px solid #c1d8ac;
   color: #c1d8ac;
@@ -175,8 +160,6 @@
 #user-detail-btn {
   font-size: 12px;
 }
-
-
 
 #destroy-btn, #withdraw-btn, #post-destroy-btn, #unsubscribe-btn {
   text-decoration: none;
@@ -192,7 +175,6 @@
   padding: 7px 20px 8px 20px;
 }
 
-
 #withdraw-btn, #post-destroy-btn {
   padding: 12px 22px 10px 22px;
 }
@@ -205,8 +187,6 @@
   }
 }
 
-
-
 #unsubscribe-btn {
   font-size: 20px;
   padding: 20px 60px;
@@ -216,7 +196,6 @@
     background: #e9546b;
   }
 }
-
 
 #no-btn {
   font-size: 20px;
@@ -258,6 +237,7 @@
     font-size: 14px;
   }
 }
+
 
 @media screen and (max-width:425px) {
   #top-signup-btn, #top-login-btn {

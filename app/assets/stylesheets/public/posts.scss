@@ -3,6 +3,20 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+// post全体
+.post-caption {
+  width: 180px;
+  margin: 0 auto;
+  text-align: left;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  font-family: 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
+}
+
+
 // Showページ
 .post-show-heading {
   width: 400px;
@@ -74,32 +88,16 @@
   margin-right: 50px;
 }
 
-
-
 .post-heading, .rank-post-heading, .rank-icons {
   width: 200px;
   margin: 0 auto;
 }
 
 
-
 // 部分テンプレートのFavoriteボタン
 #favorite-btn {
   text-decoration: none;
 }
-
-.post-caption {
-  width: 180px;
-  margin: 0 auto;
-  text-align: left;
-  display: block;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  font-size: 14px;
-  font-family: 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
-}
-
 
 
 
@@ -129,8 +127,8 @@
   .show-caption {
     width: 300px;
   }
-
 }
+
 
 @media screen and (max-width:550px) {
   .post-show-heading {
