@@ -56,7 +56,7 @@
 }
 
 
-// タブレット縦置きサイズ（768px）以下の際に適用される設定
+
 @media screen and (max-width:768px) {
   .user-show-title {
     text-align: center;
@@ -65,12 +65,9 @@
   .show-post-caption {
     margin-left: 80px;
   }
-
-
-
 }
 
-// スマートフォンサイズ（425px）以下の際に適用される設定
+
 @media screen and (max-width:425px) {
   .user-show-title-box {
     margin-bottom: 20px;
@@ -90,5 +87,4 @@
   .show-post-caption {
     margin-left: 73px;
   }
-
 }

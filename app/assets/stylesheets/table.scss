@@ -9,7 +9,6 @@
   cursor: pointer;
 }
 
-
 .table tr:hover{
   background-color: #f8fbf8;
   transition: 2s;
@@ -51,7 +50,6 @@
   text-align: center;
   width: 15%;
   padding: 10px 0px;
-
 }
 
 .comment-table td:nth-child(2) {
@@ -62,13 +60,11 @@
 .comment-table td:nth-child(3) {
   width: 45%;
   padding: 18px 15px;
-
 }
 
 .comment-table td:nth-child(4) {
   width: 30%;
   padding: 20px 0px;
-
 }
 
 
@@ -85,24 +81,20 @@
 .follow-table td:nth-child(2) {
   width: 15%;
   padding-top: 15px;
-
 }
 
 .follow-table td:nth-child(3) {
   width: 20%;
   padding-top: 17px;
-
 }
 .follow-table td:nth-child(4) {
   width: 35%;
   padding-top: 20px;
-
 }
 
 .info-edit-table {
   margin-right: 70px;
 }
-
 
 .info-edit-table th, .user-edit-table th {
   text-align: center;
@@ -116,7 +108,7 @@
 }
 
 
-// タブレット縦置きサイズ（768px）以下の際に適用される設定
+
 @media screen and (max-width:768px) {
   .info-edit-table {
     margin-left: 70px;
@@ -125,11 +117,9 @@
   .follow-table td:nth-child(1) {
     width: 20%;
   }
-
 }
 
 
-// スマートフォンサイズ（425px）以下の際に適用される設定
 @media screen and (max-width:425px) {
   .info-edit-table {
     margin: 0 15px 0 0;
@@ -138,5 +128,4 @@
   .follow-table td:nth-child(1) {
     width: 5%;
   }
-
 }

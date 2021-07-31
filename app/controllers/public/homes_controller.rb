@@ -5,7 +5,7 @@ class Public::HomesController < ApplicationController
   end
 
   def about
-    @posts = Post.includes(:user, :post_images).page(params[:page]).reverse_order #favorites?
+    @posts = Post.includes(:user).includes(:post_images).includes(:favorites).page(params[:page]).reverse_order #favorites?
   end
 
 

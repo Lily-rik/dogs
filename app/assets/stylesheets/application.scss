@@ -79,12 +79,6 @@ main {
   font-family: 'Comic Sans MS', fantasy, sans-serif;
 }
 
-
-// エラーの表示
-// .error {
-//   color: #a22041;
-// }
-
 .attention, .user-attention {
   color: #a22041;
   margin-top: 3px;
@@ -128,13 +122,9 @@ main {
   font-family: 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
 }
 
-
 .captions, .user-name, .form-control {
   font-family: 'Hiragino Maru Gothic Pro', 'Yu Mincho', sans-serif;
 }
-
-
-
 
 
 // ページネーション
@@ -181,6 +171,7 @@ main {
 }
 
 
+// フッター
 footer {
 	text-align: center;
 	background-color: #bed2c3;
@@ -189,11 +180,9 @@ footer {
   line-height: 5;
 }
 
-
 .container::-webkit-scrollbar {
     display:none;
 }
-
 
 
 
