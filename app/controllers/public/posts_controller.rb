@@ -14,7 +14,6 @@ class Public::PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    # return render :new unless image_present?
     @post.user_id = current_user.id
     if @post.save
       redirect_to post_path(@post.id), success: "投稿に成功しました"
@@ -59,13 +58,13 @@ class Public::PostsController < ApplicationController
   end
 
   def ranking
-    @ranking = Post.includes(:user).create_ranking
+    @ranking = Post.includes(:user).create_ranking # N+1問題の解消
   end
 
   def hashtag
     @user = current_user
     @tag = Hashtag.find_by(hashname: params[:name])
-    @posts = @tag.posts.includes(:user).page(params[:page]).reverse_order
+    @posts = @tag.posts.includes(:user).page(params[:page]).reverse_order # N+1問題の解消
   end
 
 
