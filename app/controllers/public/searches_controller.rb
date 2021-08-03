@@ -11,11 +11,11 @@ class Public::SearchesController < ApplicationController
     split_keyword.each do |keyword|
       next if keyword == ""
       users += User.where("name LIKE ? OR user_name LIKE ?", "%#{keyword}%", "%#{keyword}%").order(created_at: :desc)
-      posts += Post.where("caption LIKE ?", "%#{keyword}%").order(created_at: :desc).includes(:user)
+      posts += Post.where("caption LIKE ?", "%#{keyword}%").order(created_at: :desc).includes(:user) # N+1問題の
       posts += Hashtag.where("hashname LIKE ?", "%#{keyword}%").order(created_at: :desc)
     end
 
-    users.uniq! #uniqメソッド：配列の要素の中で重複している要素を削除して、削除後の配列として返す
+    users.uniq! # uniqメソッド：配列の要素の中で重複している要素を削除して、削除後の配列として返す
     posts.uniq!
 
     @users = Kaminari.paginate_array(users).page(params[:page]).per(10)
