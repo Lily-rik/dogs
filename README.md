@@ -2,7 +2,7 @@
 
 ## サイト概要
 犬についての投稿・交流サイトです。<br>
-いいね機能、コメント機能があるので気軽にコミュニケーションを取ることができます。
+いいね機能、コメント機能、チャット機能があるため気軽にコミュニケーションを取ることができます。
 また、ランキング機能や検索機能によって、自分の見たい投稿や知りたい情報を探すことができるようになっています。
 
 ### サイトテーマ
@@ -25,19 +25,14 @@
 
 ## 設計書
 ### ER図
-<img width="660" alt="スクリーンショット 2021-06-24 17 52 16" src="https://user-images.githubusercontent.com/79913183/123261995-64229080-d532-11eb-853d-e9993c38e903.png">
+https://app.diagrams.net/#G1JWmB9M2K-heDb6RLqIM7yqFdoywfrBs_
 
 ### テーブル定義書
-・テーブル一覧、管理者側<br>
-<img width="553" alt="スクリーンショット 2021-06-24 20 59 56" src="https://user-images.githubusercontent.com/79913183/123262400-ce3b3580-d532-11eb-8e20-a125c5c92b63.png"><br>
-・会員側<br>
-<img width="561" alt="スクリーンショット 2021-06-24 18 13 39" src="https://user-images.githubusercontent.com/79913183/123262221-9af8a680-d532-11eb-8945-5e561c372a63.png">
-<img width="548" alt="スクリーンショット 2021-06-24 20 55 49" src="https://user-images.githubusercontent.com/79913183/123262296-b2379400-d532-11eb-955a-2cf1d91786eb.png">
+https://docs.google.com/spreadsheets/d/12VJKsMiLtYnE5DfnfPwbz9VX22vjULUy/edit#gid=1243549839
+
 ### アプリケーション詳細設計
-・管理者側<br>
-<img width="511" alt="スクリーンショット 2021-06-24 21 31 59" src="https://user-images.githubusercontent.com/79913183/123263281-c0d27b00-d533-11eb-8ad5-1c33caa55685.png"><br>
-・会員側<br>
-<img width="724" alt="スクリーンショット 2021-06-24 21 19 45" src="https://user-images.githubusercontent.com/79913183/123261850-39d0d300-d532-11eb-8e45-dfc404793abb.png">
+https://docs.google.com/spreadsheets/d/155KaCC3rejTKw_LM11ETxjqt7vX7H1xI-QL6mV3BXig/edit#gid=0
+
 ## チャレンジ要素一覧
 <https://docs.google.com/spreadsheets/d/18I_lboN2bf9WrsJ67evP9-1Hg5WRCn4qGPr-Jz9pmBc/edit#gid=0>
 
