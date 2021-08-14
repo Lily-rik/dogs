@@ -11,7 +11,7 @@ class Public::SearchesController < ApplicationController
     split_keyword.each do |keyword|
       next if keyword == ""
       users += User.where("name LIKE ? OR user_name LIKE ?", "%#{keyword}%", "%#{keyword}%").order(created_at: :desc)
-      posts += Post.where("caption LIKE ?", "%#{keyword}%").order(created_at: :desc).includes(:user) # N+1問題の
+      posts += Post.where("caption LIKE ?", "%#{keyword}%").order(created_at: :desc).includes(:user) # N+1問題
       posts += Hashtag.where("hashname LIKE ?", "%#{keyword}%").order(created_at: :desc)
     end
 
