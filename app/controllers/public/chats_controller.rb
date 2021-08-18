@@ -23,7 +23,6 @@ class Public::ChatsController < ApplicationController
     user_rooms = UserRoom.find_by(user_id: @user.id, room_id: rooms)
     @room = user_rooms.room
     @chats = @room.chats.includes(:user)
-
     @chat = current_user.chats.new(chat_params)
     @chat.save
     @chat.create_notification_chat!(current_user, @chat.id, @user.id) # 通知
