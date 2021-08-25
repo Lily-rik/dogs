@@ -17,12 +17,7 @@ class Post < ApplicationRecord
 
 
   def favorited_by?(user)
-    favorites.each{|favorite|
-      if user.id = favorite.user_id
-        return true
-      end
-    }
-    false
+    favorites.where(user_id: user.id).exists?
   end
 
   # ランキング機能
